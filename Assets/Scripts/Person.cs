@@ -12,13 +12,12 @@ public class Person : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Random random = new Random ();
-		this.male = random.NextDouble () > .5;
-		this.drunk = random.NextDouble () > .75;
-		this.old = random.NextDouble () > .75;
+		this.male = Random.Range(0.0F, 1.0F) > .5;
+		this.drunk = Random.Range(0.0F, 1.0F) > .75;
+		this.old = Random.Range(0.0F, 1.0F) > .75;
 		this.startTime = Time.time;
 		// one turn for each risk factor + a random int from 0 to 3
-		this.timeTillFaint = Convert.ToInt32 (this.male) + Convert.ToInt32 (this.drunk) + Convert.ToInt32 (this.old) + random.Next (0, 3);
+		this.timeTillFaint = this.male.GetHashCode() + this.drunk.GetHashCode() + this.old.GetHashCode() + (int)Random.Range (0, 3);
 	}
 	
 	// Update is called once per frame
