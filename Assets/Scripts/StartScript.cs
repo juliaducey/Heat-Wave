@@ -17,4 +17,9 @@ public class StartScript : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void StartGame()
+    {
+        Application.LoadLevel("MainScene");
+    }
 }
