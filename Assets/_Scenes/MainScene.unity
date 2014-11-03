@@ -545,11 +545,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1171986391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f437ddb55d1fdb4b8dfeb41ab661ba1, type: 3}
+  m_Script: {fileID: 11500000, guid: ad31fefc329ab41c7a21222aa036d5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 0
-  state: 0
 --- !u!114 &1171986395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,6 +712,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bced235f850a42f781f16fedc6449dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  male: 0
+  drunk: 0
+  old: 0
+  timeOutsideInSeconds: 0
+  timeTillFaintInSeconds: 0
+  waterDrank: 0
 --- !u!1001 &1500853245
 Prefab:
   m_ObjectHideFlags: 0
