@@ -441,7 +441,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -419.350006, y: -287.109985}
+  m_AnchoredPosition: {x: -425, y: -287.109985}
   m_SizeDelta: {x: 120, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1121164372
@@ -455,7 +455,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f437ddb55d1fdb4b8dfeb41ab661ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 0
+  day: 0
+  hours: 0
+  minutes: 0
   state: 0
 --- !u!114 &1121164373
 MonoBehaviour:
@@ -523,7 +525,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -419.209991, y: -290.470001}
+  m_AnchoredPosition: {x: -425, y: -290.470001}
   m_SizeDelta: {x: 120, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1171986393
@@ -537,6 +539,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad31fefc329ab41c7a21222aa036d5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  temperature: 0
+  timerObject: {fileID: 0}
+  currentDay: 1
+  text: {fileID: 0}
 --- !u!114 &1171986394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,6 +554,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad31fefc329ab41c7a21222aa036d5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  temperature: 0
+  timerObject: {fileID: 0}
+  currentDay: 1
+  text: {fileID: 0}
 --- !u!114 &1171986395
 MonoBehaviour:
   m_ObjectHideFlags: 0
