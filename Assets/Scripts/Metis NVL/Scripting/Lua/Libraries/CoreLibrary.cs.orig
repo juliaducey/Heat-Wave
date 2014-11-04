@@ -1,0 +1,75 @@
+﻿using UniLua;
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using System;
+using System.Linq;
+
+public static class CoreLibrary
+{
+	public const string LIB_NAME = "corelib";
+	
+	static LuaTable table;
+	static MetisDialogueController dialogueController;
+	static MetisBackgroundController bgController;
+	static MetisSceneController sceneController;
+	static List<NameFuncPair> methods = new List<NameFuncPair>();
+
+	/// <summary>
+	/// Must be called before use.
+	/// </summary>
+	/// <param name="dialogueController">Dialogue controller.</param>
+	public static void Initialize(MetisDialogueController dialogueController, MetisBackgroundController bgController, MetisSceneController sceneController)
+	{
+		CoreLibrary.dialogueController = dialogueController;
+		CoreLibrary.bgController = bgController;
+		CoreLibrary.sceneController = sceneController;
+	}
+
+	public static void AddMethod(NameFuncPair method)
+	{
+		methods.Add (method);
+	}
+
+	public static int OpenLib(ILuaState lua)
+	{
+		/*var define = new NameFuncPair[]
+		{
+			new NameFuncPair("say", Say)
+		};*/
+		var define = methods.ToArray ();
+
+		lua.L_NewLib(define);
+		return 1;
+	}
+
+	public static int Say(ILuaState lua)
+	{
+		// Param 1: Speaker name
+		// Param 2: Dialogue
+		string speaker = lua.L_CheckString (1);
+		string text = lua.L_CheckString (2);
+
+		 UnityThreadHelper.Dispatcher.Dispatch(() => {
+			dialogueController.Show ();
+			dialogueController.ShowDialogue (speaker, text);
+		});
+
+		// TODO Wait for click
+		System.Threading.Thread.Sleep (2000);
+
+		return 1;
+	}
+
+	public static int ShowBG(ILuaState lua)
+	{
+		// Param 1: BG name
+		// Param 2: Dialogue
+		string bg = lua.L_CheckString (1);
+
+		// TODO this
+		bgController.Show ();
+		
+		return 1;
+	}
+}

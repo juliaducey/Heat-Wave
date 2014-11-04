@@ -1,0 +1,5 @@
+nvl.show_textbox();
+nvl.say("Char1: blah blah"); 
+nvl.say("Char2: blah blah blah"); 
+nvl.say("Char1: blah"); 
+nvl.say("Char2: blah blahbahsghsgfhg"); 
