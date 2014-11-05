@@ -1,0 +1,13 @@
+nvl.say("Char1: blah blah"); 
+nvl.say("Char2: blah blah blah"); 
+nvl.say("Char1: blah"); 
+nvl.say("Char2: blah blahbahsghsgfhg"); 
+
+local choice = menu("1","2","3");
+if choice == 1 then
+nvl.say("You picked 1"); 
+if choice == 2 then
+nvl.say("You picked 2"); 
+if choice == 3 then
+nvl.say("You picked 3"); 
+end
