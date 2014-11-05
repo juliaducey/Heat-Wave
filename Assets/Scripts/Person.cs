@@ -10,6 +10,7 @@ public class Person : MonoBehaviour {
 	public int timeTillFaintInSeconds;
 	private float startTime;
 	public int waterDrank = 0;
+	public MetisScriptHandler scriptHandler;
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +36,7 @@ public class Person : MonoBehaviour {
 
 	void OnMouseDown() {
 		// bring up dialogue
+		scriptHandler.RunScript();
 	}
 
 	void drinkWater () {
