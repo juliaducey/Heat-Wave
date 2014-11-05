@@ -58,10 +58,18 @@ public class Timer : MonoBehaviour {
     }
 
 	public void updateTimerUI(){
+        if (hours < 10)
+        {
+            text.text = "Day " + day + "  Time: 0" + hours;
+        }
+        else
+        {
+            text.text = "Day " + day + "  Time: " + hours;
+        }
 		if (minutes < 10) {
-			text.text = "Day " + day + "  Time: " + hours + ":0" + minutes;
+			text.text += ":0" + minutes;
 		} else {
-			text.text = "Day " + day + "  Time: " + hours + ":" + minutes;
+			text.text += ":" + minutes;
 		}
 	}
 
