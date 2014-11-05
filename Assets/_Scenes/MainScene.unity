@@ -479,7 +479,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .0018382353
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1404,7 +1404,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: -1
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -2828,7 +2828,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -425, y: -287.109985}
-  m_SizeDelta: {x: 120, y: 30}
+  m_SizeDelta: {x: 130, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1121164372
 MonoBehaviour:
@@ -3024,7 +3024,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -425, y: -290.470001}
-  m_SizeDelta: {x: 120, y: 30}
+  m_SizeDelta: {x: 130, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1171986394
 MonoBehaviour:
@@ -4673,7 +4673,7 @@ Transform:
   m_PrefabInternal: {fileID: 157684810}
   m_GameObject: {fileID: 1710049519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0018382353, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 973644623}
