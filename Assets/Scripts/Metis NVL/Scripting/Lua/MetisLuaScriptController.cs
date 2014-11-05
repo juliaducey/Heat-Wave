@@ -84,10 +84,12 @@ public class MetisLuaScriptController : MonoBehaviour
 		}
 
 		// Show dialogue box
-		if (shouldAutoShowBG)
+		//if (shouldAutoShowBG)
 		{
 			ExecuteDoString("nvl.show_textbox();");
 		}
+
+
 
 		// Execute script
 		ExecuteDoString(this.scriptCode);

@@ -483,7 +483,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: .0018382353
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_RootOrder
@@ -521,6 +521,30 @@ Prefab:
     - target: {fileID: 11400048, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: backgroundSprite
       value: frame-style7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400048, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: color.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
+    - target: {fileID: 100006, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_Name
+      value: Dialogue Container
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400050, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: color.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400014, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: color.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
@@ -1315,6 +1339,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 4cd8f33973c52ca4ea617ec44cfc805c, type: 2}
+      propertyPath: PanelName
+      value: Dialogue Container
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4cd8f33973c52ca4ea617ec44cfc805c, type: 2}
   m_RootGameObject: {fileID: 230119227}
@@ -1698,7 +1726,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: a1dc2d85ebe83b84390ece395c681e7e, type: 3}
+  - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2726,7 +2754,7 @@ GameObject:
   - 54: {fileID: 1424786688}
   - 114: {fileID: 1424786687}
   m_Layer: 8
-  m_Name: Dialogue Panel
+  m_Name: Dialogue Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3670,7 +3698,7 @@ Transform:
   m_PrefabInternal: {fileID: 157684810}
   m_GameObject: {fileID: 1710049519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: .0018382353, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 973644623}
@@ -3916,7 +3944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be54b42984155a4dba5200ee827f39e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PanelName: Dialogue Panel
+  PanelName: Dialogue Container
   SpeakerNameTransitionTime: .100000001
   SpeakerNameMoveDelta: 20
 --- !u!114 &1871055950
