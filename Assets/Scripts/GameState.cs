@@ -5,7 +5,7 @@ using System.Collections;
 public class GameState : MonoBehaviour {
 	public int currentDay = 1;
 	public Text text; 
-	public int numberOfPeopleDead = 0;
+	public int numberOfPeopleFainted = 0;
 	public int numberOfPeopleInside = 0;
 	
 	// Use this for initialization
@@ -38,12 +38,12 @@ public class GameState : MonoBehaviour {
 
 
 	
-	public void updateNumberOfPeopleDead(int numberFainted) {
-		numberOfPeopleDead += numberFainted;
+	public void SomeoneWentInside() {
+		numberOfPeopleInside += 1;
 	}
 	
-	public void updateNumberOfPeopleInside(int numberThatWentInside) {
-		numberOfPeopleInside += numberThatWentInside;
+	public void SomeoneFainted() {
+		numberOfPeopleFainted += 1;
 	}
 
     public void LoadMainScene()

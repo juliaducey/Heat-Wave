@@ -11,21 +11,20 @@ public class Person : MonoBehaviour {
 	private float startTime;
 	public int waterDrank = 0;
 	public MetisScriptHandler scriptHandler;
+    public float currenttime;
 
 	// Use this for initialization
 	void Start () {
 		this.male = Random.Range(0.0F, 1.0F) > .5;
 		this.drunk = Random.Range(0.0F, 1.0F) > .75;
 		this.old = Random.Range(0.0F, 1.0F) > .75;
-
-		this.startTime = Time.time;
+        this.startTime = Time.time;
 		// lose 10 seconds for every risk factor
-		this.timeTillFaintInSeconds = 60 - 10 * (this.male.GetHashCode () + this.drunk.GetHashCode () + this.old.GetHashCode ()) + Random.Range (-10, 10);
+		this.timeTillFaintInSeconds = 30 - 10 * (this.male.GetHashCode () + this.drunk.GetHashCode () + this.old.GetHashCode ()) + Random.Range (-10, 10);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
 		if (Time.time - this.startTime > this.timeTillFaintInSeconds) {
 			this.faint ();
 		}
@@ -56,6 +55,9 @@ public class Person : MonoBehaviour {
 	void faint() {
 		// update global variable tracking number of fainted people
 		// destroy game object (or have them fall over)
+        GameObject gamestate = GameObject.Find("GameState(Clone)");
+        gamestate.SendMessage("SomeoneFainted");
+        Destroy(gameObject);
 	}
 
 
