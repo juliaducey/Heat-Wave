@@ -1343,6 +1343,10 @@ Prefab:
       propertyPath: PanelName
       value: Dialogue Container
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 4cd8f33973c52ca4ea617ec44cfc805c, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4cd8f33973c52ca4ea617ec44cfc805c, type: 2}
   m_RootGameObject: {fileID: 230119227}
@@ -3939,7 +3943,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 784771464}
   m_GameObject: {fileID: 1871055947}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6be54b42984155a4dba5200ee827f39e, type: 3}
   m_Name: 
