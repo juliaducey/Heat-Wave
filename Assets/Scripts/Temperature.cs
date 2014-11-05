@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class Enviornment : MonoBehaviour {
+public class Temperature : MonoBehaviour {
 	public float temperature;
 	public Timer timerObject;
 	public int currentDay = 1;
