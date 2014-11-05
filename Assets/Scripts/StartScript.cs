@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class StartScript : MonoBehaviour {
-    public GameObject timer;
+    public GameObject gamestate;
 	// Use this for initialization
 	void Start () {
 
@@ -10,8 +10,8 @@ public class StartScript : MonoBehaviour {
 
     void Awake()
     {
-        if (!GameObject.Find("Timer(Clone)"))
-            Instantiate(timer, Vector3.zero, Quaternion.identity);
+        if (!GameObject.Find("GameState(Clone)"))
+            Instantiate(gamestate, Vector3.zero, Quaternion.identity);
     }
 	// Update is called once per frame
 	void Update () {

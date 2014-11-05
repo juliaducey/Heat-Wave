@@ -18,15 +18,18 @@ public class Timer : MonoBehaviour {
 		day     = 1;
 		speed   = 100;
         state = true;
-        DontDestroyOnLoad(gameObject);
 		text = GetComponent <Text> ();
 		updateTimerUI ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         if (state)
         {
+            if (seconds == 0 && minutes == 0 && hours == 0)
+            {
+                day = GameObject.Find("GameState(Clone)").GetComponent<GameState>().currentDay;
+            }
 			seconds += Time.deltaTime * speed;
 			
 			if (seconds >= 1) {
@@ -40,7 +43,9 @@ public class Timer : MonoBehaviour {
 			
 			if (hours >= 24) {
 				hours = 0;
-				day += 1;
+                day += 1;
+                GameObject gamestate = GameObject.Find("GameState(Clone)");
+                gamestate.SendMessage("IncrementDay");
 			}
         }
 		updateTimerUI ();
@@ -73,5 +78,10 @@ public class Timer : MonoBehaviour {
     public void SetTime(float t)
     {
         seconds = t;
+    }
+
+    public void SetDay(int daynumber)
+    {
+        day = daynumber;
     }
 }
