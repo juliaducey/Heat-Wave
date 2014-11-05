@@ -1,6 +1,7 @@
-nvl.test();
-nvl.say("You: Hey, you should drink some water so you don\'t die of a heat stroke. Take this bottle of water."); 
-nvl.say("Person: Thanks. I\'ll do that."); 
+nvl.say("Char1: blah blah"); 
+nvl.say("Char2: blah blah blah"); 
+nvl.say("Char1: blah"); 
+nvl.say("Char2: blah blahbahsghsgfhg"); 
 
 local choice = menu("1","2","3");
 if choice == 1 then
