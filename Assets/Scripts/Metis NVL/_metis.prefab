@@ -167,12 +167,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc2a837e5c3bbb6479ac6af1f4aa5e02, type: 3}
+  m_Script: {fileID: 11500000, guid: 4898bc5214c7a4c44bc693dde434b12f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Script: {fileID: 4900000, guid: 859baa98a8c71874481b3e6b05fc25e9, type: 3}
-  AutoStart: 1
-  AutoShowBG: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -198,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751217f3468dded44897406d3f35862a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextBox: {fileID: 0}
+  TextBox: {fileID: 11400004}
   NumberOfLines: 4
   FadeTime: .5
 --- !u!114 &11400008
