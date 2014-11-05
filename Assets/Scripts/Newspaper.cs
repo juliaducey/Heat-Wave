@@ -13,7 +13,7 @@ public class Newspaper : MonoBehaviour {
         text = GetComponent<Text>();
         GameState gamestate = GameObject.Find("GameState(Clone)").GetComponent<GameState>();
         day = gamestate.currentDay - 1;
-        fainted = gamestate.numberOfPeopleDead;
+        fainted = gamestate.numberOfPeopleFainted;
         inside = gamestate.numberOfPeopleInside;
 	}
 

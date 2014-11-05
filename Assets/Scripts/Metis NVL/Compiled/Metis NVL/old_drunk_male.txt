@@ -1,0 +1,9 @@
+nvl.say("You: Hello Sir, would you like a bottle of water"); 
+
+nvl.say("Old Drunk Man: I PREFER SCOTCH!");
+
+nvl.say("You: Everyone is susceptible to heat stroke!  Especially, old drunk people who live alone.");
+
+nvl.say("Old Drunk Man: GO AWAY OR I’LL GET MY SHOTGUN!");
+
+nvl.say("You:   Fine.");

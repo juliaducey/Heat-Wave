@@ -1,0 +1,3 @@
+nvl.say("You: Hey, you should drink some water so you don\'t die of a heat stroke. Take this bottle of water."); 
+
+nvl.say("Homeless Person: Thanks. That’s the first thing anyone has given me in 13 years.");
