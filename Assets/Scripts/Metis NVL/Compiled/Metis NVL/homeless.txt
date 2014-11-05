@@ -1,9 +1,3 @@
 nvl.say("You: Hey, you should drink some water so you don\'t die of a heat stroke. Take this bottle of water."); 
 
-nvl.say("Person: Why should I do that?");
-
-nvl.say("You: Everyone is susceptable to heat stroke!  Especially, old drunk people who live alone.");
-
-nvl.say("Person: Really?");
-
-nvl.say("You: Yes, now chug!");
+nvl.say("Person: Thanks. That’s the first thing anyone has given me in 13 years.");
