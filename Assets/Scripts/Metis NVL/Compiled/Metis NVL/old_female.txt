@@ -1,9 +1,9 @@
 nvl.say("You: Hey, you should drink some water so you don\'t die of a heat stroke. Take this bottle of water."); 
 
-nvl.say("Person: Could you say that again? I’m a little hard of hearing.");
+nvl.say("Old Female: Could you say that again? I’m a little hard of hearing.");
 
 nvl.say("You: I said you should drink some water so you don\'t die of a heat stroke. Take this bottle of water.");
 
-nvl.say("Person: Did you say water?");
+nvl.say("Old Female: Did you say water?");
 
 nvl.say("You: Yes, now chug!");
