@@ -1,5 +1,13 @@
-@nvl.show_textbox();
 Char1: blah blah
 Char2: blah blah blah
 Char1: blah
 Char2: blah blahbahsghsgfhg
+
+@local choice = menu("1","2","3");
+@if choice == 1 then
+You picked 1
+@if choice == 2 then
+You picked 2
+@if choice == 3 then
+You picked 3
+@end

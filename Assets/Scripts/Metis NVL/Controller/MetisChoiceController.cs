@@ -30,7 +30,45 @@ public class MetisChoiceController : MetisViewComponentController
 		_clickCallback = num => {};
 		_waitForClick.FinishWaiting ();
 	}
-	
+
+	[LuaMethodAttribute("menu")]
+	public int ShowMenuLua(int numChoices, string choice1, string choice2, string choice3, string choice4)
+	{
+		var wait = ScheduleWaitForever();
+		var scene = GameObject.FindGameObjectWithTag(MetisSceneController.TAG).GetComponent<MetisSceneController>();
+		var viewName = this.GetComponent<MetisViewController>().ViewName;
+		scene.ShowView (viewName);
+
+		// TODO thread this so the method doesn't return until a choice has been selected
+
+		Action<int> callback = delegate(int selectedChoice) 
+		{ 
+			wait.FinishWaiting (); 
+			scene.RemoveTopView ();
+		};
+
+		switch (numChoices)
+		{
+		case 1:
+			ShowMenu(callback, choice1);
+			break;
+		case 2:
+			ShowMenu(callback, choice1, choice2);
+			break;
+		case 3:
+			ShowMenu(callback, choice1, choice2, choice3);
+			break;
+		case 4:
+			ShowMenu(callback, choice1, choice2, choice3, choice4);
+			break;
+		default:
+			throw new ArgumentException("Illegal number of choices: must be 1-4, but "+numChoices+" was given");
+		}
+
+		// TODO this is wrong
+		return 1;
+	}
+
 	public void ShowMenu(Action<int> callback, params string[] choices)
 	{
 		_waitForClick = ScheduleWaitForever ();
