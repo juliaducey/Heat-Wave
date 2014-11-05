@@ -29,9 +29,25 @@ function menu(choice1, choice2, choice3, choice4)
 	if choice2 then number_of_choices = number_of_choices + 1 end
 	if choice3 then number_of_choices = number_of_choices + 1 end
 	if choice4 then number_of_choices = number_of_choices + 1 end
-	nvl.say("# TODO: Menu handling, automatically choosing option 1")
-	return 1
-	--return nvl.menu(number_of_choices, choice1, choice2, choice3, choice4)
+	--nvl.say("# TODO: Menu handling, automatically choosing option 1")
+	--return 1
+	return nvl.menu(number_of_choices, choice1, choice2, choice3, choice4)
+end
+
+function menu(choice1)
+	return nvl.menu(choice1)
+end
+
+function menu(choice1, choice2)
+	return nvl.menu(choice1, choice2)
+end
+
+function menu(choice1, choice2, choice3)
+	return nvl.menu(choice1, choice2, choice3)
+end
+
+function menu(choice1, choice2, choice3, choice4)
+	return nvl.menu(choice1, choice2, choice3, choice4)
 end
 
 function exit_all()

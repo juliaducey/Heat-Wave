@@ -1,5 +1,0 @@
-nvl.say("nvl.say(\"Test: blah blah blah\");"); 
-nvl.say("nvl.say(\"Test2: blah blah\");"); 
-nvl.say("nvl.say(\"Test: this is a test\");"); 
-nvl.say("nvl.say(\"Test2: yes it is\");"); 
-
