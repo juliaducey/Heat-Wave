@@ -1,7 +1,8 @@
-nvl.say("You: Hey, you should drink some water.  You\’ll feel better in the morning and this heat is dangerous."); 
-
-nvl.say("Drunk Female: Hehee, you\’re kinda cute!");
-
-nvl.say("You: Why thank you.  But seriously, this kind of heat and alcohol don\’t mix. Please drink this!");
-
-nvl.say("Drunk Female: Okay cutie!");
+nvl.say("Drunk Female");
+//nvl.say("You: Hey, you should drink some water.  You\’ll feel better in the morning and this heat is dangerous."); 
+//
+//nvl.say("Drunk Female: Hehee, you\’re kinda cute!");
+//
+//nvl.say("You: Why thank you.  But seriously, this kind of heat and alcohol don\’t mix. Please drink this!");
+//
+//nvl.say("Drunk Female: Okay cutie!");
