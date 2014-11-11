@@ -13,6 +13,7 @@ public class MetisLuaScriptController : MonoBehaviour
 	public MetisDialogueController DialogueController;
 	public MetisBackgroundController BackgroundController;
 	public MetisSceneController SceneController;
+	bool DisableMainCamera = false;
 
 	// Name of BG to automatically show, if any
 	public string AutoShowBG = string.Empty;
@@ -24,6 +25,11 @@ public class MetisLuaScriptController : MonoBehaviour
 
 		UnityThreadHelper.EnsureHelper ();
 		InitializeLuaVM ();
+	}
+
+	public void PushOntoStack(int number)
+	{
+		Lua.PushInteger (number);
 	}
 
 	void InitializeLuaVM()
@@ -59,41 +65,43 @@ public class MetisLuaScriptController : MonoBehaviour
 	{
 		this.scriptCode = script.text;
 		this.shouldAutoShowBG = shouldAutoShowBG;
-		LuaThread = new Thread (new ThreadStart (HandleExecuteScript));
-		LuaThread.Start ();
+		UnityThreadHelper.CreateThread (() => HandleExecuteScript());
+		//LuaThread = new Thread (new ThreadStart (HandleExecuteScript));
+		//LuaThread.Start ();
 	}
 
     Camera _mainCamera;
 
 	void HandleExecuteScript()
 	{
-		UnityThreadHelper.Dispatcher.Dispatch(() => {
-			// Disable main camera
-			_mainCamera = Camera.main;
-			_mainCamera.enabled = false;
-		});
+		if (DisableMainCamera)
+		{
+			UnityThreadHelper.Dispatcher.Dispatch(() => {
+				// Disable main camera
+				_mainCamera = Camera.main;
+				_mainCamera.enabled = false;
+			});
+		}
 		
 		// Import header
 		ExecuteDoString ("require \"lib.vsa.core\"");
 		ExecuteDoString ("require \"lib.metis_nvl.core\"");
 		//ExecuteDoString("sound(\"event_start\")");
-
+		
 		if (!string.IsNullOrEmpty(AutoShowBG) && shouldAutoShowBG)
 		{
 			ExecuteDoString("nvl.show_bg(\"" + AutoShowBG + "\")");
 		}
-
+		
 		// Show dialogue box
 		//if (shouldAutoShowBG)
 		{
 			ExecuteDoString("nvl.show_textbox();");
 		}
-
-
-
+		
 		// Execute script
 		ExecuteDoString(this.scriptCode);
-
+		
 		ExecuteDoString("return 1;");
 		Lua.Pop(1);
 		
@@ -104,8 +112,9 @@ public class MetisLuaScriptController : MonoBehaviour
 		Lua.L_DoString("nvl.clear_textbox();");
 		UnityThreadHelper.Dispatcher.Dispatch(() => {
 			SceneController.RemoveTopView ();
-			
-			_mainCamera.enabled = true;
+
+			if (DisableMainCamera)
+				_mainCamera.enabled = true;
 		});
 		
 		return;
