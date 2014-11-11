@@ -204,6 +204,7 @@ GameObject:
   - 114: {fileID: 130766786}
   - 54: {fileID: 130766785}
   - 82: {fileID: 130766784}
+  - 114: {fileID: 130766790}
   m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
@@ -438,6 +439,18 @@ MonoBehaviour:
   shadowOffset: {x: 1, y: -1}
   autoSize: 0
   clickWhenSpacePressed: 1
+--- !u!114 &130766790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 130766782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b3e6a9bc01b504782cdb2b396f81f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelName: Choice1
 --- !u!1001 &157684810
 Prefab:
   m_ObjectHideFlags: 0
@@ -479,11 +492,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .0018382353
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: .0018382353
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_RootOrder
@@ -1340,6 +1353,7 @@ MonoBehaviour:
   text: {fileID: 0}
   numberOfPeopleFainted: 0
   numberOfPeopleInside: 0
+  forecast: []
 --- !u!224 &542012638
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1839,7 +1853,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400012, guid: 4cd8f33973c52ca4ea617ec44cfc805c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4cd8f33973c52ca4ea617ec44cfc805c, type: 2}
   m_RootGameObject: {fileID: 230119227}
   m_IsPrefabParent: 0
@@ -2387,6 +2402,7 @@ GameObject:
   - 114: {fileID: 1026233398}
   - 54: {fileID: 1026233397}
   - 82: {fileID: 1026233396}
+  - 114: {fileID: 1026233404}
   m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
@@ -2651,6 +2667,18 @@ MonoBehaviour:
   shadowOffset: {x: 1, y: -1}
   autoSize: 0
   clickWhenSpacePressed: 1
+--- !u!114 &1026233404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1026233394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b3e6a9bc01b504782cdb2b396f81f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelName: Choice2
 --- !u!1 &1096124872
 GameObject:
   m_ObjectHideFlags: 0
@@ -2696,7 +2724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2a837e5c3bbb6479ac6af1f4aa5e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Script: {fileID: 4900000, guid: c8e4b5db8d9d144c2ae4b28cc65929cc, type: 3}
+  Script: {fileID: 4900000, guid: 6a4a0d19cf9b05b42ac052d7fa56b830, type: 3}
   AutoStart: 0
   AutoShowBG: 0
 --- !u!61 &1096124875
@@ -3043,9 +3071,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b31a16ee1f406c646939471f4f129a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temperature: 0
+  baseTemp: 0
+  curTemp: 0
   timerObject: {fileID: 0}
-  currentDay: 1
+  currentHour: 0
   text: {fileID: 0}
   numberOfPeopleDead: 0
   numberOfPeopleInside: 0
@@ -3457,7 +3486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2a837e5c3bbb6479ac6af1f4aa5e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Script: {fileID: 4900000, guid: 1029dfa5812add5449404d474097cdea, type: 3}
+  Script: {fileID: 4900000, guid: 6a4a0d19cf9b05b42ac052d7fa56b830, type: 3}
   AutoStart: 0
   AutoShowBG: 0
 --- !u!212 &1373061981
@@ -3895,6 +3924,7 @@ GameObject:
   - 114: {fileID: 1653650316}
   - 54: {fileID: 1653650315}
   - 82: {fileID: 1653650314}
+  - 114: {fileID: 1653650322}
   m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
@@ -4159,6 +4189,18 @@ MonoBehaviour:
   shadowOffset: {x: 1, y: -1}
   autoSize: 0
   clickWhenSpacePressed: 1
+--- !u!114 &1653650322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653650312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b3e6a9bc01b504782cdb2b396f81f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelName: Choice4
 --- !u!1 &1654934001
 GameObject:
   m_ObjectHideFlags: 0
@@ -4362,6 +4404,7 @@ GameObject:
   - 114: {fileID: 1700010210}
   - 54: {fileID: 1700010209}
   - 82: {fileID: 1700010208}
+  - 114: {fileID: 1700010216}
   m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
@@ -4626,6 +4669,18 @@ MonoBehaviour:
   shadowOffset: {x: 1, y: -1}
   autoSize: 0
   clickWhenSpacePressed: 1
+--- !u!114 &1700010216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1700010206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b3e6a9bc01b504782cdb2b396f81f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelName: Choice3
 --- !u!1 &1710049519
 GameObject:
   m_ObjectHideFlags: 0
@@ -4704,7 +4759,7 @@ Transform:
   m_PrefabInternal: {fileID: 157684810}
   m_GameObject: {fileID: 1710049519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0018382353, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: .0018382353, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 973644623}
@@ -4869,7 +4924,6 @@ GameObject:
   - 4: {fileID: 1746021150}
   - 114: {fileID: 1746021153}
   - 114: {fileID: 1746021152}
-  - 114: {fileID: 1746021151}
   m_Layer: 0
   m_Name: _choice
   m_TagString: Untagged
@@ -4889,19 +4943,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 230119228}
   m_RootOrder: 0
---- !u!114 &1746021151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400012, guid: 4cd8f33973c52ca4ea617ec44cfc805c,
-    type: 2}
-  m_PrefabInternal: {fileID: 784771464}
-  m_GameObject: {fileID: 1746021149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31b3e6a9bc01b504782cdb2b396f81f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PanelName: Choice Container
 --- !u!114 &1746021152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5185,7 +5226,7 @@ Prefab:
     - target: {fileID: 11400004, guid: 6db96d34facc949a498e65ed43fc1596, type: 2}
       propertyPath: Script
       value: 
-      objectReference: {fileID: 4900000, guid: 1029dfa5812add5449404d474097cdea, type: 3}
+      objectReference: {fileID: 4900000, guid: 6a4a0d19cf9b05b42ac052d7fa56b830, type: 3}
     - target: {fileID: 400000, guid: 6db96d34facc949a498e65ed43fc1596, type: 2}
       propertyPath: m_LocalScale.x
       value: .228029564
@@ -5506,7 +5547,7 @@ Prefab:
     - target: {fileID: 11400004, guid: 6db96d34facc949a498e65ed43fc1596, type: 2}
       propertyPath: Script
       value: 
-      objectReference: {fileID: 4900000, guid: c8e4b5db8d9d144c2ae4b28cc65929cc, type: 3}
+      objectReference: {fileID: 4900000, guid: 6a4a0d19cf9b05b42ac052d7fa56b830, type: 3}
     - target: {fileID: 400000, guid: 6db96d34facc949a498e65ed43fc1596, type: 2}
       propertyPath: m_LocalScale.x
       value: 2.23441482
