@@ -23,6 +23,6 @@ public class Newspaper : MonoBehaviour {
         text.text = "DAY " + day + " OVER\n" +
             fainted + " FAINTED\n" +
             inside + " WENT INSIDE\n" +
-            "TOMORROW'S FORECAST\n" + (int)gamestate.forecast[day];
+            "3 DAY FORECAST\n" + (int)gamestate.forecast[0] + " " + (int)gamestate.forecast[1] + " " + (int)gamestate.forecast[2];
 	}
 }
