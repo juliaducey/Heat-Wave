@@ -14,7 +14,8 @@ public class Temperature : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		text = GetComponent <Text> ();
-		baseTemp = Random.Range(80.0f, 120.0f);
+        GameState state =  GameObject.Find("GameState(Clone)").GetComponent<GameState>();
+        baseTemp = state.forecast[state.currentDay-1];
         timerObject = GameObject.Find("Timer").GetComponent<Timer>();
         curTemp = -1f * System.Math.Abs(timerObject.hours * .5f - 6) + baseTemp;
         text.text = "Temperature: " + curTemp.ToString();

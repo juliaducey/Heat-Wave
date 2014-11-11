@@ -7,10 +7,14 @@ public class GameState : MonoBehaviour {
 	public Text text; 
 	public int numberOfPeopleFainted = 0;
 	public int numberOfPeopleInside = 0;
+    public float[] forecast;
 	
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(gameObject);
+        forecast = new float[] { Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f), 
+            Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f),Random.Range(80.0f, 120.0f) };
+
 
 		
 	}

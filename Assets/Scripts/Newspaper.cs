@@ -7,11 +7,12 @@ public class Newspaper : MonoBehaviour {
     public int fainted;
     public int inside;
     public int day;
+    public GameState gamestate;
 
 	// Use this for initialization
 	void Start () {
         text = GetComponent<Text>();
-        GameState gamestate = GameObject.Find("GameState(Clone)").GetComponent<GameState>();
+        gamestate = GameObject.Find("GameState(Clone)").GetComponent<GameState>();
         day = gamestate.currentDay - 1;
         fainted = gamestate.numberOfPeopleFainted;
         inside = gamestate.numberOfPeopleInside;
@@ -21,6 +22,7 @@ public class Newspaper : MonoBehaviour {
 	void Update () {
         text.text = "DAY " + day + " OVER\n" +
             fainted + " FAINTED\n" +
-            inside + " WENT INSIDE";
+            inside + " WENT INSIDE\n" +
+            "TOMORROW'S FORECAST\n" + (int)gamestate.forecast[day];
 	}
 }
