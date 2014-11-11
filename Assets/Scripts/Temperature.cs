@@ -3,9 +3,10 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class Temperature : MonoBehaviour {
-	public float temperature;
+	public float baseTemp;
+    public float curTemp;
 	public Timer timerObject;
-	public int currentDay = 1;
+	public int currentHour = 0;
 	public Text text; 
 	public int numberOfPeopleDead = 0;
 	public int numberOfPeopleInside = 0;
@@ -13,8 +14,10 @@ public class Temperature : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		text = GetComponent <Text> ();
-		temperature = Random.Range(80.0f, 120.0f);
-		text.text = "Temperature: " + temperature.ToString();
+		baseTemp = Random.Range(80.0f, 120.0f);
+        timerObject = GameObject.Find("Timer").GetComponent<Timer>();
+        curTemp = -1f * System.Math.Abs(timerObject.hours * .5f - 6) + baseTemp;
+        text.text = "Temperature: " + curTemp.ToString();
 		
 	}
 	
@@ -24,15 +27,15 @@ public class Temperature : MonoBehaviour {
 	}
 	
 	public float getTemperature() {
-		return temperature;
+		return curTemp;
 	}
 	
 	public void updateTemperature() {
 		timerObject = GameObject.Find ("Timer").GetComponent<Timer> ();
-		if (timerObject.day > currentDay) {
-			currentDay = timerObject.day;
-			temperature = Random.Range(80.0F, 120.0F);
-			text.text = "Temperature: " + temperature.ToString();
+		if (timerObject.hours > currentHour) {
+			currentHour = timerObject.hours;
+            curTemp = -1f * System.Math.Abs(timerObject.hours * .5f - 6) + baseTemp;
+			text.text = "Temperature: " + curTemp.ToString();
 		}
 	}
 	
