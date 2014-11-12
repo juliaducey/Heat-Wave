@@ -284,7 +284,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -25}
+  m_AnchoredPosition: {x: 0, y: -95}
   m_SizeDelta: {x: 130, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &413238522
@@ -542,7 +542,11 @@ MonoBehaviour:
 
     0 Unconsious
 
-    0 Went Inside'
+    0 Went Inside
+
+    Tomorrow''s Forecast
+
+    99'
 --- !u!222 &1773879391
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -565,7 +569,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 300}
+  m_SizeDelta: {x: 500, y: 300}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1773879393
 MonoBehaviour:
@@ -582,3 +586,4 @@ MonoBehaviour:
   fainted: 0
   inside: 0
   day: 0
+  gamestate: {fileID: 0}

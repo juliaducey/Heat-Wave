@@ -7,7 +7,6 @@ using System.Threading;
 
 public class MetisChoiceController : MetisViewComponentController 
 {
-	Action<int> _clickCallback;
 	WaitToken _waitForClick;
 	bool _active = false;
 	int _selectedChoice = 0;
@@ -28,81 +27,52 @@ public class MetisChoiceController : MetisViewComponentController
 	void ChoiceClickCallback(int choiceNumber)
 	{
 		Hide ();
-		_clickCallback.Invoke(choiceNumber);
-		_clickCallback = num => {};
+		_selectedChoice = choiceNumber;
+		var scene = GameObject.FindGameObjectWithTag(MetisSceneController.TAG).GetComponent<MetisSceneController>();
+		scene.RemoveTopView ();
 		_waitForClick.FinishWaiting ();
 	}
 
-	[LuaMethodAttribute("menu1")]
-	public int ShowMenuLua(string choice1)
-	{
-		return ShowMenuLua(1, choice1, null, null, null);
-	}
+	// 	TODO having two ShowMenu methods is stupid combine them
 
-	[LuaMethodAttribute("menu2")]
-	public int ShowMenuLua(string choice1, string choice2)
+	[LuaMethodAttribute("menu")]
+	public void ShowMenuLua(int numChoices, string choice1, string choice2, string choice3, string choice4)
 	{
-		return ShowMenuLua(2, choice1, choice2, null, null);
-	}
-
-	[LuaMethodAttribute("menu3")]
-	public int ShowMenuLua(string choice1, string choice2, string choice3)
-	{
-		return ShowMenuLua(3, choice1, choice2, choice3, null);
-	}
-	
-	[LuaMethodAttribute("menu4")]
-	public int ShowMenuLua(string choice1, string choice2, string choice3, string choice4)
-	{
-		return ShowMenuLua(4, choice1, choice2, choice3, choice4);
-	}
-
-	// TODO having so many wrapper methods is weird refactor this
-	
-	public int ShowMenuLua(int numChoices, string choice1, string choice2, string choice3, string choice4)
-	{
-		_selectedChoice = 0;
 		var scene = GameObject.FindGameObjectWithTag(MetisSceneController.TAG).GetComponent<MetisSceneController>();
 		var viewName = this.GetComponent<MetisViewController>().ViewName;
 		scene.ShowView (viewName);
 
-		var _lock = new AutoResetEvent(false);
-
-		Action<int> callback = delegate(int selected) 
-		{
-			_selectedChoice = selected;
-			_lock.Set ();
-		};
-
 		switch (numChoices)
 		{
 		case 1:
-			UnityThreadHelper.Dispatcher.Dispatch (() => ShowMenu(callback, choice1));
+			ShowMenu(choice1);
 			break;
 		case 2:
-			UnityThreadHelper.Dispatcher.Dispatch (() => ShowMenu(callback, choice1, choice2));
+			ShowMenu(choice1, choice2);
 			break;
 		case 3:
-			UnityThreadHelper.Dispatcher.Dispatch (() => ShowMenu(callback, choice1, choice2, choice3));
+			ShowMenu(choice1, choice2, choice3);
 			break;
 		case 4:
-			UnityThreadHelper.Dispatcher.Dispatch (() => ShowMenu(callback, choice1, choice2, choice3, choice4));
+			ShowMenu(choice1, choice2, choice3, choice4);
 			break;
 		default:
 			throw new ArgumentException("Illegal number of choices: must be 1-4, but "+numChoices+" was given");
 		}
-
-		_lock.WaitOne ();
-
-		scene.RemoveTopView ();
-
-		return _selectedChoice;
 	}
 
-	public void ShowMenu(Action<int> callback, params string[] choices)
+	[LuaMethodAttribute("menu_result")]
+	public int GetMenuResult()
 	{
+		var controller = GameObject.FindGameObjectWithTag(MetisSceneController.TAG).GetComponent<MetisLuaScriptController>();
+		controller.PushOntoStack(_selectedChoice);
+		return 1;
+	}
+
+	public void ShowMenu(params string[] choices)
+	{
+		_selectedChoice = 0;
 		_waitForClick = ScheduleWaitForever ();
-		_clickCallback = callback;
 		for (int i = 0; i < choices.Length; i++)
 		{
 			_choices[i].FadeIn (FadeTime);

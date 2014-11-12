@@ -30,7 +30,7 @@ public class Person : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float tempMultiplier = 1f;
-        if (temperature.temperature > 100)
+        if (temperature.curTemp > 100)
             tempMultiplier = 1.5f;
 
         this.timeTillFaintInSeconds -= tempMultiplier * Time.deltaTime;
