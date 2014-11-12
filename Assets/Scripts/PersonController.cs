@@ -5,6 +5,18 @@ public class PersonController : MetisViewComponentController {
 
 	// TODO: All methods you want to expose to Lua go in this class.
 
+	[LuaMethodAttribute("drinkWater")]
+	public void DrinkWater(int id)
+	{
+		Person[] allPeople = FindObjectsOfType (typeof(Person)) as Person[];
+		foreach (Person p in allPeople) 
+		{
+			if (p.id == id)
+				p.drinkWater();
+		}
+		//TODO: actually call the person drinkWater method
+	}
+
 	[LuaMethodAttribute("test")]
 	public void Test()
 	{

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Person : MonoBehaviour {
 
+	public int id;
 	public bool male;
 	public bool drunk;
 	public bool old;
@@ -46,7 +47,7 @@ public class Person : MonoBehaviour {
 		scriptHandler.RunScript();
 	}
 
-	void drinkWater () {
+	public void drinkWater () {
 		this.timeTillFaintInSeconds += 20; // value can be balanced later
 		this.waterDrank++;
 	}
