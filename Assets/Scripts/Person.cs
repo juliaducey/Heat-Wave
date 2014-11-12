@@ -14,6 +14,9 @@ public class Person : MonoBehaviour {
 	public MetisScriptHandler scriptHandler;
     public float currenttime;
     public Temperature temperature;
+	public float XMove = 0.08f;
+	public float YMove = 0.0f;
+	
 
 	// Use this for initialization
 	void Start () {
@@ -38,7 +41,15 @@ public class Person : MonoBehaviour {
 			this.faint ();
 		}
 
-
+		//Should not hard code in edges of the scene. 
+		//Todo(Gebhard): Figure out how to get right and left edge of sprite. P3
+		float xPosition = gameObject.transform.position.x;
+		if (xPosition > 30 || xPosition < -45) {
+			XMove = -1 * XMove;
+		}
+		gameObject.transform.position = new Vector3 (xPosition + XMove, 
+		                                             gameObject.transform.position.y + YMove, 
+		                                             gameObject.transform.position.z);
 
 	}
 
