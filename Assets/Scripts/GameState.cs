@@ -8,14 +8,24 @@ public class GameState : MonoBehaviour {
 	public int numberOfPeopleFainted = 0;
 	public int numberOfPeopleInside = 0;
     public float[] forecast;
+	public Person person;
+	public Person[] allPeople; 
 	
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(gameObject);
         forecast = new float[] { Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f)};
 
+		int numPeople = 5; //TODO: figure out specifics of random people
+		for (int i=1; i<=numPeople; i++)
+		{
+			Person newPerson = (Person) Instantiate(person, new Vector3(i*5.0F, 10.0F, (float) (-i)), Quaternion.identity);
+			newPerson.transform.localScale = new Vector3(8, 8, 0);
+			newPerson.name = "Person " + i;
+			newPerson.id = i;
+		}
 
-		
+
 	}
 	
 	// Update is called once per frame

@@ -677,6 +677,8 @@ MonoBehaviour:
   scriptHandler: {fileID: 246156913}
   currenttime: 0
   temperature: {fileID: 0}
+  XMove: .0799999982
+  YMove: 0
 --- !u!50 &246156916
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -993,6 +995,11 @@ Prefab:
       propertyPath: m_Name
       value: GameState(Clone)
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 957d47cfbc2fc1c41bc1b755e940e7de, type: 2}
+      propertyPath: person
+      value: 
+      objectReference: {fileID: 11400002, guid: 6db96d34facc949a498e65ed43fc1596,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 957d47cfbc2fc1c41bc1b755e940e7de, type: 2}
   m_RootGameObject: {fileID: 542012636}
@@ -1355,6 +1362,8 @@ MonoBehaviour:
   numberOfPeopleFainted: 0
   numberOfPeopleInside: 0
   forecast: []
+  person: {fileID: 11400002, guid: 6db96d34facc949a498e65ed43fc1596, type: 2}
+  allPeople: []
 --- !u!224 &542012638
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2762,6 +2771,8 @@ MonoBehaviour:
   scriptHandler: {fileID: 1096124874}
   currenttime: 0
   temperature: {fileID: 0}
+  XMove: .0799999982
+  YMove: 0
 --- !u!50 &1096124877
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -3446,7 +3457,7 @@ Transform:
   m_GameObject: {fileID: 1373061977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.87900019, y: -1.97409999, z: -1}
-  m_LocalScale: {x: .228029564, y: .228029504, z: 0}
+  m_LocalScale: {x: .228028998, y: .228029504, z: 0}
   m_Children: []
   m_Father: {fileID: 905791255}
   m_RootOrder: 0
@@ -3556,6 +3567,8 @@ MonoBehaviour:
   scriptHandler: {fileID: 1373061980}
   currenttime: 0
   temperature: {fileID: 0}
+  XMove: .0799999982
+  YMove: 0
 --- !u!61 &1373061984
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3782,6 +3795,8 @@ MonoBehaviour:
   scriptHandler: {fileID: 1489708064}
   currenttime: 0
   temperature: {fileID: 0}
+  XMove: .0799999982
+  YMove: 0
 --- !u!50 &1489708067
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -4846,6 +4861,8 @@ MonoBehaviour:
   scriptHandler: {fileID: 1743269935}
   currenttime: 0
   temperature: {fileID: 0}
+  XMove: .0799999982
+  YMove: 0
 --- !u!50 &1743269938
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -5242,7 +5259,7 @@ Prefab:
       objectReference: {fileID: 4900000, guid: 6a4a0d19cf9b05b42ac052d7fa56b830, type: 3}
     - target: {fileID: 400000, guid: 6db96d34facc949a498e65ed43fc1596, type: 2}
       propertyPath: m_LocalScale.x
-      value: .228029564
+      value: .228028998
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6db96d34facc949a498e65ed43fc1596, type: 2}
       propertyPath: m_LocalScale.y
