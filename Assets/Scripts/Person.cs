@@ -27,8 +27,10 @@ public class Person : MonoBehaviour {
 		// lose 10 seconds for every risk factor
 		this.timeTillFaintInSeconds = 40 - 10 * (this.male.GetHashCode () + this.drunk.GetHashCode () + this.old.GetHashCode ()) + Random.Range (-10, 10);
         this.temperature = GameObject.Find("Temperature").GetComponent<Temperature>();
-		MetisScriptHandler handler = gameObject.GetComponent<MetisScriptHandler> ();
-		handler.Script = "blah blah blah";
+
+		//TODO: programmatically attach scripts to people
+		//MetisScriptHandler handler = gameObject.GetComponent<MetisScriptHandler> ();
+		//handler.Script = "blah blah blah";
 	}
 	
 	// Update is called once per frame
