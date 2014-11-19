@@ -1,8 +1,6 @@
 nvl.say("You: Hello!");
 local choice = menu("Would you like some water?", "Darn that\'s hot.", "Go inside!");
 
-nvl.say("You: " .. tostring(choice));
-
 if choice == 1 then
 nvl.say("Person: Yes, thanks.");
 nvl.say("You: Great! Drinking water early and often can keep you safe in heat this.");
@@ -13,9 +11,7 @@ nvl.say("You: ...Sorry...");
 else
 nvl.say("Person: No!");
 
-local choice2 menu("At least take some water?", "Darn that's hot.", "I SAID go HOME!!");
-nvl.say("You: " .. tostring(choice2));
-
+local choice2 = menu("At least take some water?", "Darn that\'s hot.", "I SAID go HOME!!");
 
 if choice2 == 1 then
 nvl.say("Person: Yes, thanks.");
