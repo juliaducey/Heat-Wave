@@ -69,6 +69,11 @@ public class Person : MonoBehaviour {
 		this.timeTillFaintInSeconds += 20; // value can be balanced later
 		this.waterDrank++;
 	}
+
+	public void setPersonToMoving() {
+		inConversation = false;
+	}
+
 	
 	void goInside () {
 		// remove from screen
