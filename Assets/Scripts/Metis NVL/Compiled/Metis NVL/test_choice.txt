@@ -1,13 +1,30 @@
-nvl.say("You: Hey, you should drink some water so you don\'t die of a heat stroke. Take this bottle of water."); 
-nvl.say("Person: Thanks. I\'ll do that."); 
+nvl.say("You: Hello!");
+local choice = menu("Would you like some water?", "Darn that\'s hot.", "Go inside!");
 
-local choice = menu("1","2","3");
+nvl.say("You: " .. tostring(choice));
+
 if choice == 1 then
-nvl.say("You picked 1"); 
+nvl.say("Person: Yes, thanks.");
+nvl.say("You: Great! Drinking water early and often can keep you safe in heat this.");
+nvl.say("You:  Stay safe!");
 elseif choice == 2 then
-nvl.say("You picked 2"); 
-elseif choice == 3 then
-nvl.say("You picked 3"); 
+nvl.say("Person: Are you talking to me?");
+nvl.say("You: ...Sorry...");
 else
-nvl.say(tostring(choice));
+nvl.say("Person: No!");
+
+local choice2 menu("At least take some water?", "Darn that's hot.", "I SAID go HOME!!");
+nvl.say("You: " .. tostring(choice2));
+
+
+if choice2 == 1 then
+nvl.say("Person: Yes, thanks.");
+nvl.say("You: Great! Drinking water early and often can keep you safe in heat this.");
+nvl.say("You:  Stay safe!");
+elseif choice2 == 2 then
+nvl.say("Person: Are you talking to me?");
+nvl.say("You: ...Sorry...");
+elseif choice2 == 3 then
+nvl.say("Person: Stop bothering me");
+end
 end
