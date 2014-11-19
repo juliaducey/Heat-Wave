@@ -7,6 +7,7 @@ public class Person : MonoBehaviour {
 	public bool male;
 	public bool drunk;
 	public bool old;
+	public bool inConversation;
 	public int timeOutsideInSeconds = 0; // use our global timer, rather than updating on every frame
 	public float timeTillFaintInSeconds;
 	private float startTime;
@@ -46,18 +47,21 @@ public class Person : MonoBehaviour {
 
 		//Should not hard code in edges of the scene. 
 		//Todo(Gebhard): Figure out how to get right and left edge of sprite. P3
-		float xPosition = gameObject.transform.position.x;
-		if (xPosition > 30 || xPosition < -45) {
-			XMove = -1 * XMove;
+		if (!inConversation) {
+			float xPosition = gameObject.transform.position.x;
+			if (xPosition > 30 || xPosition < -45) {
+					XMove = -1 * XMove;
+			}
+			gameObject.transform.position = new Vector3 (xPosition + XMove, 
+                                     gameObject.transform.position.y + YMove, 
+                                     gameObject.transform.position.z);
 		}
-		gameObject.transform.position = new Vector3 (xPosition + XMove, 
-		                                             gameObject.transform.position.y + YMove, 
-		                                             gameObject.transform.position.z);
 
 	}
 
 	void OnMouseDown() {
 		// bring up dialogue
+		inConversation = true;
 		scriptHandler.RunScript();
 	}
 
