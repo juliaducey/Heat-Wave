@@ -64,7 +64,6 @@ public class Person : MonoBehaviour {
 		inConversation = true;
 		GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().TalkToPerson (this);
 		scriptHandler.RunScript();
-		GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().FinishTalking();
 	}
 
 	public void drinkWater () {
@@ -76,9 +75,10 @@ public class Person : MonoBehaviour {
 		inConversation = false;
 	}
 
-	void goInside () {
+	public void goInside () {
 		// remove from screen
 		// add to global environment variable tracking the number of people who successfully went inside
+		Debug.Log ("somebody went inside");
 	}
 
 	void rejectAdvice () {

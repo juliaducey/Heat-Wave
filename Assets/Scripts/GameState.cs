@@ -10,7 +10,7 @@ public class GameState : MonoBehaviour {
     public float[] forecast;
 	public Person person;
 	public Person[] allPeople; 
-	private Person talkingPerson;
+	public Person talkingPerson;
 	
 	// Use this for initialization
 	void Start () {

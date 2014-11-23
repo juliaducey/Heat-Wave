@@ -22,16 +22,18 @@ public class PersonController : MetisViewComponentController {
 		return 1;
 	}
 
-	[LuaMethodAttribute("drinkWater")]
-	public void DrinkWater(int id)
+	[LuaMethodAttribute("drink_water")]
+	public void DrinkWater()
 	{
-		Person[] allPeople = FindObjectsOfType (typeof(Person)) as Person[];
-		foreach (Person p in allPeople) 
-		{
-			if (p.id == id)
-				p.drinkWater();
-		}
-		//TODO: actually call the person drinkWater method
+		Person talkingPerson = GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().GetTalkingPerson();
+		talkingPerson.drinkWater();
+	}
+
+	[LuaMethodAttribute("go_inside")]
+	public void GoInside()
+	{
+		Person talkingPerson = GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().GetTalkingPerson();
+		talkingPerson.goInside();
 	}
 
 	[LuaMethodAttribute("test")]
@@ -43,6 +45,7 @@ public class PersonController : MetisViewComponentController {
 	public static void PostScriptCall()
 	{
 		// TODO: Do something here. This is called after every script finishes.
+		GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().FinishTalking();
 	}
 
 	// Don't worry about any of this; this is just because I'm using a hacky way to provide exposure to the scripting. -Julia
