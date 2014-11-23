@@ -24,13 +24,20 @@ public class GameState : MonoBehaviour {
 		int numPeople = 5; //TODO: figure out specifics of random people
 		for (int i=1; i<=numPeople; i++)
 		{
-			Person newPerson = (Person) Instantiate(person, new Vector3(i*5.0F, 10.0F, (float) (-i)), Quaternion.identity);
+			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), 10F, (float) (-i)), Quaternion.identity);
 			newPerson.transform.localScale = new Vector3(8, 8, 0);
 			newPerson.name = "Person " + i;
 			newPerson.id = i;
 		}
 
-
+		for (int i=1; i<=2; i++)
+		{
+			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), -9f, (float) (-i)), Quaternion.identity);
+			newPerson.transform.localScale = new Vector3(8, 8, 0);
+			newPerson.name = "Person " + i;
+			newPerson.id = i;
+		}
+		
 	}
 	
 	// Update is called once per frame

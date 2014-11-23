@@ -1,0 +1,97 @@
+function string:split( inSplitPattern, outResults )
+  if not outResults then
+    outResults = { }
+  end
+  local theStart = 1
+  local theSplitStart, theSplitEnd = string.find( self, inSplitPattern, theStart )
+  while theSplitStart do
+    table.insert( outResults, string.sub( self, theStart, theSplitStart-1 ) )
+    theStart = theSplitEnd + 1
+    theSplitStart, theSplitEnd = string.find( self, inSplitPattern, theStart )
+  end
+  table.insert( outResults, string.sub( self, theStart ) )
+  return outResults
+end
+
+local leaves={drink={type="drink"}, home={type="home"}, stop={type="stop"}, more_you={type="more", next_type="you"}, more_other={type="more", next_type="other"}}
+local lines = {}
+lines[1] = {type="other", val="Tell me more", children={leaves.more_you}}
+lines[2] = {type="other", val="Sure", children={leaves.drink}}
+lines[3] = {type="you", val="Would you like some water?", children={lines[2], lines[1]}}
+lines[4] = {type="other", val="I'm busy; stop bothering me.", children={leaves.stop}}
+lines[5] = {type="other", val="ok", children={leaves.home}}
+lines[6] = {type="you", val="It's dangerous to be out in this heat. You should go inside.", children={lines[1], lines[4], lines[5]}}
+lines[7] = {type="choice", children={lines[3], lines[6]}}
+local conversation_possibilities = {}
+conversation_possibilities["human"] = {{type="you", conv_tree=lines[7]}}
+conversation_possibilities["old"] = {}
+conversation_possibilities["male"] = {}
+conversation_possibilities["female"] = {}
+conversation_possibilities["drunk"] = {}
+conversation_possibilities["homeless"] = {}
+
+
+
+function get_snip(type, conversation_possibilities)
+  local attributes = nvl.attributes()
+  local attribute_table = attributes:split(",")
+  table.insert(attribute_table, "human")
+  
+  snips = { }
+  
+  for i = 1, #attribute_table do
+    local att = attribute_table[i]
+    for j = 1, #conversation_possibilities[att] do
+      local snip = conversation_possibilities[att][j]
+      if snip.type == type then
+        table.insert(snips, snip)
+      end
+    end
+  end
+  
+  return snips[math.random(#snips)].conv_tree
+end
+
+function talk(conv)
+  while 1 do
+    if nvl.fainted() == 1 then
+      conv = {type="other", val="AAAAAAAAAAAAaaaaaaaaaaahhhh", children={{type="stop"}}}
+    end
+    
+    if conv.type == "drink" then
+      nvl.drink_water()
+      return "drink"
+    elseif conv.type == "home" then
+      nvl.send_home()
+      return "home"
+    elseif conv.type == "stop" then
+      return "stop"
+    elseif conv.type == "more" then
+      return "more", conv.next_type
+    elseif conv.type == "you" then
+      nvl.say("You: " .. conv.val)
+      conv = conv.children[math.random(#(conv.children))]
+    elseif conv.type == "other" then
+      nvl.say("Person: " .. conv.val)
+      conv = conv.children[math.random(#(conv.children))]
+    elseif conv.type == "choice" then
+      local choice = 1
+      if #(conv.children) == 2 then
+        choice = menu(conv.children[1].val, conv.children[2].val)
+      elseif #(conv.children) == 3 then 
+        choice = menu(conv.children[1].val, conv.children[2].val, conv.children[3].val)
+      elseif #(conv.children) == 4 then 
+        choice = menu(conv.children[1].val, conv.children[2].val, conv.children[3].val, conv.children[4].val)
+      end
+      conv = conv.children[choice]
+    end
+  end
+end
+
+local next_type = "you"
+local result = nil
+local conv = nil
+repeat
+  conv = get_snip(next_type, conversation_possibilities)
+  result, next_type = talk(conv)
+until result ~= "more"

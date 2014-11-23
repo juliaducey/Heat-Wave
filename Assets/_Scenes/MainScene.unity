@@ -496,11 +496,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: .0018382353
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .0018382353
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_RootOrder
@@ -804,6 +804,7 @@ MonoBehaviour:
   drunk: 1
   old: 0
   inConversation: 0
+  fainting: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
   waterDrank: 0
@@ -812,6 +813,8 @@ MonoBehaviour:
   temperature: {fileID: 0}
   XMove: .0799999982
   YMove: 0
+  faintRotation: 3
+  flame: {fileID: 400000, guid: c074693d1f48b4e94af05d103a2a3144, type: 2}
 --- !u!50 &246156916
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2899,6 +2902,7 @@ MonoBehaviour:
   drunk: 0
   old: 1
   inConversation: 0
+  fainting: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
   waterDrank: 0
@@ -2907,6 +2911,8 @@ MonoBehaviour:
   temperature: {fileID: 0}
   XMove: .0799999982
   YMove: 0
+  faintRotation: 3
+  flame: {fileID: 400000, guid: c074693d1f48b4e94af05d103a2a3144, type: 2}
 --- !u!50 &1096124877
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -3708,6 +3714,7 @@ MonoBehaviour:
   drunk: 1
   old: 0
   inConversation: 0
+  fainting: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
   waterDrank: 0
@@ -3716,6 +3723,8 @@ MonoBehaviour:
   temperature: {fileID: 0}
   XMove: .0799999982
   YMove: 0
+  faintRotation: 3
+  flame: {fileID: 400000, guid: c074693d1f48b4e94af05d103a2a3144, type: 2}
 --- !u!61 &1373061984
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3937,6 +3946,7 @@ MonoBehaviour:
   drunk: 1
   old: 1
   inConversation: 0
+  fainting: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
   waterDrank: 0
@@ -3945,6 +3955,8 @@ MonoBehaviour:
   temperature: {fileID: 0}
   XMove: .0799999982
   YMove: 0
+  faintRotation: 3
+  flame: {fileID: 400000, guid: c074693d1f48b4e94af05d103a2a3144, type: 2}
 --- !u!50 &1489708067
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -4997,7 +5009,7 @@ Transform:
   m_PrefabInternal: {fileID: 157684810}
   m_GameObject: {fileID: 1710049519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .0018382353, z: 0}
+  m_LocalPosition: {x: .0018382353, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 973644623}
@@ -5067,6 +5079,7 @@ MonoBehaviour:
   drunk: 0
   old: 0
   inConversation: 0
+  fainting: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
   waterDrank: 0
@@ -5075,6 +5088,8 @@ MonoBehaviour:
   temperature: {fileID: 0}
   XMove: .0799999982
   YMove: 0
+  faintRotation: 3
+  flame: {fileID: 400000, guid: c074693d1f48b4e94af05d103a2a3144, type: 2}
 --- !u!50 &1743269938
 Rigidbody2D:
   m_ObjectHideFlags: 0
