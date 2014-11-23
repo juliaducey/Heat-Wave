@@ -9,12 +9,16 @@ public class GameState : MonoBehaviour {
 	public int numberOfPeopleInside = 0;
     public float[] forecast;
 	public Person person;
+    public Umbrella umbrella;
+    public int umbrellas;
+    public bool busy;
 	public Person[] allPeople; 
 	public Person talkingPerson;
 	
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(gameObject);
+        this.busy = false;
         forecast = new float[] { Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f)};
 
 		int numPeople = 5; //TODO: figure out specifics of random people
@@ -51,6 +55,13 @@ public class GameState : MonoBehaviour {
         forecast[1] = forecast[2] + Random.Range(-2f, 2f);
         forecast[2] = Random.Range(80.0f, 120.0f);
         Application.LoadLevel("NewspaperScene");
+    }
+
+    public void AddUmbrella()
+    {
+        this.umbrellas += 1;
+        Umbrella newUmbrella = (Umbrella) Instantiate(umbrella, new Vector3((this.umbrellas - 8) * 5.0F, 1.0F, (float)(1)), Quaternion.identity);
+        newUmbrella.transform.localScale = new Vector3(1, 1, 0);
     }
 
 	public void TalkToPerson(Person p)
