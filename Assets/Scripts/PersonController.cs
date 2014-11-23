@@ -4,17 +4,36 @@ using System.Collections;
 public class PersonController : MetisViewComponentController {
 
 	// TODO: All methods you want to expose to Lua go in this class.
-
-	[LuaMethodAttribute("drinkWater")]
-	public void DrinkWater(int id)
+	[LuaMethodAttribute("fainted")]
+	public int Fainted()
 	{
-		Person[] allPeople = FindObjectsOfType (typeof(Person)) as Person[];
-		foreach (Person p in allPeople) 
-		{
-			if (p.id == id)
-				p.drinkWater();
-		}
-		//TODO: actually call the person drinkWater method
+		Person talkingPerson = GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().GetTalkingPerson();
+		var controller = GameObject.FindGameObjectWithTag(MetisSceneController.TAG).GetComponent<MetisLuaScriptController>();
+		controller.PushOntoStack(talkingPerson.timeTillFaintInSeconds<0 ? 1 : 0);
+		return 1;
+	}
+
+	[LuaMethodAttribute("attributes")]
+	public int Attributes()
+	{
+		Person talkingPerson = GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().GetTalkingPerson();
+		var controller = GameObject.FindGameObjectWithTag(MetisSceneController.TAG).GetComponent<MetisLuaScriptController>();
+		controller.PushOntoStack(talkingPerson.GetAttributes());
+		return 1;
+	}
+
+	[LuaMethodAttribute("drink_water")]
+	public void DrinkWater()
+	{
+		Person talkingPerson = GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().GetTalkingPerson();
+		talkingPerson.drinkWater();
+	}
+
+	[LuaMethodAttribute("go_inside")]
+	public void GoInside()
+	{
+		Person talkingPerson = GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().GetTalkingPerson();
+		talkingPerson.goInside();
 	}
 
 	[LuaMethodAttribute("test")]
@@ -26,6 +45,7 @@ public class PersonController : MetisViewComponentController {
 	public static void PostScriptCall()
 	{
 		// TODO: Do something here. This is called after every script finishes.
+		GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().FinishTalking();
 	}
 
 	// Don't worry about any of this; this is just because I'm using a hacky way to provide exposure to the scripting. -Julia
