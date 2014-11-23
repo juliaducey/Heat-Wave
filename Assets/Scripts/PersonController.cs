@@ -4,6 +4,23 @@ using System.Collections;
 public class PersonController : MetisViewComponentController {
 
 	// TODO: All methods you want to expose to Lua go in this class.
+	[LuaMethodAttribute("fainted")]
+	public int Fainted()
+	{
+		Person talkingPerson = GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().GetTalkingPerson();
+		var controller = GameObject.FindGameObjectWithTag(MetisSceneController.TAG).GetComponent<MetisLuaScriptController>();
+		controller.PushOntoStack(talkingPerson.timeTillFaintInSeconds<0 ? 1 : 0);
+		return 1;
+	}
+
+	[LuaMethodAttribute("attributes")]
+	public int Attributes()
+	{
+		Person talkingPerson = GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().GetTalkingPerson();
+		var controller = GameObject.FindGameObjectWithTag(MetisSceneController.TAG).GetComponent<MetisLuaScriptController>();
+		controller.PushOntoStack(talkingPerson.GetAttributes());
+		return 1;
+	}
 
 	[LuaMethodAttribute("drinkWater")]
 	public void DrinkWater(int id)

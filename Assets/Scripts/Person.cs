@@ -62,7 +62,9 @@ public class Person : MonoBehaviour {
 	void OnMouseDown() {
 		// bring up dialogue
 		inConversation = true;
+		GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().TalkToPerson (this);
 		scriptHandler.RunScript();
+		GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().FinishTalking();
 	}
 
 	public void drinkWater () {
@@ -74,7 +76,6 @@ public class Person : MonoBehaviour {
 		inConversation = false;
 	}
 
-	
 	void goInside () {
 		// remove from screen
 		// add to global environment variable tracking the number of people who successfully went inside
@@ -90,8 +91,22 @@ public class Person : MonoBehaviour {
         GameObject gamestate = GameObject.Find("GameState(Clone)");
         gamestate.SendMessage("SomeoneFainted");
         Destroy(gameObject);
+
 	}
+	
+	public string GetAttributes()
+	{
+		string attributes = "";
+		attributes += male ? "Male" : "Female";
+		if (drunk)
+		{
+			attributes += ",Drunk";
+		}
+		if (old)
+		{
+			attributes += ",Old";
+		}
 
-
-
+		return attributes;
+	}
 }

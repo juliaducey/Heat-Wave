@@ -10,6 +10,7 @@ public class GameState : MonoBehaviour {
     public float[] forecast;
 	public Person person;
 	public Person[] allPeople; 
+	private Person talkingPerson;
 	
 	// Use this for initialization
 	void Start () {
@@ -52,7 +53,20 @@ public class GameState : MonoBehaviour {
         Application.LoadLevel("NewspaperScene");
     }
 
+	public void TalkToPerson(Person p)
+	{
+		talkingPerson = p;
+	}
 
+	public void FinishTalking()
+	{
+		talkingPerson = null;
+	}
+
+	public Person GetTalkingPerson()
+	{
+		return talkingPerson;
+	}
 	
 	public void SomeoneWentInside() {
 		numberOfPeopleInside += 1;
