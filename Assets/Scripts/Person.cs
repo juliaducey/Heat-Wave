@@ -106,9 +106,10 @@ public class Person : MonoBehaviour {
 	}
 
 	
-	void goInside () {
+	public void goInside () {
 		// remove from screen
 		// add to global environment variable tracking the number of people who successfully went inside
+		Debug.Log ("somebody went inside");
 	}
 
 	void rejectAdvice () {
@@ -125,6 +126,20 @@ public class Person : MonoBehaviour {
 		// Destroy(gameObject);
 	}
 
-
+	public string GetAttributes()
+	{
+		string attributes = "";
+		attributes += male ? "Male" : "Female";
+		if (drunk)
+		{
+			attributes += ",Drunk";
+		}
+		if (old)
+		{
+			attributes += ",Old";
+		}
+		
+		return attributes;
+	}
 
 }
