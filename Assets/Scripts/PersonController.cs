@@ -19,6 +19,7 @@ public class PersonController : MetisViewComponentController {
 		Person talkingPerson = GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().GetTalkingPerson();
 		var controller = GameObject.FindGameObjectWithTag(MetisSceneController.TAG).GetComponent<MetisLuaScriptController>();
 		controller.PushOntoStack(talkingPerson.GetAttributes());
+		Debug.Log ("returned " + talkingPerson.GetAttributes ());
 		return 1;
 	}
 
@@ -29,8 +30,8 @@ public class PersonController : MetisViewComponentController {
 		talkingPerson.drinkWater();
 	}
 
-	[LuaMethodAttribute("go_inside")]
-	public void GoInside()
+	[LuaMethodAttribute("send_home")]
+	public void SendHome()
 	{
 		Person talkingPerson = GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().GetTalkingPerson();
 		talkingPerson.goInside();

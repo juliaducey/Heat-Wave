@@ -67,6 +67,7 @@ public class Person : MonoBehaviour {
 	}
 
 	public void drinkWater () {
+		Debug.Log ("somebody drank water");
 		this.timeTillFaintInSeconds += 20; // value can be balanced later
 		this.waterDrank++;
 	}
@@ -76,7 +77,7 @@ public class Person : MonoBehaviour {
 	}
 
 	public void goInside () {
-		// remove from screen
+		// TODO: remove from screen
 		// add to global environment variable tracking the number of people who successfully went inside
 		Debug.Log ("somebody went inside");
 	}
@@ -97,14 +98,14 @@ public class Person : MonoBehaviour {
 	public string GetAttributes()
 	{
 		string attributes = "";
-		attributes += male ? "Male" : "Female";
+		attributes += male ? "male" : "female";
 		if (drunk)
 		{
-			attributes += ",Drunk";
+			attributes += ",drunk";
 		}
 		if (old)
 		{
-			attributes += ",Old";
+			attributes += ",old";
 		}
 
 		return attributes;
