@@ -118,6 +118,7 @@ MonoBehaviour:
   drunk: 1
   old: 0
   inConversation: 0
+  fainting: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
   waterDrank: 0
@@ -126,6 +127,8 @@ MonoBehaviour:
   temperature: {fileID: 0}
   XMove: .0799999982
   YMove: 0
+  faintRotation: 3
+  flame: {fileID: 400000, guid: c074693d1f48b4e94af05d103a2a3144, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
