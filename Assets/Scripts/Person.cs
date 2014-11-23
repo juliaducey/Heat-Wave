@@ -15,16 +15,24 @@ public class Person : MonoBehaviour {
 	public MetisScriptHandler scriptHandler;
     public float currenttime;
     public Temperature temperature;
-	public float XMove = 0.08f;
-	public float YMove = 0.0f;
+	public float XMove = 0f;
+	public float YMove = 0f;
+	public float distanceWalked = 0f;
+	public float currentXPosition; 
+	public float distanceNeedToTravelToPause = 0f;
+	public float timeStoppedMinutes=0f;
+	public float timePersonPausesInMinutes=0f;
 	
-
 	// Use this for initialization
 	void Start () {
 		this.male = Random.Range(0.0F, 1.0F) > .5;
 		this.drunk = Random.Range(0.0F, 1.0F) > .75;
 		this.old = Random.Range(0.0F, 1.0F) > .75;
         this.startTime = Time.time;
+		this.distanceNeedToTravelToPause = Random.Range (10, 50);
+		this.XMove = generateWalkingSpeed ();
+		this.timePersonPausesInMinutes = Random.Range (10, 30);
+		this.currentXPosition = this.transform.position.x;
 		// lose 10 seconds for every risk factor
 		this.timeTillFaintInSeconds = 40 - 10 * (this.male.GetHashCode () + this.drunk.GetHashCode () + this.old.GetHashCode ()) + Random.Range (-10, 10);
         this.temperature = GameObject.Find("Temperature").GetComponent<Temperature>();
@@ -33,7 +41,7 @@ public class Person : MonoBehaviour {
 		//MetisScriptHandler handler = gameObject.GetComponent<MetisScriptHandler> ();
 		//handler.Script = "blah blah blah";
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         float tempMultiplier = 1f;
@@ -45,18 +53,45 @@ public class Person : MonoBehaviour {
 			this.faint ();
 		}
 
-		//Should not hard code in edges of the scene. 
-		//Todo(Gebhard): Figure out how to get right and left edge of sprite. P3
+
+		// If you are not in dialog the person should be walking
 		if (!inConversation) {
 			float xPosition = gameObject.transform.position.x;
-			if (xPosition > 30 || xPosition < -45) {
-					XMove = -1 * XMove;
+			distanceWalked += currentXPosition - xPosition;
+			currentXPosition = xPosition;
+			if (Mathf.Abs(distanceWalked) > distanceNeedToTravelToPause) {
+				timeStoppedMinutes +=  5 * Time.deltaTime;
+				gameObject.transform.position = new Vector3 (xPosition,
+                                             gameObject.transform.position.y,
+                                             gameObject.transform.position.z);
+				if (timeStoppedMinutes > timePersonPausesInMinutes){
+					XMove = generateWalkingSpeed();
+					distanceWalked = 0;
+					timeStoppedMinutes = 0;
+				}
+			} else {
+				// Todo(Gebhard): Figure out how to get right and left edge of sprite. 
+				// If character is going to walk out of scene change direction
+				if (xPosition > 30 || xPosition < -45) {
+						XMove = -1 * XMove;
+				}
+
+				gameObject.transform.position = new Vector3 (xPosition + XMove, 
+             										gameObject.transform.position.y + YMove, 
+             										gameObject.transform.position.z);
 			}
-			gameObject.transform.position = new Vector3 (xPosition + XMove, 
-                                     gameObject.transform.position.y + YMove, 
-                                     gameObject.transform.position.z);
 		}
 
+	}
+
+	// Keeps generating a random number either forward or backward 
+	// until in speed Range [-.1, -.03] or [.03, .1]
+	float generateWalkingSpeed() {
+		float speed = Random.Range (-.1f, .1f);
+		while (Mathf.Abs(speed) < .03) {
+			speed = Random.Range (-.1f, .1f);
+		}
+		return speed;
 	}
 
 	void OnMouseDown() {
@@ -71,7 +106,7 @@ public class Person : MonoBehaviour {
 		this.waterDrank++;
 	}
 
-	public void setPersonToMoving() {
+	void setPersonToMoving() {
 		inConversation = false;
 	}
 
