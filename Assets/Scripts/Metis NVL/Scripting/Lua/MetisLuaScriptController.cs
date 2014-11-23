@@ -32,6 +32,11 @@ public class MetisLuaScriptController : MonoBehaviour
 		Lua.PushInteger (number);
 	}
 
+	public void PushOntoStack(string str)
+	{
+		Lua.PushString (str);
+	}
+
 	void InitializeLuaVM()
 	{
 		if( Lua == null )
