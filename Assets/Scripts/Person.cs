@@ -15,6 +15,7 @@ public class Person : MonoBehaviour {
 	public MetisScriptHandler scriptHandler;
     public float currenttime;
     public Temperature temperature;
+
 	public float XMove = 0f;
 	public float YMove = 0f;
 	public float distanceWalked = 0f;
@@ -29,10 +30,12 @@ public class Person : MonoBehaviour {
 		this.drunk = Random.Range(0.0F, 1.0F) > .75;
 		this.old = Random.Range(0.0F, 1.0F) > .75;
         this.startTime = Time.time;
-		this.distanceNeedToTravelToPause = Random.Range (10, 50);
+
 		this.XMove = generateWalkingSpeed ();
+		this.distanceNeedToTravelToPause = Random.Range (10, 50);
 		this.timePersonPausesInMinutes = Random.Range (10, 30);
 		this.currentXPosition = this.transform.position.x;
+
 		// lose 10 seconds for every risk factor
 		this.timeTillFaintInSeconds = 40 - 10 * (this.male.GetHashCode () + this.drunk.GetHashCode () + this.old.GetHashCode ()) + Random.Range (-10, 10);
         this.temperature = GameObject.Find("Temperature").GetComponent<Temperature>();
