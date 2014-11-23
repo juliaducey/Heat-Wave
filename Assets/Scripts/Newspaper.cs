@@ -16,13 +16,15 @@ public class Newspaper : MonoBehaviour {
         day = gamestate.currentDay - 1;
         fainted = gamestate.numberOfPeopleFainted;
         inside = gamestate.numberOfPeopleInside;
+		text.text = "DAY " + day + " OVER\n" +
+			fainted + " FAINTED\n" +
+				inside + " WENT INSIDE\n" +
+				"3 DAY FORECAST\n" + (int)gamestate.forecast[0] + " " + (int)gamestate.forecast[1] + " " + (int)gamestate.forecast[2];
+
 	}
 
 	// Update is called once per frame
 	void Update () {
-        text.text = "DAY " + day + " OVER\n" +
-            fainted + " FAINTED\n" +
-            inside + " WENT INSIDE\n" +
-            "3 DAY FORECAST\n" + (int)gamestate.forecast[0] + " " + (int)gamestate.forecast[1] + " " + (int)gamestate.forecast[2];
+
 	}
 }
