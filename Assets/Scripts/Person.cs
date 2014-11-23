@@ -26,9 +26,10 @@ public class Person : MonoBehaviour {
 	public Transform flame; 
 	private Transform myFlame;
 
+
 	// Use this for initialization
 	void Start () {
-        state = GameObject.Find("GameState(Clone)").GetComponent<GameState>();
+        this.state = GameObject.Find("GameState(Clone)").GetComponent<GameState>();
 		this.male = Random.Range(0.0F, 1.0F) > .5;
 		this.drunk = Random.Range(0.0F, 1.0F) > .75;
 		this.old = Random.Range(0.0F, 1.0F) > .75;
@@ -80,7 +81,7 @@ public class Person : MonoBehaviour {
 				}
 				if (fireTimeRemaining <= 0)
 				{
-					Transform.Destroy(myFlame);
+					Destroy(myFlame);
 					// Destroy(gameObject);
 				}
 
@@ -98,7 +99,7 @@ public class Person : MonoBehaviour {
         if (state.busy == false)
         {
             inConversation = true;
-		    GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().TalkToPerson (this);
+		    state.TalkToPerson (this);
 		    scriptHandler.RunScript();
         }
 	}
@@ -127,8 +128,7 @@ public class Person : MonoBehaviour {
 	void faint() {
 		// update global variable tracking number of fainted people
 		// destroy game object (or have them fall over)
-        GameObject gamestate = GameObject.Find("GameState(Clone)");
-        gamestate.SendMessage("SomeoneFainted");
+        this.state.SomeoneFainted();
         // Create animation
 		fainting = true;
 		// Destroy(gameObject);
