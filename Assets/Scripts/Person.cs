@@ -115,7 +115,7 @@ public class Person : MonoBehaviour {
 	
 	public void goInside () {
 		state.SomeoneWentInside ();
-		Destroy (this);
+		Destroy (gameObject);
 	}
 
 	void rejectAdvice () {
