@@ -32,6 +32,11 @@ public class MetisLuaScriptController : MonoBehaviour
 		Lua.PushInteger (number);
 	}
 
+	public void PushOntoStack(string str)
+	{
+		Lua.PushString (str);
+	}
+
 	void InitializeLuaVM()
 	{
 		if( Lua == null )
@@ -112,6 +117,7 @@ public class MetisLuaScriptController : MonoBehaviour
 		Lua.L_DoString("nvl.clear_textbox();");
 		UnityThreadHelper.Dispatcher.Dispatch(() => {
 			SceneController.RemoveTopView ();
+			PersonController.PostScriptCall();
 
 			if (DisableMainCamera)
 				_mainCamera.enabled = true;

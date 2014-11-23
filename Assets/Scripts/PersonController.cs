@@ -40,6 +40,11 @@ public class PersonController : MetisViewComponentController {
 		Debug.Log ("This does something.");
 	}
 
+	public static void PostScriptCall()
+	{
+		// TODO: Do something here. This is called after every script finishes.
+	}
+
 	// Don't worry about any of this; this is just because I'm using a hacky way to provide exposure to the scripting. -Julia
 	#region hack
 	public override void Show()
