@@ -1,0 +1,245 @@
+OFFER WATER
+===========
+
+SOBER MALE
+----------
+
+You: Excuse me sir! In this heat, it's important to stay hydrated. Take this water.
+
+accept
+------
+
+Him: You're right, it has been hot. I'll take it.
+You: Thank you! Stay healthy.
+
+reject
+------
+
+Him: No no no, I'll be fine without it.
+Him: Not now! Can't you see I'm busy?
+
+  try again
+  ---------
+
+  You: Men in particular have a harder time staying hydrated. It's really important for you to drink plenty of water when the heat is this bad.
+  You: Are you sure?
+
+  give up
+  -------
+
+  You: Okay then, please be careful in the heat!
+
+
+
+
+SOBER FEMALE
+------------
+
+You: Excuse me miss, would you like some water? In a heat wave like this, you need to stay hydrated.
+
+accept
+------
+
+Her: It has been really hot. I'd love some water. Thank you!
+You: You're welcome! Stay healthy!
+
+reject
+------
+
+Her: That's okay, I'd rather not.
+Her: Sorry, I'm not interested. I don't need it now.
+
+  try again
+  ---------
+
+  You: Please consider taking some water. Dehydration can cause a lot of health problems, and in this heat, it's hard to stay hydrated.
+  You: Are you sure?
+
+  give up
+  -------
+
+  You: Okay then, please be careful in the heat!
+
+
+
+
+DRUNK
+-----
+
+You: I see you've had a bit to drink! You need extra water to stay hydrated since it's so hot!
+
+accept
+------
+
+Them: You're probably *hiccup* right. I'll take it!
+You: Make sure you drink lots of water!
+
+reject
+------
+
+Them: I've already *hiccup* had plenty to drink *hiccup*. Leave me alone!
+
+  try again
+  ---------
+
+  You: Being inebriated makes it hard to stay hydrated. Please take some water.
+  You: Drinking alcohol actually makes it harder to stay hydrated. You need to drink plenty of water!
+
+  give up
+  -------
+
+  You: Please be careful and drink some water soon!
+
+
+
+
+GO INSIDE
+=========
+
+HOMELESS
+--------
+
+You: It's dangerous to stay outside in this heat. I'd encourage you to go inside and stay cool!
+
+accept
+------
+
+Them: There is a shelter nearby, I can go inside there. You're right, it's really hot!
+You: Please stay safe!
+
+reject
+------
+
+Them: There's nowhere for me to go! 
+Them: No, I don't want to go there. I'm just fine out here.
+
+  try again
+  ---------
+
+  You: There are homeless shelters and public buildings you can take refuge in. Staying outside in a heat wave can cause dehydration, fainting, and other problems.
+  You: The Red Cross has a shelter nearby. You can definitely go inside there.
+
+  give up
+  -------
+
+  You: Okay then, please try to find someplace soon!
+
+
+
+
+OLD FEMALE
+----------
+
+You: Excuse me miss! Since it's so hot out today, you should go inside to escape the heat.
+
+accept
+------
+
+Her: Well thank you dearie. I'll finish my business tomorrow.
+You: That's great! Stay safe!
+
+reject
+------
+
+Her: Well, I've got lots to do today! I need to be out for a while.
+
+  try again
+  ---------
+
+  You: But ma'am, the elderly are at even more risk of fainting and dehydration in a heat wave. Going inside will help you stay healthy.
+
+  give up
+  -------
+
+  You: Okay ma'am, please stay safe!
+
+
+
+
+YOUNG MALE/FEMALE
+-----------------
+
+You: Hello there, have you been outside for long? In this heat, it's unsafe to stay outside. You should try to go inside.
+
+accept
+------
+
+Them: That's a good idea. I'll try to stay cool. Thank you!
+You: You're welcome. Stay inside while it's this hot!
+
+reject
+------
+
+Them: I'm really busy right now, I'll go inside later if I can.
+Them: I can't go in right now. I've got a lot of work to do.
+
+  try again
+  ---------
+
+  You: It's really important to stay cool. Staying outside can cause dehydration, overheating, and other health problems too.
+
+  give up
+  -------
+
+  You: Okay then. Please try to go inside soon!
+
+
+
+
+OLD MALE
+-------
+
+You: Excuse me sir. You've been outside in the heat for a long time. You should try to go inside and stay cool.
+
+accept
+------
+
+Him: Well I suppose you're right. I'll head inside now.
+You: Thank you! Stay safe!
+
+reject
+------
+
+Him: I don't think so, I have lots to do out here.
+Him: Can't you see I'm busy here?
+
+  try again
+  ---------
+
+  You: But sir, the elderly are at even more risk of fainting and dehydration in a heat wave. Going inside will help you stay healthy.
+
+  give up
+  -------
+
+  You: Okay then. Please try to go inside soon!
+
+
+
+
+DRUNK
+-----
+
+You: It seems like you've been drinking today. Being inebriated can make the effects of a heat wave even worse. Please try to go inside!
+
+accept
+------
+
+Them: You're right *hiccup*. I'll try to go inside now.
+You: That's great! Try to stay safe!
+
+reject
+------
+
+Them: I need to stay outside! I'm fine out here! *hiccup*
+Them: Yeah yeah yeah *hiccup*. Leave me alone!
+
+  try again
+  ---------
+
+  You: It's important to stay cool when it's this hot out. You should really go inside and try to cool down.
+
+  give up
+  -------
+
+  You: Alright, please stay safe.
+
