@@ -50,7 +50,7 @@ public class Person : MonoBehaviour {
             tempMultiplier = 1.5f;
 
         this.timeTillFaintInSeconds -= tempMultiplier * Time.deltaTime;
-		if (this.timeTillFaintInSeconds <= 0) {
+		if (this.timeTillFaintInSeconds <= 0 && !fainting) {
 			this.faint ();
 		}
 
