@@ -16,8 +16,6 @@ public class Person : MonoBehaviour {
 	public MetisScriptHandler scriptHandler;
     public float currenttime;
     public Temperature temperature;
-	public float XMove = 0.08f;
-	public float YMove = 0.0f;
     public GameState state;
 	public int faintRotation = 1;
 	// People burn for this long (seconds)
@@ -26,6 +24,14 @@ public class Person : MonoBehaviour {
 	public Transform flame; 
 	private Transform myFlame;
 
+	public float XMove = 0f;
+	public float YMove = 0f;
+	public float distanceWalked = 0f;
+	public float currentXPosition; 
+	public float distanceNeedToTravelToPause = 0f;
+	public float timeStoppedMinutes=0f;
+	public float timePersonPausesInMinutes=0f;
+	
 
 	// Use this for initialization
 	void Start () {
@@ -38,6 +44,10 @@ public class Person : MonoBehaviour {
 		this.timeTillFaintInSeconds = 31 - 10 * (this.male.GetHashCode () + this.drunk.GetHashCode () + this.old.GetHashCode ()) + Random.Range (-10, 10);
         this.temperature = GameObject.Find("Temperature").GetComponent<Temperature>();
 
+		this.distanceNeedToTravelToPause = Random.Range (10, 50);
+		this.XMove = generateWalkingSpeed ();
+		this.timePersonPausesInMinutes = Random.Range (10, 30);
+		this.currentXPosition = this.transform.position.x;
 		//TODO: programmatically attach scripts to people
 		//MetisScriptHandler handler = gameObject.GetComponent<MetisScriptHandler> ();
 		//handler.Script = "blah blah blah";
@@ -58,13 +68,30 @@ public class Person : MonoBehaviour {
 		//Don't move if fainting
 		//Todo(Gebhard): Figure out how to get right and left edge of sprite. P3
 		if (!inConversation && !fainting) {
-						float xPosition = gameObject.transform.position.x;
-						if (xPosition > 30 || xPosition < -45) {
-								XMove = -1 * XMove;
-						}
-						gameObject.transform.position = new Vector3 (xPosition + XMove, 
-                                     gameObject.transform.position.y + YMove, 
-                                     gameObject.transform.position.z);
+			float xPosition = gameObject.transform.position.x;
+			distanceWalked += currentXPosition - xPosition;
+			currentXPosition = xPosition;
+			if (Mathf.Abs(distanceWalked) > distanceNeedToTravelToPause) {
+				timeStoppedMinutes +=  5 * Time.deltaTime;
+				gameObject.transform.position = new Vector3 (xPosition,
+				                                             gameObject.transform.position.y,
+				                                             gameObject.transform.position.z);
+				if (timeStoppedMinutes > timePersonPausesInMinutes){
+					XMove = generateWalkingSpeed();
+					distanceWalked = 0;
+					timeStoppedMinutes = 0;
+				}
+			} else {
+				// Todo(Gebhard): Figure out how to get right and left edge of sprite. 
+				// If character is going to walk out of scene change direction
+				if (xPosition > 30 || xPosition < -45) {
+					XMove = -1 * XMove;
+				}
+				
+				gameObject.transform.position = new Vector3 (xPosition + XMove, 
+				                                             gameObject.transform.position.y + YMove, 
+				                                             gameObject.transform.position.z);
+			}
 		} 
 		else if (fainting) 
 		{
@@ -90,6 +117,17 @@ public class Person : MonoBehaviour {
 			}
 		}
 
+	}
+
+	
+	// Keeps generating a random number either forward or backward 
+	// until in speed Range [-.1, -.03] or [.03, .1]
+	float generateWalkingSpeed() {
+		float speed = Random.Range (-.1f, .1f);
+		while (Mathf.Abs(speed) < .03) {
+			speed = Random.Range (-.1f, .1f);
+		}
+		return speed;
 	}
 
 	void OnMouseDown() {
