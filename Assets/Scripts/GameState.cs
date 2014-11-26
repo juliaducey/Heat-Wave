@@ -98,4 +98,9 @@ public class GameState : MonoBehaviour {
     {
         Application.LoadLevel("MainScene");
     }
+
+	public void Pause()
+	{
+		Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+	}
 }
