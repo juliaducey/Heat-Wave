@@ -29,7 +29,7 @@ conversation_possibilities["male"] = {}
 conversation_possibilities["female"] = {}
 conversation_possibilities["drunk"] = {}
 conversation_possibilities["homeless"] = {}
-
+conversation_possibilities["dying"] = {}
 
 
 function get_snip(type, conversation_possibilities)
