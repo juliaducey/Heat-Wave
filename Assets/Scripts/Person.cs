@@ -41,7 +41,7 @@ public class Person : MonoBehaviour {
 		this.old = Random.Range(0.0F, 1.0F) > .75;
         this.startTime = Time.time;
 		// lose 10 seconds for every risk factor
-		this.timeTillFaintInSeconds = 31 - 10 * (this.male.GetHashCode () + this.drunk.GetHashCode () + this.old.GetHashCode ()) + Random.Range (-10, 10);
+		this.timeTillFaintInSeconds = 40 - 10 * (this.male.GetHashCode () + this.drunk.GetHashCode () + this.old.GetHashCode ()) + Random.Range (-10, 10);
         this.temperature = GameObject.Find("Temperature").GetComponent<Temperature>();
 
 		this.distanceNeedToTravelToPause = Random.Range (10, 50);
@@ -67,7 +67,7 @@ public class Person : MonoBehaviour {
 		//Should not hard code in edges of the scene. 
 		//Don't move if fainting
 		//Todo(Gebhard): Figure out how to get right and left edge of sprite. P3
-		if (!inConversation && !fainting) {
+		if (!inConversation && !fainting && Time.timeScale != 0) {
 			float xPosition = gameObject.transform.position.x;
 			distanceWalked += currentXPosition - xPosition;
 			currentXPosition = xPosition;
@@ -181,7 +181,11 @@ public class Person : MonoBehaviour {
 		{
 			attributes += ",old";
 		}
-		
+		if (timeTillFaintInSeconds < 15) 
+		{
+			attributes += ",dying,dying";
+			//TODO: balance timings?
+		}
 		return attributes;
 	}
 
