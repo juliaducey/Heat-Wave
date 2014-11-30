@@ -71,6 +71,11 @@ public class GameState : MonoBehaviour {
         newUmbrella.transform.localScale = new Vector3(1, 1, 0);
     }
 
+    public void RemoveUmbrella()
+    {
+        this.umbrellas -= 1;
+    }
+
 	public void TalkToPerson(Person p)
 	{
 		talkingPerson = p;
