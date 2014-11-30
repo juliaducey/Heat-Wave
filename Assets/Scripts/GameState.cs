@@ -42,6 +42,9 @@ public class GameState : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (numberOfPeopleFainted > 15 ) {
+			Application.LoadLevel("endScreen");
+		}
 	}
 	
     // tells the Timer function what day it is

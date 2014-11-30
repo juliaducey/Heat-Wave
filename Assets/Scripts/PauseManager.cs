@@ -22,7 +22,12 @@ public class PauseManager : MonoBehaviour {
 			Pause();
 		}
 	}
-	
+	public void Restart()
+	{
+		Application.LoadLevel ("MainScene");
+		
+	}
+
 	public void Pause()
 	{
 		canvas.enabled = !canvas.enabled;
@@ -31,10 +36,12 @@ public class PauseManager : MonoBehaviour {
 	
 	public void Quit()
 	{
-		#if UNITY_EDITOR 
-		EditorApplication.isPlaying = false;
-		#else 
-		Application.Quit();
-		#endif
+		Application.LoadLevel ("EndScreen");
+		
+//		#if UNITY_EDITOR 
+//		EditorApplication.isPlaying = false;
+//		#else 
+//		Application.Quit();
+//		#endif
 	}
 }
