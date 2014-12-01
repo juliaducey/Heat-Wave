@@ -10,10 +10,15 @@ public class GameState : MonoBehaviour {
     public float[] forecast;
 	public Person person;
     public Umbrella umbrella;
+    public UmbrellaSprite umbrellaSprite;
+    public Water water;
+    public WaterSprite waterSprite;
+    public int waters;
     public int umbrellas;
     public bool busy;
 	public Person[] allPeople; 
 	public Person talkingPerson;
+    public bool hot;
 	
 	// Use this for initialization
 	void Start () {
@@ -71,12 +76,26 @@ public class GameState : MonoBehaviour {
     {
         this.umbrellas += 1;
         Umbrella newUmbrella = (Umbrella) Instantiate(umbrella, new Vector3((this.umbrellas - 8) * 5.0F, 1.0F, (float)(1)), Quaternion.identity);
-        newUmbrella.transform.localScale = new Vector3(1, 1, 0);
+        UmbrellaSprite newUmbrellaSprite = (UmbrellaSprite)Instantiate(umbrellaSprite, new Vector3((this.umbrellas - 8) * 5.0F, 1.0F, (float)(1)), Quaternion.identity);
+        newUmbrellaSprite.transform.localScale = new Vector3(1, 1, 0);
     }
 
     public void RemoveUmbrella()
     {
         this.umbrellas -= 1;
+    }
+
+    public void AddWater()
+    {
+        this.waters += 1;
+        Water newWater = (Water)Instantiate(water, new Vector3((this.umbrellas - 7) * 5.0F, 1.5F, (float)(1)), Quaternion.identity)
+        WaterSprite newWaterSprite = (WaterSprite)Instantiate(waterSprite, new Vector3((this.umbrellas - 8) * 5.0F, 1.0F, (float)(1)), Quaternion.identity);
+        newWaterSprite.transform.localScale = new Vector3(1, 1, 0);
+    }
+
+    public void RemoveWater()
+    {
+        this.waters -= 1;
     }
 
 	public void TalkToPerson(Person p)
