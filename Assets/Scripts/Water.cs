@@ -7,6 +7,7 @@ public class Water : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        DontDestroyOnLoad(this);
         this.health = 50f;
         this.state = GameObject.Find("GameState(Clone)").GetComponent<GameState>();
 	

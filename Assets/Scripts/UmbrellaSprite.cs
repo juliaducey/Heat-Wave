@@ -15,6 +15,6 @@ public class UmbrellaSprite : MonoBehaviour {
 
     void Remove()
     {
-        Destroy(gameObject)
+        Destroy(gameObject);
     }
 }

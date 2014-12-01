@@ -75,7 +75,7 @@ public class GameState : MonoBehaviour {
     public void AddUmbrella()
     {
         this.umbrellas += 1;
-        Umbrella newUmbrella = (Umbrella) Instantiate(umbrella, new Vector3((this.umbrellas - 8) * 5.0F, 1.0F, (float)(1)), Quaternion.identity);
+        Instantiate(umbrella, new Vector3((this.umbrellas - 8) * 5.0F, 1.0F, (float)(1)), Quaternion.identity);
         UmbrellaSprite newUmbrellaSprite = (UmbrellaSprite)Instantiate(umbrellaSprite, new Vector3((this.umbrellas - 8) * 5.0F, 1.0F, (float)(1)), Quaternion.identity);
         newUmbrellaSprite.transform.localScale = new Vector3(1, 1, 0);
     }
@@ -88,8 +88,8 @@ public class GameState : MonoBehaviour {
     public void AddWater()
     {
         this.waters += 1;
-        Water newWater = (Water)Instantiate(water, new Vector3((this.umbrellas - 7) * 5.0F, 1.5F, (float)(1)), Quaternion.identity)
-        WaterSprite newWaterSprite = (WaterSprite)Instantiate(waterSprite, new Vector3((this.umbrellas - 8) * 5.0F, 1.0F, (float)(1)), Quaternion.identity);
+        Instantiate(water, new Vector3((this.umbrellas - 7) * 5.0F, 1.5F, (float)(1)), Quaternion.identity);
+        WaterSprite newWaterSprite = (WaterSprite)Instantiate(waterSprite, new Vector3((this.umbrellas - 7.5f) * 5.0F, 1.5F, (float)(1)), Quaternion.identity);
         newWaterSprite.transform.localScale = new Vector3(1, 1, 0);
     }
 

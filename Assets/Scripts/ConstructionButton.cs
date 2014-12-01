@@ -6,6 +6,7 @@ public class ConstructionButton : MonoBehaviour {
     GameState state;
     public bool building = false;
     public float timeToBuild = 5f;
+    public string item;
     GameObject working;
 	// Use this for initialization
 	void Start () {
@@ -22,7 +23,10 @@ public class ConstructionButton : MonoBehaviour {
         {
             state.busy = false;
             building = false;
-            state.AddUmbrella();
+            if (item.Equals("umbrella"))
+                state.AddUmbrella();
+            else if (item.Equals("water"))
+                state.AddWater();
             this.timeToBuild = 5;
             // working.gameObject.SetActive(false);
         }

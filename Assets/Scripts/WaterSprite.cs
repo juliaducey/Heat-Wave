@@ -15,7 +15,7 @@ public class WaterSprite : MonoBehaviour {
 
     void Remove()
     {
-        Destroy(gameObject)
+        Destroy(gameObject);
     }
-}
+
 }
