@@ -357,6 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamestate: {fileID: 100000, guid: 957d47cfbc2fc1c41bc1b755e940e7de, type: 2}
+  bgm: {fileID: 11400000, guid: ad18bc9289e05bb48962a77efc036b2a, type: 2}
 --- !u!1 &1884384549
 GameObject:
   m_ObjectHideFlags: 0

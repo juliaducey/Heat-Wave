@@ -19,6 +19,7 @@ public class GameState : MonoBehaviour {
 	public Person[] allPeople; 
 	public Person talkingPerson;
     public bool hot;
+    public bool bgm;
 	
 	// Use this for initialization
 	void Start () {
