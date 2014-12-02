@@ -647,7 +647,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .0018382353
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_RootOrder
@@ -1136,8 +1136,10 @@ MonoBehaviour:
   old: 0
   inConversation: 0
   fainting: 0
+  goingInside: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
+  timeTillGoInside: 0
   waterDrank: 0
   scriptHandler: {fileID: 246156913}
   currenttime: 0
@@ -4005,8 +4007,10 @@ MonoBehaviour:
   old: 1
   inConversation: 0
   fainting: 0
+  goingInside: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
+  timeTillGoInside: 0
   waterDrank: 0
   scriptHandler: {fileID: 1096124874}
   currenttime: 0
@@ -4825,8 +4829,10 @@ MonoBehaviour:
   old: 0
   inConversation: 0
   fainting: 0
+  goingInside: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
+  timeTillGoInside: 0
   waterDrank: 0
   scriptHandler: {fileID: 1373061980}
   currenttime: 0
@@ -5195,8 +5201,10 @@ MonoBehaviour:
   old: 1
   inConversation: 0
   fainting: 0
+  goingInside: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
+  timeTillGoInside: 0
   waterDrank: 0
   scriptHandler: {fileID: 1489708064}
   currenttime: 0
@@ -6263,7 +6271,7 @@ Transform:
   m_PrefabInternal: {fileID: 157684810}
   m_GameObject: {fileID: 1710049519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .0018382353, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 973644623}
@@ -6334,8 +6342,10 @@ MonoBehaviour:
   old: 0
   inConversation: 0
   fainting: 0
+  goingInside: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
+  timeTillGoInside: 0
   waterDrank: 0
   scriptHandler: {fileID: 1743269935}
   currenttime: 0
