@@ -9,8 +9,10 @@ public class Person : MonoBehaviour {
 	public bool old;
 	public bool inConversation;
 	public bool fainting; // Whether or not person is currently fainting
+	public bool goingInside;
 	public int timeOutsideInSeconds = 0; // use our global timer, rather than updating on every frame
 	public float timeTillFaintInSeconds;
+	public float timeTillGoInside;
 	private float startTime;
 	public int waterDrank = 0;
 	public MetisScriptHandler scriptHandler;
@@ -48,6 +50,7 @@ public class Person : MonoBehaviour {
 		this.XMove = generateWalkingSpeed ();
 		this.timePersonPausesInMinutes = Random.Range (10, 30);
 		this.currentXPosition = this.transform.position.x;
+		this.timeTillGoInside = 10 * (this.male.GetHashCode () + this.drunk.GetHashCode () + this.old.GetHashCode ()) + Random.Range (-10, 10);
 		//TODO: programmatically attach scripts to people
 		//MetisScriptHandler handler = gameObject.GetComponent<MetisScriptHandler> ();
 		//handler.Script = "blah blah blah";
@@ -56,18 +59,31 @@ public class Person : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float tempMultiplier = 1f;
+
         if (temperature.curTemp > 100 && state.waters == 0)
             tempMultiplier = 1.5f;
 
         this.timeTillFaintInSeconds -= tempMultiplier * Time.deltaTime;
-		if (this.timeTillFaintInSeconds <= 0 && !fainting) {
+		this.timeTillGoInside -= Time.deltaTime;
+
+		if ((this.timeTillGoInside <= 0) && !fainting && !goingInside && !inConversation) {
+			this.goInside ();
+		} else if ((this.timeTillFaintInSeconds <= 0) && !fainting && !goingInside && !inConversation) {
 			this.faint ();
+			return;
+		} else if (goingInside) {
+			gameObject.transform.position = new Vector3 (gameObject.transform.position.x + 0.05f, 
+			                                             gameObject.transform.position.y, 
+			                                             gameObject.transform.position.z);
+			if (gameObject.transform.position.x > 30) {
+				Destroy(this.gameObject);
+			}
 		}
 
 		//Should not hard code in edges of the scene. 
 		//Don't move if fainting
 		//Todo(Gebhard): Figure out how to get right and left edge of sprite. P3
-		if (!inConversation && !fainting && Time.timeScale != 0) {
+		else if (!inConversation && !fainting && Time.timeScale != 0) {
 			float xPosition = gameObject.transform.position.x;
 			distanceWalked += currentXPosition - xPosition;
 			currentXPosition = xPosition;
@@ -132,7 +148,7 @@ public class Person : MonoBehaviour {
 
 	void OnMouseDown() {
 		// bring up dialogue
-        if (state.busy == false)
+        if (state.busy == false && !goingInside && !fainting)
         {
             inConversation = true;
 		    state.TalkToPerson (this);
@@ -153,7 +169,7 @@ public class Person : MonoBehaviour {
 	
 	public void goInside () {
 		state.SomeoneWentInside ();
-		Destroy (gameObject);
+		this.goingInside = true;
 	}
 
 	void rejectAdvice () {
