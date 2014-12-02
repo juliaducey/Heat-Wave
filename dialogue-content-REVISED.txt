@@ -1,0 +1,118 @@
+EVERYONE
+========
+
+1. You: Hello there, have you been outside for long? (player chooses 1 or 2)
+  2. You: In this heat, it's unsafe to stay outside. You should try to go inside.
+    (person chooses 4 or 5)
+    *4. Person: That's a good idea. I'll try to stay cool. Thank you!
+        You: You're welcome. Stay inside while it's this hot!
+  3. You: Would you like some water? In a heat wave like this, you need to stay hydrated.
+    (person chooses 5 or 6)
+    *6. Person: It has been really hot. I'd love some water. Thank you!
+        You: You're welcome! Stay healthy!
+    5. Person: Can't you see I'm busy here? (person chooses 7 or 8)
+      *7. Person: Sorry, I've got to go.
+      *8. (convo continues - select new tree)
+
+-----------------------
+
+1. You: Excuse me! I'm a Red Cross volunteer. (player chooses 1 or 2)
+  2. You: Since it's so hot out today, you should go inside to escape the heat. (person chooses 4 or 5)
+    *4. Person: You're right, it is too hot. I'll finish my business tomorrow.
+        You: That's great! Stay safe!
+  3. You: In this heat, it's important to stay hydrated. Take this water.
+    (person chooses 5 or 6)
+    *6. Person: You're right, it has been hot. I'll take it.
+        You: Remember to stay hydrated!
+    5. Person: I don't think so, I have lots to do right now. (person chooses 7 or 8)
+      *7. Person: Thanks, but I have to run.
+      *8. (convo continues - select new tree)
+
+OLD
+===
+
+1. You: Hello there, I'm a Red Cross volunteer. The elderly are at extra risk of fainting and dehydration in a heat wave. (player chooses 1 or 2)
+  2. You: Going inside will help you stay healthy. (person chooses 4 or 5)
+    *4. Person: Well thank you dearie. I'll go inside now. Thank you!
+        You: You're welcome. Stay inside while it's this hot!
+  3. You: Drinking extra water will help you stay hydrated. Would you like some?
+    (person chooses 5 or 6)
+    *6. Person: Thank you, I'll take it.
+        You: You're welcome! Keep drinking more water!
+    5. Person: Leave me alone, I can take care of myself! (person chooses 7 or 8)
+      *7. Person: I'm busy, I've got to go.
+      *8. (convo continues - select new tree)
+
+-----------------------
+
+1. You: Excuse me, I wanted to see if you were feeling okay, since it's so hot out today. (player chooses 1 or 2)
+  2. You: Staying outside can cause dehydration, overheating, and other health problems too. You should go inside. (person chooses 4 or 5)
+    *4. Person: Well I suppose you're right. I'll head inside now.
+        You: Thank you! Stay safe!
+  3. You: Dehydration can make you feel sick and faint. I have some water here for you.
+    (person chooses 5 or 6)
+    *6. Person: Thank you, I'll take it.
+        You: Make sure you stay hydrated!
+    5. Person: I don't think I need anything. (person chooses 7 or 8)
+      *7. Person: Thanks, but I've got to go now.
+      *8. (convo continues - select new tree)
+
+MALE
+====
+
+1. You: Hello sir. Did you know that men in particular are at risk in a heat wave? (player chooses 1 or 2)
+  2. You: Try to go inside to escape the heat. (person chooses 4 or 5)
+    *4. Person: You're right, it has been hot. I'll head home.
+        You: Stay healthy!
+  3. You: Men also have a harder time staying hydrated. Here's some water for you.
+    (person chooses 5 or 6)
+    *6. Person: I didn't know that. Thanks for the water!
+        You: You're welcome! Keep yourself hydrated.
+    5. Person: No thanks, I'll be fine. (person chooses 7 or 8)
+      *7. Person: Bye.
+      *8. (convo continues - select new tree)
+
+FEMALE
+======
+
+1. You: Excuse me miss, I'm here with the Red Cross. (player chooses 1 or 2)
+  2. You: This heat wave can cause people to overheat and dehydrate. Going inside will help prevent this for you! (person chooses 4 or 5)
+    *4. Person: I'll go inside then. I can finish my errands tomorrow.
+        You: Thank you, try to keep cool!
+  3. You: This heat can be really dangerous. Take some of this water to keep hydrated.
+    (person chooses 5 or 6)
+    *6. Person: Oh, thank you. It has been really hot.
+        You: You're welcome! Keep drinking more water.
+    5. Person: No thanks, I'm alright. (person chooses 7 or 8)
+      *7. Person: I've got to go.
+      *8. (convo continues - select new tree)
+
+DRUNK
+=====
+
+1. You: It seems like you've been drinking today. Being inebriated can make the effects of a heat wave even worse. (player chooses 1 or 2)
+  2. You: Please try to go inside! (person chooses 4 or 5)
+    *4. Person: You're right *hiccup*. I'll try to go inside now.
+        You: That's great! Try to stay safe!
+  3. You: You need extra water to stay hydrated since it's so hot!
+    (person chooses 5 or 6)
+    *6. Person: *hiccup* I should probably *hiccup* drink some water instead...
+        You: Definitely! Here's some water for you.
+    5. Person: Yeah yeah yeah *hiccup*. I'm fine. (person chooses 7 or 8)
+      *7. Person: I've got to *hiccup* go.
+      *8. (convo continues - select new tree)
+
+HOMELESS
+========
+
+1. You: Excuse me! I'm a Red Cross volunteer. (player chooses 1 or 2)
+  2. You: The Red Cross has a shelter nearby where you can take refuge from this heat. (person chooses 4 or 5)
+    *4. Person: You're right, it is too hot. I'll visit the shelter.
+        You: I'm glad to hear that! We are here to help!
+  3. You: In this heat, it's important to stay hydrated. Take this water.
+    (person chooses 5 or 6)
+    *6. Person: Thank you for the water, I needed it.
+        You: You're welcome, remember to keep drinking water!
+    5. Person: Oh, no, it's alright, I've been fine for now. (person chooses 7 or 8)
+      *7. Person: Thanks for talking but I'll be going now.
+      *8. (convo continues - select new tree)
