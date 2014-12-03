@@ -17,14 +17,15 @@ public class PauseManager : MonoBehaviour {
 	
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-			Pause();
-		}
+
 	}
 	public void Restart()
 	{
-		Application.LoadLevel ("MainScene");
+		Application.LoadLevel ("StartScene");
+		Time.timeScale = 1;
+		while (GameObject.Find("Umbrella(Clone)") != null) {
+			Destroy(GameObject.Find("Umbrella(Clone)"));
+		}
 		
 	}
 

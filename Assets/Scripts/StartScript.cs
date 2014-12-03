@@ -3,6 +3,7 @@ using System.Collections;
 
 public class StartScript : MonoBehaviour {
     public GameObject gamestate;
+    public BGMusic bgm;
 	// Use this for initialization
 	void Start () {
 
@@ -15,6 +16,7 @@ public class StartScript : MonoBehaviour {
 
 		GameObject.Find("Instructions Text").SetActive(false);
 		GameObject.Find("Back Button").SetActive(false);
+        Instantiate(bgm, Vector3.zero, Quaternion.identity);
     }
 	// Update is called once per frame
 	void Update () {

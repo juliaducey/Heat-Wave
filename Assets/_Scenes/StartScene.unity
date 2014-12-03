@@ -826,6 +826,7 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1786795306}
   m_HideIfInvisible: 0
+  bgm: {fileID: 11400000, guid: ad18bc9289e05bb48962a77efc036b2a, type: 2}
 --- !u!1 &1884384549
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,33 +4,41 @@ using System.Collections;
 public class Person : MonoBehaviour {
 
 	public int id;
-	public bool male;
-	public bool drunk;
-	public bool old;
-	public bool inConversation;
-	public bool fainting; // Whether or not person is currently fainting
-	public int timeOutsideInSeconds = 0; // use our global timer, rather than updating on every frame
+	private bool male;
+	private bool drunk;
+	private bool old;
+	private bool inConversation;
+	private bool fainting; // Whether or not person is currently fainting
+	private bool goingInside;
+	private bool faintNotification;
+	private bool checkNotification;
+	private int timeOutsideInSeconds = 0; // use our global timer, rather than updating on every frame
 	public float timeTillFaintInSeconds;
+	private float timeTillGoInside;
 	private float startTime;
-	public int waterDrank = 0;
+	private int waterDrank = 0;
 	public MetisScriptHandler scriptHandler;
-    public float currenttime;
-    public Temperature temperature;
+    private float currenttime;
+    private Temperature temperature;
     public GameState state;
-	public int faintRotation = 1;
+	private int faintRotation = 1;
 	// People burn for this long (seconds)
 	private float fireTimeRemaining = 2.0f;
 	// Flame property for prefab
 	public Transform flame; 
+	public Transform exclamation;
+	public Transform checkmark;
 	private Transform myFlame;
+	private Transform myExclamation;
+	private Transform myCheckmark;
 
-	public float XMove = 0f;
-	public float YMove = 0f;
-	public float distanceWalked = 0f;
-	public float currentXPosition; 
-	public float distanceNeedToTravelToPause = 0f;
-	public float timeStoppedMinutes=0f;
-	public float timePersonPausesInMinutes=0f;
+	private float XMove = 0f;
+	private float YMove = 0f;
+	private float distanceWalked = 0f;
+	private float currentXPosition; 
+	private float distanceNeedToTravelToPause = 0f;
+	private float timeStoppedMinutes = 0f;
+	private float timePersonPausesInMinutes = 0f;
 	
 
 	// Use this for initialization
@@ -48,6 +56,7 @@ public class Person : MonoBehaviour {
 		this.XMove = generateWalkingSpeed ();
 		this.timePersonPausesInMinutes = Random.Range (10, 30);
 		this.currentXPosition = this.transform.position.x;
+		this.timeTillGoInside = Random.Range (0, 40);
 		//TODO: programmatically attach scripts to people
 		//MetisScriptHandler handler = gameObject.GetComponent<MetisScriptHandler> ();
 		//handler.Script = "blah blah blah";
@@ -55,19 +64,50 @@ public class Person : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		// game is paused
+		if (Time.timeScale == 0) {
+			return;
+		}
+
         float tempMultiplier = 1f;
+
         if (temperature.curTemp > 100 && state.waters == 0)
             tempMultiplier = 1.5f;
 
         this.timeTillFaintInSeconds -= tempMultiplier * Time.deltaTime;
-		if (this.timeTillFaintInSeconds <= 0 && !fainting) {
+		this.timeTillGoInside -= Time.deltaTime;
+
+		if ((this.timeTillGoInside <= 0) && !fainting && !goingInside && !inConversation) {
+			this.goInside ();
+		} else if ((this.timeTillFaintInSeconds <= 0) && !fainting && !goingInside && !inConversation) {
 			this.faint ();
+		} else if (goingInside) {
+			if (!checkNotification)
+			{
+				myCheckmark = (Transform)Transform.Instantiate(checkmark, transform.position, Quaternion.identity);
+				checkNotification = true;
+			}
+			myCheckmark.transform.position = new Vector3(transform.position.x - 2, transform.position.y + 4, transform.position.z);
+			gameObject.transform.position = new Vector3 (gameObject.transform.position.x + 0.05f, 
+			                                             gameObject.transform.position.y, 
+			                                             gameObject.transform.position.z);
+			if (gameObject.transform.position.x > 30) {
+				if (myExclamation)
+				{
+					Destroy(myExclamation.gameObject);
+				}
+				if (myCheckmark) {
+					Destroy (myCheckmark.gameObject);
+				}
+				Destroy(this.gameObject);
+			}
 		}
 
 		//Should not hard code in edges of the scene. 
 		//Don't move if fainting
 		//Todo(Gebhard): Figure out how to get right and left edge of sprite. P3
-		if (!inConversation && !fainting && Time.timeScale != 0) {
+		else if (!inConversation && !fainting) {
 			float xPosition = gameObject.transform.position.x;
 			distanceWalked += currentXPosition - xPosition;
 			currentXPosition = xPosition;
@@ -92,6 +132,18 @@ public class Person : MonoBehaviour {
 				                                             gameObject.transform.position.y + YMove, 
 				                                             gameObject.transform.position.z);
 			}
+
+			// If close to fainting, start the wobble
+			if (timeTillFaintInSeconds < 10)
+			{
+				if (!faintNotification)
+				{
+					myExclamation = (Transform)Transform.Instantiate(exclamation, transform.position, Quaternion.identity);
+					faintNotification = true;
+				}
+				// myExclamation.transform.position = transform.position;
+				myExclamation.transform.position = new Vector3(transform.position.x - 2, transform.position.y + 5, transform.position.z);
+			} 
 		} 
 		else if (fainting) 
 		{
@@ -110,7 +162,6 @@ public class Person : MonoBehaviour {
 				{
 					Destroy(myFlame.gameObject);
 					Destroy (gameObject);
-					// Destroy(gameObject);
 				}
 
 				fireTimeRemaining -= Time.deltaTime;
@@ -132,7 +183,7 @@ public class Person : MonoBehaviour {
 
 	void OnMouseDown() {
 		// bring up dialogue
-        if (state.busy == false)
+        if (state.busy == false && !goingInside && !fainting)
         {
             inConversation = true;
 		    state.TalkToPerson (this);
@@ -153,7 +204,12 @@ public class Person : MonoBehaviour {
 	
 	public void goInside () {
 		state.SomeoneWentInside ();
-		Destroy (gameObject);
+		this.goingInside = true;
+
+		if (myExclamation) 
+		{
+			Destroy (myExclamation.gameObject);
+		}
 	}
 
 	void rejectAdvice () {
@@ -166,6 +222,8 @@ public class Person : MonoBehaviour {
         this.state.SomeoneFainted();
         // Create animation
 		fainting = true;
+		// Destroy exclamation point
+		Destroy (myExclamation.gameObject);
 		// Destroy(gameObject);
 	}
 
