@@ -28,6 +28,8 @@ public class GameState : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		forecast = new float[] { Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f)};
+
 		Person[] people = new Person[] {person1, person2, person3, person4};
 		// Kinda hacky but whatever
 		int day = GameObject.Find("GameState(Clone)").GetComponent<GameState>().currentDay;
@@ -35,7 +37,6 @@ public class GameState : MonoBehaviour {
 		DontDestroyOnLoad(gameObject);
 		timer = GameObject.Find ("Timer").GetComponent<Timer> ();
 		this.busy = false;
-		forecast = new float[] { Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f)};
 		
 		int numPeople = 1 + (3 * day) + Random.Range(0, 3); 
 		Debug.Log ("Generated People");
