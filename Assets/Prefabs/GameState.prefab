@@ -29,8 +29,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDay: 1
   text: {fileID: 0}
-  numberOfPeopleDead: 0
+  numberOfPeopleFainted: 0
   numberOfPeopleInside: 0
+  forecast: []
+  person: {fileID: 0}
+  umbrella: {fileID: 11400000, guid: e82b23f8e49634c4ba7b3ce8c19a67cc, type: 2}
+  umbrellaSprite: {fileID: 11400000, guid: 8938abfe99926f442af7a6e197ea867d, type: 2}
+  water: {fileID: 11400000, guid: 4234a56e49098f14280c482a50b3c38c, type: 2}
+  waterSprite: {fileID: 11400000, guid: 12591983545abec4cb9e120a463b6ff3, type: 2}
+  waters: 0
+  umbrellas: 0
+  busy: 0
+  allPeople: []
+  talkingPerson: {fileID: 0}
+  hot: 0
+  bgm: 0
 --- !u!224 &22400000
 RectTransform:
   m_ObjectHideFlags: 1
