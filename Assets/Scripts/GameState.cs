@@ -9,7 +9,10 @@ public class GameState : MonoBehaviour {
 	public int numberOfPeopleInside = 0;
 	public int score = 0;
     public float[] forecast;
-	public Person person;
+	public Person person1;
+	public Person person2;
+	public Person person3;
+	public Person person4;
     public Umbrella umbrella;
     public UmbrellaSprite umbrellaSprite;
     public Water water;
@@ -24,23 +27,34 @@ public class GameState : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		Person[] people = new Person[] {person1, person2, person3, person4};
+		// Kinda hacky but whatever
+		int day = GameObject.Find("GameState(Clone)").GetComponent<GameState>().currentDay;
+
         DontDestroyOnLoad(gameObject);
         this.busy = false;
         forecast = new float[] { Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f)};
 
-		int numPeople = 5; //TODO: figure out specifics of random people
-		for (int i=1; i<=numPeople; i++)
+		int numPeople = 1 + (3 * day) + Random.Range(0, 3); 
+		Debug.Log ("Generated People");
+		Debug.Log (numPeople);
+		for (int i=1; i<=numPeople/2; i++)
 		{
+			Person person = people[Random.Range(0, 4)];
 			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), 10F, (float) (-i)), Quaternion.identity);
-			newPerson.transform.localScale = new Vector3(8, 8, 0);
+			// Fixed prefab so scaling here isn't necessary
+			// newPerson.transform.localScale = new Vector3(8, 8, 0);
 			newPerson.name = "Person " + i;
 			newPerson.id = i;
 		}
 
-		for (int i=1; i<=2; i++)
+		// Create people on bottom row.  Note that one person doesn't actually get created because of bounds on loops
+		for (int i=1; i<=numPeople/2; i++)
 		{
-			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), -9f, (float) (-i)), Quaternion.identity);
-			newPerson.transform.localScale = new Vector3(8, 8, 0);
+			Person person = people[Random.Range(0, 4)];
+			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), -9F, (float) (-i)), Quaternion.identity);
+			// Fixed prefab so scaling here isn't necessary
+			// newPerson.transform.localScale = new Vector3(8, 8, 0);
 			newPerson.name = "Person " + i;
 			newPerson.id = i;
 		}
@@ -51,7 +65,7 @@ public class GameState : MonoBehaviour {
 	void Update () {
 		SetScore ();
 
-		if (numberOfPeopleFainted > 15 ) {
+		if (numberOfPeopleFainted > 12 ) {
 			Application.LoadLevel("endScreen");
 		}
 	}
