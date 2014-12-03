@@ -56,7 +56,7 @@ public class Person : MonoBehaviour {
 		this.XMove = generateWalkingSpeed ();
 		this.timePersonPausesInMinutes = Random.Range (10, 30);
 		this.currentXPosition = this.transform.position.x;
-		this.timeTillGoInside = 10 * (this.male.GetHashCode () + this.drunk.GetHashCode () + this.old.GetHashCode ()) + Random.Range (-10, 10);
+		this.timeTillGoInside = Random.Range (0, 40);
 		//TODO: programmatically attach scripts to people
 		//MetisScriptHandler handler = gameObject.GetComponent<MetisScriptHandler> ();
 		//handler.Script = "blah blah blah";
@@ -82,7 +82,6 @@ public class Person : MonoBehaviour {
 			this.goInside ();
 		} else if ((this.timeTillFaintInSeconds <= 0) && !fainting && !goingInside && !inConversation) {
 			this.faint ();
-			return;
 		} else if (goingInside) {
 			if (!checkNotification)
 			{
