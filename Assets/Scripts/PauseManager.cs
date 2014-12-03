@@ -23,10 +23,6 @@ public class PauseManager : MonoBehaviour {
 	{
 		Application.LoadLevel ("StartScene");
 		Time.timeScale = 1;
-		while (GameObject.Find("Umbrella(Clone)") != null) {
-			Destroy(GameObject.Find("Umbrella(Clone)"));
-		}
-		
 	}
 
 	public void Pause()
