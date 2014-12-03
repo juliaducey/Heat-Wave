@@ -28,8 +28,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.73939991, y: -2.4295001, z: -1}
-  m_LocalScale: {x: .220618829, y: .220618755, z: 0}
+  m_LocalPosition: {x: -1.25810003, y: 2.66939998, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2a837e5c3bbb6479ac6af1f4aa5e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Script: {fileID: 4900000, guid: e9c7baa33a7ee415bafffd5870a9139f, type: 3}
+  Script: {fileID: 4900000, guid: 2a5921933fd0b48deb1b69454a2a1f96, type: 3}
   AutoStart: 0
   AutoShowBG: 0
 --- !u!114 &11400002
@@ -84,13 +84,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bced235f850a42f781f16fedc6449dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 3
+  id: 4
+  male: 0
+  drunk: 0
+  old: 0
+  inConversation: 0
+  fainting: 0
+  goingInside: 0
+  faintNotification: 0
+  timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
+  timeTillGoInside: 0
+  waterDrank: 0
   scriptHandler: {fileID: 11400000}
+  currenttime: 0
+  temperature: {fileID: 0}
   state: {fileID: 0}
+  faintRotation: 3
   flame: {fileID: 400000, guid: c074693d1f48b4e94af05d103a2a3144, type: 2}
   exclamation: {fileID: 400000, guid: 286b8282e59a04962bc4b241a561130e, type: 2}
-  checkmark: {fileID: 400000, guid: 901e9cb80b5ec4ee4b9cacad12108083, type: 2}
+  XMove: .0799999982
+  YMove: 0
+  distanceWalked: 0
+  currentXPosition: 0
+  distanceNeedToTravelToPause: 0
+  timeStoppedMinutes: 0
+  timePersonPausesInMinutes: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,7 +159,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3c71296e6cf3e40fc9f74614ea24ffec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 92c7f8625acc64a2db1b49a7c3fdd8d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

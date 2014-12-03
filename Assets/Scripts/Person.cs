@@ -142,7 +142,7 @@ public class Person : MonoBehaviour {
 					faintNotification = true;
 				}
 				// myExclamation.transform.position = transform.position;
-				myExclamation.transform.position = new Vector3(transform.position.x - 2, transform.position.y + 4, transform.position.z);
+				myExclamation.transform.position = new Vector3(transform.position.x - 2, transform.position.y + 5, transform.position.z);
 			} 
 		} 
 		else if (fainting) 
