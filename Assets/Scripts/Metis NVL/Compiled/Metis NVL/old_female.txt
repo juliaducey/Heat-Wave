@@ -2,6 +2,4 @@ nvl.say("You: Hey, you should drink some water so you do not die of a heat strok
 
 nvl.say("Old Female: Okay, sounds good.");
 
-nvl.drinkWater(4);
-
-nvl.say("You: test");
+nvl.drink_water(4);

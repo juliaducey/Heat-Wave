@@ -24,6 +24,7 @@ public class GameState : MonoBehaviour {
 	public Person talkingPerson;
     public bool hot;
     public bool bgm;
+	private Timer timer;
 	
 	// Use this for initialization
 	void Start () {
@@ -32,6 +33,7 @@ public class GameState : MonoBehaviour {
 		int day = GameObject.Find("GameState(Clone)").GetComponent<GameState>().currentDay;
 
         DontDestroyOnLoad(gameObject);
+		timer = GameObject.Find ("Timer").GetComponent<Timer> ();
         this.busy = false;
         forecast = new float[] { Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f)};
 
@@ -72,12 +74,10 @@ public class GameState : MonoBehaviour {
 	
     // tells the Timer function what day it is
 	public void GetDay() {
-        Timer timer = GameObject.Find("Timer").GetComponent<Timer>();
         timer.SendMessage("SetDay", currentDay);
 	}
 
 	public void SetScore() {
-		Timer timer = GameObject.Find("Timer").GetComponent<Timer>();
 		score = timer.day * 24 * 60 + timer.minutes;
 	}
 	
