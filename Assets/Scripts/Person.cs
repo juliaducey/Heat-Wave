@@ -10,6 +10,7 @@ public class Person : MonoBehaviour {
 	public bool inConversation;
 	public bool fainting; // Whether or not person is currently fainting
 	public bool goingInside;
+	public bool faintNotification;
 	public int timeOutsideInSeconds = 0; // use our global timer, rather than updating on every frame
 	public float timeTillFaintInSeconds;
 	public float timeTillGoInside;
@@ -24,7 +25,9 @@ public class Person : MonoBehaviour {
 	private float fireTimeRemaining = 2.0f;
 	// Flame property for prefab
 	public Transform flame; 
+	public Transform exclamation;
 	private Transform myFlame;
+	private Transform myExclamation;
 
 	public float XMove = 0f;
 	public float YMove = 0f;
@@ -76,6 +79,10 @@ public class Person : MonoBehaviour {
 			                                             gameObject.transform.position.y, 
 			                                             gameObject.transform.position.z);
 			if (gameObject.transform.position.x > 30) {
+				if (myExclamation)
+				{
+					Destroy(myExclamation.gameObject);
+				}
 				Destroy(this.gameObject);
 			}
 		}
@@ -108,6 +115,18 @@ public class Person : MonoBehaviour {
 				                                             gameObject.transform.position.y + YMove, 
 				                                             gameObject.transform.position.z);
 			}
+
+			// If close to fainting, start the wobble
+			if (timeTillFaintInSeconds < 10)
+			{
+				if (!faintNotification)
+				{
+					myExclamation = (Transform)Transform.Instantiate(exclamation, transform.position, Quaternion.identity);
+					faintNotification = true;
+				}
+				// myExclamation.transform.position = transform.position;
+				myExclamation.transform.position = new Vector3(transform.position.x - 2, transform.position.y + 4, transform.position.z);
+			} 
 		} 
 		else if (fainting) 
 		{
@@ -126,7 +145,6 @@ public class Person : MonoBehaviour {
 				{
 					Destroy(myFlame.gameObject);
 					Destroy (gameObject);
-					// Destroy(gameObject);
 				}
 
 				fireTimeRemaining -= Time.deltaTime;
@@ -170,6 +188,11 @@ public class Person : MonoBehaviour {
 	public void goInside () {
 		state.SomeoneWentInside ();
 		this.goingInside = true;
+
+		if (myExclamation) 
+		{
+			Destroy (myExclamation.gameObject);
+		}
 	}
 
 	void rejectAdvice () {
@@ -182,6 +205,8 @@ public class Person : MonoBehaviour {
         this.state.SomeoneFainted();
         // Create animation
 		fainting = true;
+		// Destroy exclamation point
+		Destroy (myExclamation.gameObject);
 		// Destroy(gameObject);
 	}
 

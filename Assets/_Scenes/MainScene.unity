@@ -643,7 +643,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: .0018382353
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1137,6 +1137,7 @@ MonoBehaviour:
   inConversation: 0
   fainting: 0
   goingInside: 0
+  faintNotification: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
   timeTillGoInside: 0
@@ -1147,6 +1148,7 @@ MonoBehaviour:
   state: {fileID: 0}
   faintRotation: 3
   flame: {fileID: 400000, guid: c074693d1f48b4e94af05d103a2a3144, type: 2}
+  exclamation: {fileID: 400000, guid: 286b8282e59a04962bc4b241a561130e, type: 2}
   XMove: .0799999982
   YMove: 0
   distanceWalked: 0
@@ -4008,6 +4010,7 @@ MonoBehaviour:
   inConversation: 0
   fainting: 0
   goingInside: 0
+  faintNotification: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
   timeTillGoInside: 0
@@ -4018,6 +4021,7 @@ MonoBehaviour:
   state: {fileID: 0}
   faintRotation: 3
   flame: {fileID: 400000, guid: c074693d1f48b4e94af05d103a2a3144, type: 2}
+  exclamation: {fileID: 400000, guid: 286b8282e59a04962bc4b241a561130e, type: 2}
   XMove: .0799999982
   YMove: 0
   distanceWalked: 0
@@ -4502,11 +4506,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 6db96d34facc949a498e65ed43fc1596, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.47650003
+      value: -6.34639978
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6db96d34facc949a498e65ed43fc1596, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.06789994
+      value: 3.11129999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6db96d34facc949a498e65ed43fc1596, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4576,6 +4580,10 @@ Prefab:
       propertyPath: m_Center.x
       value: -.200000003
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 6db96d34facc949a498e65ed43fc1596, type: 2}
+      propertyPath: exclamation
+      value: 
+      objectReference: {fileID: 400000, guid: 286b8282e59a04962bc4b241a561130e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6db96d34facc949a498e65ed43fc1596, type: 2}
   m_RootGameObject: {fileID: 1489708062}
@@ -4830,6 +4838,7 @@ MonoBehaviour:
   inConversation: 0
   fainting: 0
   goingInside: 0
+  faintNotification: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
   timeTillGoInside: 0
@@ -4840,6 +4849,7 @@ MonoBehaviour:
   state: {fileID: 0}
   faintRotation: 3
   flame: {fileID: 400000, guid: c074693d1f48b4e94af05d103a2a3144, type: 2}
+  exclamation: {fileID: 400000, guid: 286b8282e59a04962bc4b241a561130e, type: 2}
   XMove: .0799999982
   YMove: 0
   distanceWalked: 0
@@ -5151,7 +5161,7 @@ Transform:
   m_PrefabInternal: {fileID: 1226053427}
   m_GameObject: {fileID: 1489708062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.47650003, y: 3.06789994, z: -3}
+  m_LocalPosition: {x: -6.34639978, y: 3.11129999, z: -3}
   m_LocalScale: {x: 2.27055669, y: 2.27055669, z: 0}
   m_Children: []
   m_Father: {fileID: 905791255}
@@ -5202,6 +5212,7 @@ MonoBehaviour:
   inConversation: 0
   fainting: 0
   goingInside: 0
+  faintNotification: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
   timeTillGoInside: 0
@@ -5212,6 +5223,7 @@ MonoBehaviour:
   state: {fileID: 0}
   faintRotation: 3
   flame: {fileID: 400000, guid: c074693d1f48b4e94af05d103a2a3144, type: 2}
+  exclamation: {fileID: 400000, guid: 286b8282e59a04962bc4b241a561130e, type: 2}
   XMove: .0799999982
   YMove: 0
   distanceWalked: 0
@@ -5327,6 +5339,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 86026352a958b4df5a77b66ce74519d5, type: 2}
+      propertyPath: exclamation
+      value: 
+      objectReference: {fileID: 400000, guid: 286b8282e59a04962bc4b241a561130e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86026352a958b4df5a77b66ce74519d5, type: 2}
   m_RootGameObject: {fileID: 246156911}
@@ -5371,6 +5387,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 985eaa8f093fd4256b927d3b6313c64d, type: 2}
+      propertyPath: exclamation
+      value: 
+      objectReference: {fileID: 400000, guid: 286b8282e59a04962bc4b241a561130e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 985eaa8f093fd4256b927d3b6313c64d, type: 2}
   m_RootGameObject: {fileID: 1743269934}
@@ -5415,6 +5435,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 8bf52bac51e5f4114b5fda41ce5b4bbc, type: 2}
+      propertyPath: exclamation
+      value: 
+      objectReference: {fileID: 400000, guid: 286b8282e59a04962bc4b241a561130e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8bf52bac51e5f4114b5fda41ce5b4bbc, type: 2}
   m_RootGameObject: {fileID: 1373061977}
@@ -6271,7 +6295,7 @@ Transform:
   m_PrefabInternal: {fileID: 157684810}
   m_GameObject: {fileID: 1710049519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .0018382353, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 973644623}
@@ -6343,6 +6367,7 @@ MonoBehaviour:
   inConversation: 0
   fainting: 0
   goingInside: 0
+  faintNotification: 0
   timeOutsideInSeconds: 0
   timeTillFaintInSeconds: 0
   timeTillGoInside: 0
@@ -6353,6 +6378,7 @@ MonoBehaviour:
   state: {fileID: 0}
   faintRotation: 3
   flame: {fileID: 400000, guid: c074693d1f48b4e94af05d103a2a3144, type: 2}
+  exclamation: {fileID: 400000, guid: 286b8282e59a04962bc4b241a561130e, type: 2}
   XMove: .0799999982
   YMove: 0
   distanceWalked: 0
@@ -7072,6 +7098,10 @@ Prefab:
       propertyPath: id
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 6db96d34facc949a498e65ed43fc1596, type: 2}
+      propertyPath: exclamation
+      value: 
+      objectReference: {fileID: 400000, guid: 286b8282e59a04962bc4b241a561130e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6db96d34facc949a498e65ed43fc1596, type: 2}
   m_RootGameObject: {fileID: 1096124872}
