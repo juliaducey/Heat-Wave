@@ -12,6 +12,9 @@ public class StartScript : MonoBehaviour {
     {
         if (!GameObject.Find("GameState(Clone)"))
             Instantiate(gamestate, Vector3.zero, Quaternion.identity);
+
+		GameObject.Find("Instructions Text").SetActive(false);
+		GameObject.Find("Back Button").SetActive(false);
     }
 	// Update is called once per frame
 	void Update () {
