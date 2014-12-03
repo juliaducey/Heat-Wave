@@ -19,7 +19,7 @@ public class ConstructionButton : MonoBehaviour {
         if (building)
             this.timeToBuild -= Time.deltaTime;
 
-        if (this.timeToBuild < 0)
+        if (this.timeToBuild <= 0)
         {
             state.busy = false;
             building = false;
