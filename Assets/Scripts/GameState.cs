@@ -51,8 +51,10 @@ public class GameState : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		SetScore ();
-
+		// Hacky way to not update score when gamestate is passed to the end screen
+		if (Application.loadedLevel != 3) {
+			SetScore ();
+		}
 		if (numberOfPeopleFainted > 15 ) {
 			Application.LoadLevel("endScreen");
 		}
@@ -64,7 +66,8 @@ public class GameState : MonoBehaviour {
 	}
 
 	public void SetScore() {
-		score = timer.day * 24 * 60 + timer.minutes;
+		Timer timer = GameObject.Find("Timer").GetComponent<Timer>();
+		score = (timer.day - 1) * 24 + timer.hours;
 	}
 	
 	// updates the currentDay
