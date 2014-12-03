@@ -61,6 +61,12 @@ public class Person : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		// game is paused
+		if (Time.timeScale == 0) {
+			return;
+		}
+
         float tempMultiplier = 1f;
 
         if (temperature.curTemp > 100 && state.waters == 0)
@@ -90,7 +96,7 @@ public class Person : MonoBehaviour {
 		//Should not hard code in edges of the scene. 
 		//Don't move if fainting
 		//Todo(Gebhard): Figure out how to get right and left edge of sprite. P3
-		else if (!inConversation && !fainting && Time.timeScale != 0) {
+		else if (!inConversation && !fainting) {
 			float xPosition = gameObject.transform.position.x;
 			distanceWalked += currentXPosition - xPosition;
 			currentXPosition = xPosition;
