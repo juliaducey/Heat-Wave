@@ -592,6 +592,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a4d6a9e0e62427ca587bf244ee88b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  fainted: 0
+  inside: 0
+  day: 0
+  gamestate: {fileID: 0}
 --- !u!114 &1146110442
 MonoBehaviour:
   m_ObjectHideFlags: 0
