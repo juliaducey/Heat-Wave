@@ -7,6 +7,7 @@ public class GameState : MonoBehaviour {
 	public Text text; 
 	public int numberOfPeopleFainted = 0;
 	public int numberOfPeopleInside = 0;
+	public int score = 0;
     public float[] forecast;
 	public Person person;
     public Umbrella umbrella;
@@ -48,6 +49,8 @@ public class GameState : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		SetScore ();
+
 		if (numberOfPeopleFainted > 15 ) {
 			Application.LoadLevel("endScreen");
 		}
@@ -58,8 +61,13 @@ public class GameState : MonoBehaviour {
         Timer timer = GameObject.Find("Timer").GetComponent<Timer>();
         timer.SendMessage("SetDay", currentDay);
 	}
+
+	public void SetScore() {
+		Timer timer = GameObject.Find("Timer").GetComponent<Timer>();
+		score = timer.day * 24 * 60 + timer.minutes;
+	}
 	
-    // updates the currentDay
+	// updates the currentDay
 	public void SetDay(int daynumber) {
         currentDay = daynumber;
 	}
