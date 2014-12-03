@@ -643,7 +643,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .0018382353
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1960,6 +1960,7 @@ MonoBehaviour:
   text: {fileID: 0}
   numberOfPeopleFainted: 0
   numberOfPeopleInside: 0
+  score: 0
   forecast: []
   person1: {fileID: 11400004, guid: 8bf52bac51e5f4114b5fda41ce5b4bbc, type: 2}
   person2: {fileID: 11400002, guid: 86026352a958b4df5a77b66ce74519d5, type: 2}
@@ -5409,7 +5410,7 @@ Transform:
   m_PrefabInternal: {fileID: 157684810}
   m_GameObject: {fileID: 1710049519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0018382353, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 973644623}
