@@ -43,8 +43,12 @@ public class ConstructionButton : MonoBehaviour {
     {
         if (state.busy == false)
         {
-            state.busy = true;
-            building = true;
+            if ((item.Equals("umbrella") && state.umbrellas != 5) || (item.Equals("water") && state.waters != 5))
+            {
+                state.busy = true;
+                building = true;
+            }
+
         }
 
         //working.gameObject.SetActive(true);

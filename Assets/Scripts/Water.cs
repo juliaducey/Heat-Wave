@@ -25,5 +25,8 @@ public class Water : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
+
+        if (Application.loadedLevelName == "StartScene")
+            Destroy(gameObject);
 	}
 }

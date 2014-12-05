@@ -15,9 +15,7 @@ public class GameState : MonoBehaviour {
 	public Person person3;
 	public Person person4;
     public Umbrella umbrella;
-    public UmbrellaSprite umbrellaSprite;
     public Water water;
-    public WaterSprite waterSprite;
     public int waters;
     public int umbrellas;
     public bool busy;
@@ -75,6 +73,10 @@ public class GameState : MonoBehaviour {
 		if (Application.loadedLevel != 3) {
 			SetScore ();
 		}
+        if (Application.loadedLevelName != "MainScene")
+        {
+            busy = false;
+        }
 		if (numberOfPeopleFainted > 15 ) {
 			Application.LoadLevel("endScreen");
 		}
@@ -111,9 +113,7 @@ public class GameState : MonoBehaviour {
             if (!umbrellaList.Contains(i))
             {
                 this.umbrellas += 1;
-                Instantiate(umbrella, new Vector3((this.umbrellas - 8 + i) * 5.0F, 1.0F, (float)(1)), Quaternion.identity);
-                UmbrellaSprite newUmbrellaSprite = (UmbrellaSprite)Instantiate(umbrellaSprite, new Vector3((this.umbrellas - 8) * 5.0F, 1.0F, (float)(1)), Quaternion.identity);
-                newUmbrellaSprite.transform.localScale = new Vector3(1, 1, 0);
+                Instantiate(umbrella, new Vector3((i - 8) * 5.0F, 1.0F, (float)(1)), Quaternion.identity);
                 umbrellaList.Add(i);
                 break;
             }
@@ -135,9 +135,7 @@ public class GameState : MonoBehaviour {
             if (!waterList.Contains(i))
             {
                 this.waters += 1;
-                Instantiate(water, new Vector3((this.waters - 7 ) * 5.0F, 1.5F, (float)(1)), Quaternion.identity);
-                WaterSprite newWaterSprite = (WaterSprite)Instantiate(waterSprite, new Vector3((i + 1 - 7.5f) * 5.0F, 1.5F, (float)(1)), Quaternion.identity);
-                newWaterSprite.transform.localScale = new Vector3(1, 1, 0);
+                Instantiate(water, new Vector3((i - 7 ) * 5.0F, 1.5F, (float)(1)), Quaternion.identity);
                 waterList.Add(i);
                 break;
             }
@@ -184,22 +182,5 @@ public class GameState : MonoBehaviour {
     public void Pause()
     {
         Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-    }
-
-    public void DrawUpgrades()
-    {
-        for (int i = 0; i < 5; i++)
-        {
-            if (waterList.Contains(i))
-            {
-                WaterSprite newWaterSprite = (WaterSprite)Instantiate(waterSprite, new Vector3((this.waters - 7.5f + i) * 5.0F, 1.5F, (float)(1)), Quaternion.identity);
-                newWaterSprite.transform.localScale = new Vector3(1, 1, 0);
-            }
-            if (umbrellaList.Contains(i))
-            {
-                UmbrellaSprite newUmbrellaSprite = (UmbrellaSprite)Instantiate(umbrellaSprite, new Vector3((this.umbrellas - 8 + i) * 5.0F, 1.0F, (float)(1)), Quaternion.identity);
-                newUmbrellaSprite.transform.localScale = new Vector3(1, 1, 0);
-            }
-        }
     }
 }
