@@ -2,14 +2,18 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class GameState : MonoBehaviour
-{
-    public int currentDay = 1;
-    public Text text;
-    public int numberOfPeopleFainted = 0;
-    public int numberOfPeopleInside = 0;
+
+public class GameState : MonoBehaviour {
+	public int currentDay = 1;
+	public Text text; 
+	public int numberOfPeopleFainted = 0;
+	public int numberOfPeopleInside = 0;
+	public int score = 0;
     public float[] forecast;
-    public Person person;
+	public Person person1;
+	public Person person2;
+	public Person person3;
+	public Person person4;
     public Umbrella umbrella;
     public UmbrellaSprite umbrellaSprite;
     public Water water;
@@ -23,54 +27,71 @@ public class GameState : MonoBehaviour
     public bool bgm;
     public ArrayList umbrellaList;
     public ArrayList waterList;
+    private Timer timer;
+	
+	// Use this for initialization
+	void Start () {
+		forecast = new float[] { Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f)};
 
-    // Use this for initialization
-    void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-        this.busy = false;
-        forecast = new float[] { Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f) };
+		Person[] people = new Person[] {person1, person2, person3, person4};
+		// Kinda hacky but whatever
+		int day = GameObject.Find("GameState(Clone)").GetComponent<GameState>().currentDay;
+		
+		DontDestroyOnLoad(gameObject);
+		timer = GameObject.Find ("Timer").GetComponent<Timer> ();
+		this.busy = false;
         umbrellaList = new ArrayList();
         waterList = new ArrayList();
-
-        int numPeople = 5; //TODO: figure out specifics of random people
-        for (int i = 1; i <= numPeople; i++)
-        {
-            Person newPerson = (Person)Instantiate(person, new Vector3(Random.Range(-45, 30), 10F, (float)(-i)), Quaternion.identity);
-            newPerson.transform.localScale = new Vector3(8, 8, 0);
-            newPerson.name = "Person " + i;
-            newPerson.id = i;
-        }
-
-        for (int i = 1; i <= 2; i++)
-        {
-            Person newPerson = (Person)Instantiate(person, new Vector3(Random.Range(-45, 30), -9f, (float)(-i)), Quaternion.identity);
-            newPerson.transform.localScale = new Vector3(8, 8, 0);
-            newPerson.name = "Person " + i;
-            newPerson.id = i;
-        }
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (numberOfPeopleFainted > 15)
-        {
-            Application.LoadLevel("endScreen");
-        }
-    }
-
+		
+		int numPeople = 1 + (3 * day) + Random.Range(0, 3); 
+		Debug.Log ("Generated People");
+		Debug.Log (numPeople);
+		for (int i=1; i<=numPeople/2; i++)
+		{
+			Person person = people[Random.Range(0, 4)];
+			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), 10F, (float) (-i)), Quaternion.identity);
+			// Fixed prefab so scaling here isn't necessary
+			// newPerson.transform.localScale = new Vector3(8, 8, 0);
+			newPerson.name = "Person " + i;
+			newPerson.id = i;
+		}
+		
+		// Create people on bottom row.  Note that one person doesn't actually get created because of bounds on loops
+		for (int i=1; i<=numPeople/2; i++)
+		{
+			Person person = people[Random.Range(0, 4)];
+			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), -9F, (float) (-i)), Quaternion.identity);
+			// Fixed prefab so scaling here isn't necessary
+			// newPerson.transform.localScale = new Vector3(8, 8, 0);
+			newPerson.name = "Person " + i;
+			newPerson.id = i;
+		}
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		// Hacky way to not update score when gamestate is passed to the end screen
+		if (Application.loadedLevel != 3) {
+			SetScore ();
+		}
+		if (numberOfPeopleFainted > 15 ) {
+			Application.LoadLevel("endScreen");
+		}
+	}
+	
     // tells the Timer function what day it is
-    public void GetDay()
-    {
-        Timer timer = GameObject.Find("Timer").GetComponent<Timer>();
+	public void GetDay() {
         timer.SendMessage("SetDay", currentDay);
-    }
+	}
 
-    // updates the currentDay
-    public void SetDay(int daynumber)
-    {
+	public void SetScore() {
+		Timer timer = GameObject.Find("Timer").GetComponent<Timer>();
+		score = (timer.day - 1) * 24 + timer.hours;
+	}
+	
+	// updates the currentDay
+	public void SetDay(int daynumber) {
         currentDay = daynumber;
     }
 
