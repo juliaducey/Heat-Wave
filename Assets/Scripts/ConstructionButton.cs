@@ -41,8 +41,12 @@ public class ConstructionButton : MonoBehaviour {
 
     public void Build()
     {
-        state.busy = true;
-        building = true;
+        if (state.busy == false)
+        {
+            state.busy = true;
+            building = true;
+        }
+
         //working.gameObject.SetActive(true);
     }
 }
