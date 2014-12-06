@@ -20,6 +20,7 @@ public class Timer : MonoBehaviour {
         state = true;
 		text = GetComponent <Text> ();
 		updateTimerUI ();
+        GameObject.Find("GameState(Clone)").GetComponent<GameState>().PopulateScene();
 	}
 
 	// Update is called once per frame

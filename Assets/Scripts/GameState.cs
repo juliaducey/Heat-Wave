@@ -29,6 +29,7 @@ public class GameState : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+        DontDestroyOnLoad(gameObject);
 		forecast = new float[] { Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f)};
 		this.busy = false;
         umbrellaList = new ArrayList();
@@ -41,11 +42,15 @@ public class GameState : MonoBehaviour {
 		// 3 Represents the end screen load level
 		if (Application.loadedLevel != 3) {
 			SetScore ();
-            busy = false;
 			if (numberOfPeopleFainted > 15 ) {
 				Application.LoadLevel("endScreen");
 			}
 		}
+
+        if (Application.loadedLevelName != "MainScene")
+        {
+            busy = false;
+        }
 	}
 	
     // tells the Timer function what day it is

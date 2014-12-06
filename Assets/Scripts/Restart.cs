@@ -15,6 +15,7 @@ public class Restart : MonoBehaviour {
 
 	public void restart()
 	{
+        Destroy(GameObject.Find("GameState(Clone)"));
 		Application.LoadLevel ("StartScene");
 		Time.timeScale = 1;
 	}
