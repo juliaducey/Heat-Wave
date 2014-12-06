@@ -67,12 +67,14 @@ public class GameState : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Hacky way to not update score when gamestate is passed to the end screen
+		// 3 Represents the end screen load level
 		if (Application.loadedLevel != 3) {
 			SetScore ();
+			if (numberOfPeopleFainted > 15 ) {
+				Application.LoadLevel("endScreen");
+			}
 		}
-		if (numberOfPeopleFainted > 15 ) {
-			Application.LoadLevel("endScreen");
-		}
+
 	}
 	
     // tells the Timer function what day it is
