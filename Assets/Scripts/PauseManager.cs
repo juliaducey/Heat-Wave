@@ -19,11 +19,6 @@ public class PauseManager : MonoBehaviour {
 	{
 
 	}
-	public void Restart()
-	{
-		Application.LoadLevel ("StartScene");
-		Time.timeScale = 1;
-	}
 
 	public void Pause()
 	{

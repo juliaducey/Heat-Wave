@@ -30,55 +30,21 @@ public class GameState : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		forecast = new float[] { Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f)};
-
-		Person[] people = new Person[] {person1, person2, person3, person4};
-		// Kinda hacky but whatever
-		int day = GameObject.Find("GameState(Clone)").GetComponent<GameState>().currentDay;
-		
-		DontDestroyOnLoad(gameObject);
-		timer = GameObject.Find ("Timer").GetComponent<Timer> ();
 		this.busy = false;
         umbrellaList = new ArrayList();
         waterList = new ArrayList();
-		
-		int numPeople = 1 + (3 * day) + Random.Range(0, 3); 
-		Debug.Log ("Generated People");
-		Debug.Log (numPeople);
-		for (int i=1; i<=numPeople/2; i++)
-		{
-			Person person = people[Random.Range(0, 4)];
-			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), 10F, (float) (-i)), Quaternion.identity);
-			// Fixed prefab so scaling here isn't necessary
-			// newPerson.transform.localScale = new Vector3(8, 8, 0);
-			newPerson.name = "Person " + i;
-			newPerson.id = i;
-		}
-		
-		// Create people on bottom row.  Note that one person doesn't actually get created because of bounds on loops
-		for (int i=1; i<=numPeople/2; i++)
-		{
-			Person person = people[Random.Range(0, 4)];
-			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), -9F, (float) (-i)), Quaternion.identity);
-			// Fixed prefab so scaling here isn't necessary
-			// newPerson.transform.localScale = new Vector3(8, 8, 0);
-			newPerson.name = "Person " + i;
-			newPerson.id = i;
-		}
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		// Hacky way to not update score when gamestate is passed to the end screen
+		// 3 Represents the end screen load level
 		if (Application.loadedLevel != 3) {
 			SetScore ();
-		}
-        if (Application.loadedLevelName != "MainScene")
-        {
             busy = false;
-        }
-		if (numberOfPeopleFainted > 15 ) {
-			Application.LoadLevel("endScreen");
+			if (numberOfPeopleFainted > 15 ) {
+				Application.LoadLevel("endScreen");
+			}
 		}
 	}
 	
@@ -159,20 +125,49 @@ public class GameState : MonoBehaviour {
         talkingPerson = null;
     }
 
-    public Person GetTalkingPerson()
-    {
-        return talkingPerson;
-    }
+	public Person GetTalkingPerson()
+	{
+		return talkingPerson;
+	}
 
-    public void SomeoneWentInside()
-    {
-        numberOfPeopleInside += 1;
-    }
-
-    public void SomeoneFainted()
-    {
-        numberOfPeopleFainted += 1;
-    }
+	// Populate scene with people; more people on later days
+	public void PopulateScene()
+	{
+		Person[] people = new Person[] {person1, person2, person3, person4};
+		// Kinda hacky but whatever
+		timer = GameObject.Find ("Timer").GetComponent<Timer> ();
+		int day = timer.day;
+		
+		int numPeople = 1 + (3 * day) + Random.Range(0, 3); 
+		for (int i=1; i<=numPeople/2; i++)
+		{
+			Person person = people[Random.Range(0, 4)];
+			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), 10F, (float) (-i)), Quaternion.identity);
+			// Fixed prefab so scaling here isn't necessary
+			// newPerson.transform.localScale = new Vector3(8, 8, 0);
+			newPerson.name = "Person " + i;
+			newPerson.id = i;
+		}
+		
+		// Create people on bottom row.  Note that one person doesn't actually get created because of bounds on loops
+		for (int i=1; i<=numPeople/2; i++)
+		{
+			Person person = people[Random.Range(0, 4)];
+			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), -9F, (float) (-i)), Quaternion.identity);
+			// Fixed prefab so scaling here isn't necessary
+			// newPerson.transform.localScale = new Vector3(8, 8, 0);
+			newPerson.name = "Person " + i;
+			newPerson.id = i;
+		}
+	}
+	
+	public void SomeoneWentInside() {
+		numberOfPeopleInside += 1;
+	}
+	
+	public void SomeoneFainted() {
+		numberOfPeopleFainted += 1;
+	}
 
     public void LoadMainScene()
     {
