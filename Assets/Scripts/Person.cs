@@ -43,7 +43,7 @@ public class Person : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        this.state = GameObject.Find("GameState(Clone)").GetComponent<GameState>();
+        this.state = GameObject.Find("MainGameState").GetComponent<GameState>();
 		this.male = Random.Range(0.0F, 1.0F) > .5;
 		this.drunk = Random.Range(0.0F, 1.0F) > .75;
 		this.old = Random.Range(0.0F, 1.0F) > .75;

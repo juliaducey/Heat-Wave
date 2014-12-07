@@ -16,7 +16,7 @@ public class Temperature : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		text = GetComponent <Text> ();
-        state =  GameObject.Find("GameState(Clone)").GetComponent<GameState>();
+		state = GameObject.Find ("MainGameState").GetComponent<GameState> ();
         baseTemp = state.forecast[0];
         timerObject = GameObject.Find("Timer").GetComponent<Timer>();
         curTemp = -1f * System.Math.Abs(timerObject.hours * .5f - 6) + baseTemp - state.umbrellas;

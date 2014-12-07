@@ -19,7 +19,7 @@ public class Umbrella : MonoBehaviour {
 
             if (health < 0)
             {
-                GameState state = GameObject.Find("GameState(Clone)").GetComponent<GameState>();
+                GameState state = GameObject.Find("MainGameState").GetComponent<GameState>();
                 state.RemoveUmbrella();
                 Destroy(gameObject);
             }

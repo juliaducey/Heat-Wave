@@ -7,7 +7,7 @@ public class PersonController : MetisViewComponentController {
 	[LuaMethodAttribute("fainted")]
 	public int Fainted()
 	{
-		Person talkingPerson = GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().GetTalkingPerson();
+		Person talkingPerson = GameObject.Find ("MainGameState").GetComponent<GameState> ().GetTalkingPerson();
 		var controller = GameObject.FindGameObjectWithTag(MetisSceneController.TAG).GetComponent<MetisLuaScriptController>();
 		controller.PushOntoStack(talkingPerson.timeTillFaintInSeconds<0 ? 1 : 0);
 		return 1;
@@ -16,7 +16,7 @@ public class PersonController : MetisViewComponentController {
 	[LuaMethodAttribute("attributes")]
 	public int Attributes()
 	{
-		Person talkingPerson = GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().GetTalkingPerson();
+		Person talkingPerson = GameObject.Find ("MainGameState").GetComponent<GameState> ().GetTalkingPerson();
 		var controller = GameObject.FindGameObjectWithTag(MetisSceneController.TAG).GetComponent<MetisLuaScriptController>();
 		controller.PushOntoStack(talkingPerson.GetAttributes());
 		Debug.Log ("returned " + talkingPerson.GetAttributes ());
@@ -26,14 +26,14 @@ public class PersonController : MetisViewComponentController {
 	[LuaMethodAttribute("drink_water")]
 	public void DrinkWater()
 	{
-		Person talkingPerson = GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().GetTalkingPerson();
+		Person talkingPerson = GameObject.Find ("MainGameState").GetComponent<GameState> ().GetTalkingPerson();
 		talkingPerson.drinkWater();
 	}
 
 	[LuaMethodAttribute("send_home")]
 	public void SendHome()
 	{
-		Person talkingPerson = GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().GetTalkingPerson();
+		Person talkingPerson = GameObject.Find ("MainGameState").GetComponent<GameState> ().GetTalkingPerson();
 		talkingPerson.goInside();
 	}
 
@@ -46,7 +46,7 @@ public class PersonController : MetisViewComponentController {
 	public static void PostScriptCall()
 	{
 		// TODO: Do something here. This is called after every script finishes.
-		GameObject.Find ("GameState(Clone)").GetComponent<GameState> ().FinishTalking();
+		GameObject.Find ("MainGameState").GetComponent<GameState> ().FinishTalking();
 	}
 
 	// Don't worry about any of this; this is just because I'm using a hacky way to provide exposure to the scripting. -Julia

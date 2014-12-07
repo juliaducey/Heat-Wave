@@ -10,7 +10,7 @@ public class ConstructionButton : MonoBehaviour {
     GameObject working;
 	// Use this for initialization
 	void Start () {
-        this.state = GameObject.Find("GameState(Clone)").GetComponent<GameState>();
+        this.state = GameObject.Find("MainGameState").GetComponent<GameState>();
 	
 	}
 	

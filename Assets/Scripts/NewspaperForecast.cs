@@ -12,7 +12,7 @@ public class NewspaperForecast : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         text = GetComponent<Text>();
-        gamestate = GameObject.Find("GameState(Clone)").GetComponent<GameState>();
+        gamestate = GameObject.Find("MainGameState").GetComponent<GameState>();
         day = gamestate.currentDay - 1;
         fainted = gamestate.numberOfPeopleFainted;
         inside = gamestate.numberOfPeopleInside;

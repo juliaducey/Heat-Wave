@@ -8,7 +8,7 @@ public class ScoreUpdate : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		score_text = GetComponent<Text>();
-		gamestate = GameObject.Find("GameState(Clone)").GetComponent<GameState>();
+		gamestate = GameObject.Find("MainGameState").GetComponent<GameState>();
 
 		if (gamestate.score == 1) {
 			score_text.text = "Score: " + gamestate.score + " hour";

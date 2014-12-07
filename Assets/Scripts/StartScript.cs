@@ -11,7 +11,7 @@ public class StartScript : MonoBehaviour {
 
     void Awake()
     {
-        if (!GameObject.Find("GameState(Clone)"))
+        if (!GameObject.Find("MainGameState"))
             Instantiate(gamestate, Vector3.zero, Quaternion.identity);
 
 		GameObject.Find("Instructions Text").SetActive(false);

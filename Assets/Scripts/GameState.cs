@@ -29,7 +29,7 @@ public class GameState : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-        DontDestroyOnLoad(gameObject);
+		DontDestroyOnLoad (gameObject);
 		forecast = new float[] { Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f), Random.Range(80.0f, 120.0f)};
 		this.busy = false;
         umbrellaList = new ArrayList();
@@ -142,7 +142,9 @@ public class GameState : MonoBehaviour {
 		// Kinda hacky but whatever
 		timer = GameObject.Find ("Timer").GetComponent<Timer> ();
 		int day = timer.day;
-		
+		Debug.Log ("Day:");
+		Debug.Log (day);
+
 		int numPeople = 1 + (3 * day) + Random.Range(0, 3); 
 		for (int i=1; i<=numPeople/2; i++)
 		{

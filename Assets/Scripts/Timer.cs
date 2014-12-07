@@ -18,9 +18,10 @@ public class Timer : MonoBehaviour {
 		day     = 1;
 		speed   = 100;
         state = true;
-		text = GetComponent <Text> ();
+		text = GameObject.Find("TimerText").GetComponent <Text> ();
 		updateTimerUI ();
-        GameObject.Find("GameState(Clone)").GetComponent<GameState>().PopulateScene();
+		DontDestroyOnLoad (gameObject);
+        GameObject.Find("MainGameState").GetComponent<GameState>().PopulateScene();
 	}
 
 	// Update is called once per frame
@@ -29,7 +30,7 @@ public class Timer : MonoBehaviour {
         {
             if (seconds == 0 && minutes == 0 && hours == 0)
             {
-                day = GameObject.Find("GameState(Clone)").GetComponent<GameState>().currentDay;
+                day = GameObject.Find("MainGameState").GetComponent<GameState>().currentDay;
             }
 			seconds += Time.deltaTime * speed;
 			
@@ -45,7 +46,7 @@ public class Timer : MonoBehaviour {
 			if (hours >= 24) {
 				hours = 0;
                 day += 1;
-                GameObject gamestate = GameObject.Find("GameState(Clone)");
+                GameObject gamestate = GameObject.Find("MainGameState");
                 gamestate.SendMessage("IncrementDay");
 			}
         }
@@ -59,18 +60,18 @@ public class Timer : MonoBehaviour {
     }
 
 	public void updateTimerUI(){
-        if (hours < 10)
-        {
-            text.text = "Day " + day + "  Time: 0" + hours;
-        }
-        else
-        {
-            text.text = "Day " + day + "  Time: " + hours;
-        }
-		if (minutes < 10) {
-			text.text += ":0" + minutes;
-		} else {
-			text.text += ":" + minutes;
+		if (text) 
+		{
+			if (hours < 10) {
+					text.text = "Day " + day + "  Time: 0" + hours;
+			} else {
+					text.text = "Day " + day + "  Time: " + hours;
+			}
+			if (minutes < 10) {
+					text.text += ":0" + minutes;
+			} else {
+					text.text += ":" + minutes;
+			}
 		}
 	}
 

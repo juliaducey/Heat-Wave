@@ -14,7 +14,7 @@ public class BGMusic : MonoBehaviour {
 	}
 
     void Awake() {
-        GameState state = GameObject.Find("GameState(Clone)").GetComponent<GameState>();
+        GameState state = GameObject.Find("MainGameState").GetComponent<GameState>();
         if (state.bgm)
         {
             Destroy(gameObject);

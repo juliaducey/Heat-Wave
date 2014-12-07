@@ -9,7 +9,7 @@ public class Water : MonoBehaviour {
 	void Start () {
         DontDestroyOnLoad(this);
         this.health = 50f;
-        this.state = GameObject.Find("GameState(Clone)").GetComponent<GameState>();
+        this.state = GameObject.Find("MainGameState").GetComponent<GameState>();
 	
 	}
 	
