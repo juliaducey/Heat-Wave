@@ -1,0 +1,183 @@
+function string:split( inSplitPattern, outResults )
+  if not outResults then
+    outResults = { }
+  end
+  local theStart = 1
+  local theSplitStart, theSplitEnd = string.find( self, inSplitPattern, theStart )
+  while theSplitStart do
+    table.insert( outResults, string.sub( self, theStart, theSplitStart-1 ) )
+    theStart = theSplitEnd + 1
+    theSplitStart, theSplitEnd = string.find( self, inSplitPattern, theStart )
+  end
+  table.insert( outResults, string.sub( self, theStart ) )
+  return outResults
+end
+
+local leaves={drink={type="drink"}, home={type="home"}, stop={type="stop"}, more_you={type="more", next_type="you"}, more_other={type="more", next_type="other"}}
+local lines = {}
+lines[1] = {type="other", val="Sorry, I've got to go", children={leaves.stop}}
+lines[2] = {type="other", val="Can't you see I'm busy here?", children={leaves.more_you, lines[1]}}
+lines[3] = {type="you", val="You're welcome. Stay inside while it's this hot!", children={leaves.home}}
+lines[4] = {type="other", val="That's a good idea. I'll try to stay cool. Thank you!", children={lines[3]}}
+lines[5] = {type="you", val="In this heat, it's unsafe to stay outside. You should try to go inside.", children={lines[4], lines[2]}}
+lines[6] = {type="you", val="You're welcome! Stay healthy!", children={leaves.drink}}
+lines[7] = {type="other", val="It has been really hot. I'd love some water. Thank you!", children={lines[6]}}
+lines[8] = {type="you", val="Would you like some water? In a heat wave like this, you need to stay hydrated.", children={lines[7], lines[2]}}
+lines[9] = {type="choice", children={lines[5], lines[8]}}
+lines[10] = {type="you", val="Have you been outside for long?", children={lines[9]}}
+
+lines[11] = {type="other", val="Thanks, but I've got to go now.", children={leaves.stop}}
+lines[12] = {type="other", val="I don't think I need anything.", children={leaves.more_you, lines[11]}}
+lines[13] = {type="you", val="Thank you! Stay safe!", children={leaves.home}}
+lines[14] = {type="other", val="Well I suppose you're right. I'll head inside now.", children={lines[13]}}
+lines[15] = {type="you", val="Staying outside can cause dehydration, overheating, and other health problems too. You should go inside.", children={lines[14], lines[12]}}
+lines[16] = {type="you", val="Make sure you stay hydrated!", children={leaves.drink}}
+lines[17] = {type="other", val="Thank you, I'll take it.", children={lines[16]}}
+lines[18] = {type="you", val="Dehydration can make you feel sick and faint. I have some water here for you.", children={lines[17], lines[12]}}
+lines[19] = {type="choice", children={lines[15], lines[18]}}
+lines[20] = {type="you", val="I wanted to see if you were feeling okay, since it's so hot out today.", children={lines[19]}}
+
+lines[21] = {type="other", val="Bye.", children={leaves.stop}}
+lines[22] = {type="other", val="No thanks, I'll be fine.", children={leaves.more_you, lines[21]}}
+lines[23] = {type="you", val="You're welcome! Keep yourself hydrated.", children={leaves.drink}}
+lines[24] = {type="other", val="I didn't know that. Thanks for the water!", children={lines[23]}}
+lines[25] = {type="you", val="Men also have a harder time staying hydrated. Here's some water for you.", children={lines[24], lines[22]}}
+lines[26] = {type="you", val="Stay healthy!", children={leaves.home}}
+lines[27] = {type="other", val="You're right, it has been hot. I'll head home.", children={lines[26]}}
+lines[28] = {type="you", val="Try to go inside to escape the heat.", children={lines[27], lines[22]}}
+lines[29] = {type="choice", children={lines[25], lines[28]}}
+lines[30] = {type="you", val="Did you know that men in particular are at risk in a heat wave?", children={lines[29]}}
+
+lines[31] = {type="other", val="I've got to go.", children={leaves.stop}}
+lines[32] = {type="other", val="No thanks, I'm alright.", children={leaves.more_you, lines[31]}}
+lines[33] = {type="you", val="You're welcome! Keep drinking more water.", children={leaves.drink}}
+lines[34] = {type="other", val="Oh, thank you. It has been really hot.", children={lines[33]}}
+lines[35] = {type="you", val="This heat can be really dangerous. Take some of this water to keep hydrated.", children={lines[34], lines[32]}}
+lines[36] = {type="you", val="Thank you, try to keep cool!", children={leaves.home}}
+lines[37] = {type="other", val="I'll go inside then. I can finish my errands tomorrow.", children={lines[36]}}
+lines[38] = {type="you", val="This heat wave can cause people to overheat and dehydrate. Going inside will help prevent this for you!", children={lines[37], lines[32]}}
+lines[39] = {type="choice", children={lines[35], lines[38]}}
+lines[40] = {type="you", val="I'm here with the Red Cross.", children={lines[39]}}
+
+lines[41] = {type="other", val="Person: I've got to *hiccup* go.", children={leaves.stop}}
+lines[42] = {type="other", val="Yeah yeah yeah *hiccup*. I'm fine.", children={leaves.more_you, lines[41]}}
+lines[43] = {type="you", val="Definitely! Here's some water for you.", children={leaves.drink}}
+lines[44] = {type="other", val="*hiccup* I should probably *hiccup* drink some water instead...", children={lines[43]}}
+lines[45] = {type="you", val="You need extra water to stay hydrated since it's so hot!", children={lines[44], lines[42]}}
+lines[46] = {type="you", val="That's great! Try to stay safe!", children={leaves.home}}
+lines[47] = {type="other", val="You're right *hiccup*. I'll try to go inside now.", children={lines[46]}}
+lines[48] = {type="you", val="Please try to go inside!", children={lines[47], lines[42]}}
+lines[49] = {type="choice", children={lines[45], lines[48]}}
+lines[50] = {type="you", val="It seems like you've been drinking today. Being inebriated can make the effects of a heat wave even worse.", children={lines[49]}}
+
+lines[51] = {type="other", val="Thanks for talking but I'll be going now.", children={leaves.stop}}
+lines[52] = {type="other", val="Oh, no, it's alright, I've been fine for now.", children={leaves.more_you, lines[51]}}
+lines[53] = {type="you", val="You're welcome, remember to keep drinking water!", children={leaves.drink}}
+lines[54] = {type="other", val="Thank you for the water, I needed it.", children={lines[53]}}
+lines[55] = {type="you", val="In this heat, it's important to stay hydrated. Take this water.", children={lines[54], lines[52]}}
+lines[56] = {type="you", val="I'm glad to hear that! We are here to help!", children={leaves.home}}
+lines[57] = {type="other", val="You're right, it is too hot. I'll visit the shelter.", children={lines[56]}}
+lines[58] = {type="you", val="The Red Cross has a shelter nearby where you can take refuge from this heat.", children={lines[57], lines[52]}}
+lines[59] = {type="choice", children={lines[55], lines[58]}}
+lines[60] = {type="you", val="I'm a Red Cross volunteer.", children={lines[59]}}
+
+lines[61] = {type="other", val="I'm busy, I've got to go.", children={leaves.stop}}
+lines[62] = {type="other", val="Leave me alone, I can take care of myself!", children={leaves.more_you, lines[61]}}
+lines[63] = {type="you", val="You're welcome! Keep drinking more water!", children={leaves.drink}}
+lines[64] = {type="other", val="Thank you, I'll take it.", children={lines[63]}}
+lines[65] = {type="you", val="Drinking extra water will help you stay hydrated. Would you like some?", children={lines[64], lines[62]}}
+lines[66] = {type="you", val="You're welcome. Stay inside while it's this hot!", children={leaves.home}}
+lines[67] = {type="other", val="Well thank you dearie. I'll go inside now. Thank you!", children={lines[66]}}
+lines[68] = {type="you", val="Going inside will help you stay healthy.", children={lines[67], lines[62]}}
+lines[69] = {type="choice", children={lines[65], lines[68]}}
+lines[70] = {type="you", val="I'm a Red Cross volunteer. The elderly are at extra risk of fainting and dehydration in a heat wave.", children={lines[69]}}
+
+lines[71] = {type="other", val="Thanks, but I have to run.", children={leaves.stop}}
+lines[72] = {type="other", val="I don't think so, I have lots to do right now.", children={leaves.more_you, lines[71]}}
+lines[73] = {type="you", val="Remember to stay hydrated!", children={leaves.drink}}
+lines[74] = {type="other", val="You're right, it has been hot. I'll take it.", children={lines[73]}}
+lines[75] = {type="you", val="In this heat, it's important to stay hydrated. Take this water.", children={lines[74], lines[72]}}
+lines[76] = {type="you", val="That's great! Stay safe!", children={leaves.home}}
+lines[77] = {type="other", val="Well I suppose you're right. I'll head inside now.", children={lines[76]}}
+lines[78] = {type="you", val="Staying outside can cause dehydration, overheating, and other health problems too. You should go inside.", children={lines[77], lines[72]}}
+lines[79] = {type="choice", children={lines[75], lines[78]}}
+lines[80] = {type="you", val="I wanted to see if you were feeling okay, since it's so hot out today.", children={lines[79]}}
+
+lines[81] = {type="other", val="Yes please. Thanks you!", children={leaves.drink}}
+lines[82] = {type="you", val="You look like you're about to faint! Would you like some water?", children={lines[81]}}
+
+local conversation_possibilities = {}
+conversation_possibilities["human"] = {{type="you", conv_tree=lines[10]}, {type="you", conv_tree=lines[20]}}
+conversation_possibilities["old"] = {{type="you", conv_tree=lines[70]}, {type="you", conv_tree=lines[80]}}
+conversation_possibilities["male"] = {{type="you", conv_tree=lines[30]}}
+conversation_possibilities["female"] = {{type="you", conv_tree=lines[40]}}
+conversation_possibilities["drunk"] = {{type="you", conv_tree=lines[50]}}
+conversation_possibilities["homeless"] = {{type="you", conv_tree=lines[60]}}
+conversation_possibilities["dying"] = {{type="you", conv_tree=lines[82]}, {type="you", conv_tree=lines[82]}}
+
+
+
+
+function get_snip(type)
+  local attributes = nvl.attributes()
+  local attribute_table = attributes:split(",")
+  table.insert(attribute_table, "human")
+  
+  snips = { }
+  
+  for i = 1, #attribute_table do
+    local att = attribute_table[i]
+    for j = 1, #conversation_possibilities[att] do
+      local snip = conversation_possibilities[att][j]
+      if snip.type == type then
+        table.insert(snips, snip)
+      end
+    end
+  end
+  
+  return snips[math.random(#snips)].conv_tree
+end
+
+function talk(conv)
+  while 1 do
+    if nvl.fainted == 1 then
+      conv = {type="other", val="AAAAAAAAAAAAaaaaaaaaaaahhhh", children={type="stop"}}
+    end
+    
+    if conv.type == "drink" then
+      nvl.drink_water()
+      return "drink"
+    elseif conv.type == "home" then
+      nvl.send_home()
+      return "home"
+    elseif conv.type == "stop" then
+      return "stop"
+    elseif conv.type == "more" then
+      return "more", conv.next_type
+    elseif conv.type == "you" then
+      nvl.say("You: " .. conv.val)
+      conv = conv.children[math.random(#(conv.children))]
+    elseif conv.type == "other" then
+      nvl.say("Person: " .. conv.val)
+      conv = conv.children[math.random(#(conv.children))]
+    elseif conv.type == "choice" then
+      local choice = 1
+      if #(conv.children) == 2 then
+        choice = menu(conv.children[1].val, conv.children[2].val)
+      elseif #(conv.children) == 3 then 
+        choice = menu(conv.children[1].val, conv.children[2].val, conv.children[3].val)
+      elseif #(conv.children) == 4 then 
+        choice = menu(conv.children[1].val, conv.children[2].val, conv.children[3].val, conv.children[4].val)
+      end
+      conv = conv.children[choice]
+    end
+  end
+end
+
+local next_type = "you"
+local result = nil
+local conv = nil
+repeat
+  conv = get_snip(next_type)
+  result, next_type = talk(conv)
+until result ~= "more"
