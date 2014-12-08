@@ -73,7 +73,7 @@ public class GameState : MonoBehaviour {
         currentDay += 1;
         forecast[0] = forecast[1] + Random.Range(-2f, 2f);
         forecast[1] = forecast[2] + Random.Range(-2f, 2f);
-        forecast[2] = Random.Range(80.0f, 120.0f);
+        forecast[2] = Random.Range(26f, 46f);
         Application.LoadLevel("NewspaperScene");
     }
 
