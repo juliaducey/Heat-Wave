@@ -16,6 +16,7 @@ public class StartScript : MonoBehaviour {
 
 		GameObject.Find("Instructions Text").SetActive(false);
 		GameObject.Find("Back Button").SetActive(false);
+
         if (!GameObject.Find("BGM(Clone)"))
             Instantiate(bgm, Vector3.zero, Quaternion.identity);
     }
