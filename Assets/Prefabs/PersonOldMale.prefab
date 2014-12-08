@@ -15,7 +15,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Person 2
+  m_Name: PersonOldMale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -43.5660019, y: -5.93149996, z: -3}
-  m_LocalScale: {x: .526940763, y: .526940703, z: 0}
+  m_LocalPosition: {x: 21.6806889, y: -8.20823288, z: -3}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -85,6 +85,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
+  male: 1
+  drunk: 0
+  old: 1
   timeTillFaintInSeconds: 0
   scriptHandler: {fileID: 11400000}
   state: {fileID: 0}

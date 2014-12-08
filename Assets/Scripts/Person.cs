@@ -89,7 +89,7 @@ public class Person : MonoBehaviour {
 				myCheckmark = (Transform)Transform.Instantiate(checkmark, transform.position, Quaternion.identity);
 				checkNotification = true;
 			}
-			myCheckmark.transform.position = new Vector3(transform.position.x - 2, transform.position.y + 4, transform.position.z);
+			myCheckmark.transform.position = new Vector3(transform.position.x, transform.position.y + 11, transform.position.z);
 			gameObject.transform.position = new Vector3 (gameObject.transform.position.x + 0.05f, 
 			                                             gameObject.transform.position.y, 
 			                                             gameObject.transform.position.z);
@@ -143,7 +143,7 @@ public class Person : MonoBehaviour {
 					faintNotification = true;
 				}
 				// myExclamation.transform.position = transform.position;
-				myExclamation.transform.position = new Vector3(transform.position.x - 2, transform.position.y + 5, transform.position.z);
+				myExclamation.transform.position = new Vector3(transform.position.x, transform.position.y + 11, transform.position.z);
 			} 
 		} 
 		else if (fainting) 

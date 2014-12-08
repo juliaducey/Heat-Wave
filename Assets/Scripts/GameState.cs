@@ -147,21 +147,12 @@ public class GameState : MonoBehaviour {
 		Debug.Log (day);
 
 		int numPeople = 1 + (3 * day) + Random.Range(0, 3); 
-		for (int i=1; i<=numPeople/2; i++)
-		{
-			Person person = people[Random.Range(0, 4)];
-			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), 10F, (float) (-i)), Quaternion.identity);
-			// Fixed prefab so scaling here isn't necessary
-			// newPerson.transform.localScale = new Vector3(8, 8, 0);
-			newPerson.name = "Person " + i;
-			newPerson.id = i;
-		}
 		
 		// Create people on bottom row.  Note that one person doesn't actually get created because of bounds on loops
-		for (int i=1; i<=numPeople/2; i++)
+		for (int i=1; i<=numPeople; i++)
 		{
 			Person person = people[Random.Range(0, 4)];
-			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), -9F, (float) (-i)), Quaternion.identity);
+			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), -4F, (float) (-i)), Quaternion.identity);
 			// Fixed prefab so scaling here isn't necessary
 			// newPerson.transform.localScale = new Vector3(8, 8, 0);
 			newPerson.name = "Person " + i;
