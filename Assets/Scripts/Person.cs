@@ -92,7 +92,7 @@ public class Person : MonoBehaviour {
 			gameObject.transform.position = new Vector3 (gameObject.transform.position.x + 0.05f, 
 			                                             gameObject.transform.position.y, 
 			                                             gameObject.transform.position.z);
-			if (gameObject.transform.position.x > 30) {
+			if (gameObject.transform.position.x > 45) {
 				if (myExclamation)
 				{
 					Destroy(myExclamation.gameObject);
@@ -124,7 +124,7 @@ public class Person : MonoBehaviour {
 			} else {
 				// Todo(Gebhard): Figure out how to get right and left edge of sprite. 
 				// If character is going to walk out of scene change direction
-				if (xPosition > 30 || xPosition < -45) {
+				if (xPosition > 33.5 || xPosition < -33.5) {
 					XMove = -1 * XMove;
 				}
 				

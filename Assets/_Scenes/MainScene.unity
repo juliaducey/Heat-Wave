@@ -151,7 +151,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -10, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &97499870
@@ -206,7 +206,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &97499873
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500000, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -478,7 +478,7 @@ MonoBehaviour:
     MemberName: BringToFront
 --- !u!65 &130766788
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500012, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -643,7 +643,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: .0018382353
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1351,7 +1351,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -431.549988, y: -280.160004}
+  m_AnchoredPosition: {x: 15, y: 17.3999996}
   m_SizeDelta: {x: 130, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &335272102
@@ -1655,7 +1655,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &499283880
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500016, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -1770,7 +1770,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &503730945
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500018, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -2031,7 +2031,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -460, y: -279.690002}
+  m_AnchoredPosition: {x: -22, y: 18}
   m_SizeDelta: {x: 130, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &607382220
@@ -2296,7 +2296,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -475, y: -279.690002}
+  m_AnchoredPosition: {x: -32, y: 18}
   m_SizeDelta: {x: 130, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &687578833
@@ -2549,7 +2549,7 @@ MonoBehaviour:
     m_Bottom: 5
 --- !u!65 &721151405
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500002, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -2608,7 +2608,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &759520300
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500014, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -2897,7 +2897,7 @@ MonoBehaviour:
     m_Bottom: 5
 --- !u!65 &885704327
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500022, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -2953,7 +2953,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 905791253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3128,7 +3128,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 26.2399998
+  orthographic size: 19.2999992
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3147,7 +3147,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 952312680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.91119957, y: -.915660024, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 2.31297016, y: 2.31297064, z: 2.31297064}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3224,7 +3224,7 @@ MeshFilter:
   m_Mesh: {fileID: 0}
 --- !u!65 &973644626
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500030, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -3348,8 +3348,8 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 434.5, y: 300}
-  m_SizeDelta: {x: 869, y: 600}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 77, y: 43}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &1026233394
 GameObject:
@@ -3524,7 +3524,7 @@ MonoBehaviour:
     MemberName: BringToFront
 --- !u!65 &1026233402
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500020, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -3898,7 +3898,7 @@ MonoBehaviour:
     m_Bottom: 5
 --- !u!65 &1136341739
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500024, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -3941,7 +3941,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -416.880005, y: -280.040009}
+  m_AnchoredPosition: {x: 30, y: 17.3999996}
   m_SizeDelta: {x: 130, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1171986394
@@ -4101,7 +4101,7 @@ MonoBehaviour:
     m_Bottom: 5
 --- !u!65 &1214763183
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500010, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -4214,7 +4214,7 @@ MonoBehaviour:
     m_Bottom: 5
 --- !u!65 &1240228965
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500028, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -4293,7 +4293,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &1424786689
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500006, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -4486,7 +4486,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -445, y: -279.690002}
+  m_AnchoredPosition: {x: -12, y: 18}
   m_SizeDelta: {x: 130, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &1653650312
@@ -4662,7 +4662,7 @@ MonoBehaviour:
     MemberName: BringToFront
 --- !u!65 &1653650320
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500034, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -4830,7 +4830,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &1654934004
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500008, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -5142,7 +5142,7 @@ MonoBehaviour:
     MemberName: BringToFront
 --- !u!65 &1700010214
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500004, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -5340,7 +5340,7 @@ Transform:
   m_PrefabInternal: {fileID: 157684810}
   m_GameObject: {fileID: 1710049519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .0018382353, z: 0}
+  m_LocalPosition: {x: .0018382353, y: .0018382353, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 973644623}
@@ -5519,7 +5519,7 @@ MonoBehaviour:
   autoHeight: 0
 --- !u!65 &1805989011
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500032, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -5634,8 +5634,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -422.089996, y: -279.579987}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -30, y: 15}
+  m_SizeDelta: {x: -60, y: -30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1994579492
 MonoBehaviour:
@@ -5898,7 +5898,7 @@ MonoBehaviour:
     m_Bottom: 5
 --- !u!65 &2024180027
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500026, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
