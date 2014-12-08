@@ -241,7 +241,7 @@ public class Person : MonoBehaviour {
 		}
 		if (timeTillFaintInSeconds < 15) 
 		{
-			attributes += ",dying,dying";
+			attributes = "dying";
 			//TODO: balance timings?
 		}
 		return attributes;
