@@ -131,6 +131,7 @@ public class GameState : MonoBehaviour {
 
     public void FinishTalking()
     {
+		talkingPerson.setPersonToMoving(); //sets inConversation to false
         talkingPerson = null;
     }
 
