@@ -212,8 +212,9 @@ MonoBehaviour:
     go inside, install umbrellas, or many other options.  What will you prioritize?
     \ Be careful though, if 20 people faint you will be fired!\n\nInstructions:\nUse
     your  mouse to interact with characters or to install water fountains.  Press
-    space to pause the game.\n\nDelete:\nPAUSE:  SPACE\nTALK TO A PERSON:  CLICK ON
-    PERSON\nADD WATER FOUNTAIN:  CLICK ON BUTTON"
+    space to pause the game.\nControls:\nPAUSE:  CLICK ON PAUSE BUTTON\nTALK TO A
+    PERSON:  CLICK ON PERSON\nADD A WATER COOLER:  CLICK ON WATER BUTTON\nADD AN UMBRELLA:
+    \ CLICK ON UMBRELLA BUTTON"
 --- !u!222 &731100314
 CanvasRenderer:
   m_ObjectHideFlags: 0
