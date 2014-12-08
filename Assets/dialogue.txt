@@ -141,17 +141,17 @@ end
 function talk(conv)
   while 1 do
     if nvl.fainted == 1 then
-      conv = {type="other", val="AAAAAAAAAAAAaaaaaaaaaaahhhh", children={type="stop"}}
+      conv = {type="other", val="AAAAAAAAAAAAaaaaaaaaaaahhhh", children={{type="stop"}}}
     end
     
     if conv.type == "drink" then
       nvl.drink_water()
-      return "drink"
+      return "drink", nil
     elseif conv.type == "home" then
       nvl.send_home()
-      return "home"
+      return "home", nil
     elseif conv.type == "stop" then
-      return "stop"
+      return "stop", nil
     elseif conv.type == "more" then
       return "more", conv.next_type
     elseif conv.type == "you" then
@@ -168,7 +168,7 @@ function talk(conv)
         choice = menu("Forget it.", conv.children[1].val, conv.children[2].val, conv.children[3].val)
       end
       if choice == 1 then
-      	conv = {type="you", val="Forget it.", children={type="stop"}}
+      	conv = {type="you", val="Forget it.", children={{type="stop"}}}
       else
       	conv = conv.children[choice - 1]
       end
