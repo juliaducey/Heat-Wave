@@ -21,7 +21,8 @@ public class Person : MonoBehaviour {
     private float currenttime;
     private Temperature temperature;
     public GameState state;
-	private int faintRotation = 1;
+	private float faintRotation = 1.2F;
+	private float faintFall = 0.057F;
 	// People burn for this long (seconds)
 	private float fireTimeRemaining = 2.0f;
 	// Flame property for prefab
@@ -152,6 +153,7 @@ public class Person : MonoBehaviour {
 			if (gameObject.transform.eulerAngles.z < 90)
 			{
 				gameObject.transform.Rotate(0, 0, faintRotation);
+				gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - faintFall, transform.position.z);
 			} 
 			else
 			{
