@@ -4,9 +4,9 @@ using System.Collections;
 public class Person : MonoBehaviour {
 
 	public int id;
-	private bool male;
-	private bool drunk;
-	private bool old;
+	public bool male;
+	public bool drunk;
+	public bool old;
 	private bool inConversation;
 	private bool fainting; // Whether or not person is currently fainting
 	private bool goingInside;
@@ -44,9 +44,10 @@ public class Person : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         this.state = GameObject.Find("MainGameState").GetComponent<GameState>();
-		this.male = Random.Range(0.0F, 1.0F) > .5;
-		this.drunk = Random.Range(0.0F, 1.0F) > .75;
-		this.old = Random.Range(0.0F, 1.0F) > .75;
+		// Set on prefab now
+//		this.male = Random.Range(0.0F, 1.0F) > .5;
+//		this.drunk = Random.Range(0.0F, 1.0F) > .75;
+//		this.old = Random.Range(0.0F, 1.0F) > .75;
         this.startTime = Time.time;
 		// lose 10 seconds for every risk factor
 		this.timeTillFaintInSeconds = 40 - 10 * (this.male.GetHashCode () + this.drunk.GetHashCode () + this.old.GetHashCode ()) + Random.Range (-10, 10);
@@ -72,7 +73,7 @@ public class Person : MonoBehaviour {
 
         float tempMultiplier = 1f;
 
-        if (temperature.curTemp > 100 && state.waters == 0)
+        if (temperature.curTemp > 38f && state.waters == 0)
             tempMultiplier = 1.5f;
 
         this.timeTillFaintInSeconds -= tempMultiplier * Time.deltaTime;
