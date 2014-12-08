@@ -40,7 +40,7 @@ public class GameState : MonoBehaviour {
 	void Update () {
 		// Hacky way to not update score when gamestate is passed to the end screen or startscreen
 		// 3 Represents the end screen load level
-		if ((Application.loadedLevel != 3) || (Application.loadedLevelName != "StartScene") ){
+		if ((Application.loadedLevel != 3) && (Application.loadedLevelName != "StartScene") ){
 			SetScore ();
 			if (numberOfPeopleFainted > 15 ) {
 				Application.LoadLevel("endScreen");
