@@ -46,6 +46,7 @@ public class Timer : MonoBehaviour {
 			if (hours >= 24) {
 				hours = 0;
                 day += 1;
+				StopTimer();
                 GameObject gamestate = GameObject.Find("MainGameState");
                 gamestate.SendMessage("IncrementDay");
 			}

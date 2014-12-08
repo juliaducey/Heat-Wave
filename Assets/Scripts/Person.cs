@@ -135,7 +135,7 @@ public class Person : MonoBehaviour {
 			}
 
 			// If close to fainting, start the wobble
-			if (timeTillFaintInSeconds < 10)
+			if (timeTillFaintInSeconds < 15)
 			{
 				if (!faintNotification)
 				{
@@ -195,6 +195,10 @@ public class Person : MonoBehaviour {
 	public void drinkWater () {
 		Debug.Log ("somebody drank water");
 		this.timeTillFaintInSeconds += 20; // value can be balanced later
+		if (myExclamation) 
+		{
+			Destroy (myExclamation.gameObject);
+		}
 		this.waterDrank++;
 	}
 
