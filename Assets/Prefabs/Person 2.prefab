@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2a837e5c3bbb6479ac6af1f4aa5e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Script: {fileID: 4900000, guid: e9c7baa33a7ee415bafffd5870a9139f, type: 3}
+  Script: {fileID: 4900000, guid: aba7c82a1904cfe4e84427046f9ff1db, type: 3}
   AutoStart: 0
   AutoShowBG: 0
 --- !u!114 &11400002
