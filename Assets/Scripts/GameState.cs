@@ -26,9 +26,13 @@ public class GameState : MonoBehaviour {
     public ArrayList umbrellaList;
     public ArrayList waterList;
     private Timer timer;
+
+	// How many people there were yesterday
+	private int prevPersonCount;
 	
 	// Use this for initialization
 	void Start () {
+		prevPersonCount = 0;
 		DontDestroyOnLoad (gameObject);
 		forecast = new float[] { Random.Range(26f, 46f), Random.Range(26f, 46f), Random.Range(26f, 46f)};
 		this.busy = false;
@@ -146,7 +150,12 @@ public class GameState : MonoBehaviour {
 		Debug.Log ("Day:");
 		Debug.Log (day);
 
-		int numPeople = 1 + (3 * day) + Random.Range(0, 3); 
+		int numPeople;
+		if (day == 1) {
+			numPeople = 2;
+		} else {
+			numPeople = prevPersonCount + Random.Range (1, 3);
+		}
 		
 		// Create people on bottom row.  Note that one person doesn't actually get created because of bounds on loops
 		for (int i=1; i<=numPeople; i++)
@@ -158,6 +167,8 @@ public class GameState : MonoBehaviour {
 			newPerson.name = "Person " + i;
 			newPerson.id = i;
 		}
+
+		prevPersonCount = numPeople;
 	}
 	
 	public void SomeoneWentInside() {
