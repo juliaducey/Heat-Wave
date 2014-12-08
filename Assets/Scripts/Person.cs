@@ -72,7 +72,7 @@ public class Person : MonoBehaviour {
 
         float tempMultiplier = 1f;
 
-        if (temperature.curTemp > 100 && state.waters == 0)
+        if (temperature.curTemp > 38f && state.waters == 0)
             tempMultiplier = 1.5f;
 
         this.timeTillFaintInSeconds -= tempMultiplier * Time.deltaTime;
