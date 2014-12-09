@@ -58,7 +58,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Size: {x: 8, y: 20}
-  m_Center: {x: 0, y: 0}
+  m_Center: {x: 0, y: 11}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -88,6 +88,7 @@ MonoBehaviour:
   male: 1
   drunk: 0
   old: 1
+  homeless: 0
   timeTillFaintInSeconds: 0
   scriptHandler: {fileID: 11400000}
   state: {fileID: 0}

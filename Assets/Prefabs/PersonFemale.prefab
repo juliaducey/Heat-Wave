@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.2151299, y: -6.70400667, z: -1}
+  m_LocalPosition: {x: -17.8516579, y: -1.55565166, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,7 +58,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Size: {x: 8, y: 20}
-  m_Center: {x: 0, y: 0}
+  m_Center: {x: 0, y: 11}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -88,6 +88,7 @@ MonoBehaviour:
   male: 0
   drunk: 0
   old: 0
+  homeless: 0
   timeTillFaintInSeconds: 0
   scriptHandler: {fileID: 11400000}
   state: {fileID: 0}
