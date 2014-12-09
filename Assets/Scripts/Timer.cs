@@ -8,7 +8,12 @@ public class Timer : MonoBehaviour {
 	float seconds;
 	int speed;
 	Text text;
+	private float totalMins = 0f;
 
+	public float GetTotalMinutes()
+	{
+		return totalMins;
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +42,7 @@ public class Timer : MonoBehaviour {
 			if (seconds >= 1) {
 				minutes += 1;
 				seconds = 0;
+				totalMins += 1;
 			}
 			if (minutes >= 60) {
 				hours += 1;
