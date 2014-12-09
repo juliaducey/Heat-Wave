@@ -87,7 +87,7 @@ public class GameState : MonoBehaviour {
             if (!umbrellaList.Contains(i))
             {
                 this.umbrellas += 1;
-                Instantiate(umbrella, new Vector3((i - 8) * 5.0F, 1.0F, (float)(1)), Quaternion.identity);
+				Instantiate(umbrella, new Vector3(Random.Range(-33.5F, 33.50F), 4.0F, (float)(1)), Quaternion.identity);
                 umbrellaList.Add(i);
                 break;
             }
@@ -109,7 +109,7 @@ public class GameState : MonoBehaviour {
             if (!waterList.Contains(i))
             {
                 this.waters += 1;
-                Instantiate(water, new Vector3((i - 7 ) * 5.0F, 1.5F, (float)(1)), Quaternion.identity);
+				Instantiate(water, new Vector3(Random.Range(-33.5F, 33.50F), 4.5F, (float)(1)), Quaternion.identity);
                 waterList.Add(i);
                 break;
             }
