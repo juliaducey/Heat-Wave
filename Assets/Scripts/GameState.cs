@@ -152,9 +152,9 @@ public class GameState : MonoBehaviour {
 
 		int numPeople;
 		if (day == 1) {
-			numPeople = 2;
+			numPeople = 6;
 		} else {
-			numPeople = prevPersonCount + Random.Range (1, 3);
+			numPeople = prevPersonCount + Random.Range (2, 3);
 		}
 		
 		// Create people on bottom row.  Note that one person doesn't actually get created because of bounds on loops

@@ -52,14 +52,14 @@ public class Person : MonoBehaviour {
 //		this.old = Random.Range(0.0F, 1.0F) > .75;
         this.startTime = Time.time;
 		// lose 10 seconds for every risk factor
-		this.timeTillFaintInSeconds = 20 - this.male.GetHashCode () - 4 * this.drunk.GetHashCode () - 4 * this.old.GetHashCode ();
+		this.timeTillFaintInSeconds =60 * (20 - this.male.GetHashCode () - 4 * this.drunk.GetHashCode () - 4 * this.old.GetHashCode () - 3 * this.homeless.GetHashCode() + Random.RandomRange(-1.5f, 1.5f));
         this.temperature = GameObject.Find("Temperature").GetComponent<Temperature>();
 
 		this.distanceNeedToTravelToPause = Random.Range (10, 50);
 		this.XMove = generateWalkingSpeed ();
 		this.timePersonPausesInMinutes = Random.Range (10, 30);
 		this.currentXPosition = this.transform.position.x;
-		this.timeTillGoInside = Random.Range (0, 40);
+		this.timeTillGoInside = 60 *Random.Range (13, 15);
 		//TODO: programmatically attach scripts to people
 		//MetisScriptHandler handler = gameObject.GetComponent<MetisScriptHandler> ();
 		//handler.Script = "blah blah blah";
@@ -78,8 +78,8 @@ public class Person : MonoBehaviour {
         if (temperature.curTemp > 38f && state.waters == 0)
             tempMultiplier = 1.5f;
 
-        this.timeTillFaintInSeconds -= tempMultiplier * Time.deltaTime;
-		this.timeTillGoInside -= Time.deltaTime;
+        this.timeTillFaintInSeconds -= ((temperature.curTemp - 28f) / 16f + 1) *  Time.deltaTime * 64f/5f;
+		this.timeTillGoInside -= Time.deltaTime * 64f/5f;
 
 		if ((this.timeTillGoInside <= 0) && !fainting && !goingInside && !inConversation) {
 			this.goInside ();
@@ -137,7 +137,7 @@ public class Person : MonoBehaviour {
 			}
 
 			// If close to fainting, start the wobble
-			if (timeTillFaintInSeconds < 15)
+			if (timeTillFaintInSeconds < 100)
 			{
 				if (!faintNotification)
 				{
@@ -251,7 +251,7 @@ public class Person : MonoBehaviour {
         {
             attributes += ",homeless";
         }
-		if (timeTillFaintInSeconds < 15) 
+		if (timeTillFaintInSeconds < 100) 
 		{
 			attributes = "dying,dying,dying,dying,dying,dying,dying,dying,dying,dying,dying,dying,dying";
 			//TODO: balance timings?

@@ -17,11 +17,11 @@ public class Timer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		hours   = 0;
+		hours   = 6;
 		minutes = 0;
 		seconds = 0;
 		day     = 1;
-		speed   = 64f / 3f;
+		speed   = 64f / 5f;
         state = true;
 		DontDestroyOnLoad (gameObject);
 	}
@@ -30,7 +30,7 @@ public class Timer : MonoBehaviour {
 	void Update () {
         if (state)
         {
-            if (seconds == 0 && minutes == 0 && hours == 0)
+            if (seconds == 0 && minutes == 0 && hours == 6)
             {
                 day = GameObject.Find("MainGameState").GetComponent<GameState>().currentDay;
 				totalMins = 0f;
@@ -39,17 +39,18 @@ public class Timer : MonoBehaviour {
 			
 			if (seconds >= 1) {
 				minutes += 1;
-				seconds = 0;
-				totalMins += 1;
+				seconds -= 1;
+				totalMins += 1.5f;
 			}
 			if (minutes >= 60) {
 				hours += 1;
 				minutes = 0;
 			}
 			
-			if (hours >= 24) {
-				hours = 0;
+			if (hours >= 22) {
+				hours = 6;
                 day += 1;
+                totalMins = 0f;
 				StopTimer();
                 GameObject gamestate = GameObject.Find("MainGameState");
                 gamestate.SendMessage("IncrementDay");
