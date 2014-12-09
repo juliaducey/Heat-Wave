@@ -126,11 +126,13 @@ public class GameState : MonoBehaviour {
     public void TalkToPerson(Person p)
     {
         talkingPerson = p;
+		busy = true;
     }
 
     public void FinishTalking()
     {
 		talkingPerson.setPersonToMoving(); //sets inConversation to false
+		busy = false;
         talkingPerson = null;
     }
 

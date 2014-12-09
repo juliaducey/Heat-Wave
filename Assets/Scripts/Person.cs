@@ -189,7 +189,7 @@ public class Person : MonoBehaviour {
 
 	void OnMouseDown() {
 		// bring up dialogue
-        if (state.busy == false && !goingInside && !fainting)
+        if (!state.busy && !goingInside && !fainting)
         {
             inConversation = true;
 		    state.TalkToPerson (this);
