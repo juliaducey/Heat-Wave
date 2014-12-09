@@ -20,7 +20,7 @@ public class NewspaperForecast : MonoBehaviour {
 //			fainted + " FAINTED\n" +
 //				inside + " WENT INSIDE\n" +
 //				"3 DAY FORECAST\n" + (int)gamestate.forecast[0] + " " + (int)gamestate.forecast[1] + " " + (int)gamestate.forecast[2];
-		text.text = (int)gamestate.forecast[0] + "   " + (int)gamestate.forecast[1] + "   " + (int)gamestate.forecast[2];
+        text.text = (int)gamestate.forecast[(day) % 7] + "   " + (int)gamestate.forecast[(day + 1) % 7] + "   " + (int)gamestate.forecast[(day +2) % 7];
 
 	}
 

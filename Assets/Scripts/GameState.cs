@@ -30,7 +30,7 @@ public class GameState : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (gameObject);
-		forecast = new float[] { Random.Range(26f, 46f), Random.Range(26f, 46f), Random.Range(26f, 46f)};
+		forecast = new float[] { 30.5f, 36.1f, 39.4f, 43.3f, 36.6f, 30.5f, 28.9f};
 		this.busy = false;
         umbrellaList = new ArrayList();
         waterList = new ArrayList();
@@ -40,7 +40,7 @@ public class GameState : MonoBehaviour {
 	void Update () {
 		// Hacky way to not update score when gamestate is passed to the end screen or startscreen
 		// 3 Represents the end screen load level
-		if ((Application.loadedLevel != 3) || (Application.loadedLevelName != "StartScene") ){
+		if ((Application.loadedLevel != 3) && (Application.loadedLevelName != "StartScene") ){
 			SetScore ();
 			if (numberOfPeopleFainted > 15 ) {
 				Application.LoadLevel("endScreen");
@@ -70,10 +70,8 @@ public class GameState : MonoBehaviour {
 
     public void IncrementDay()
     {
+        forecast[(currentDay - 1) % 7] += Random.Range(0f, 2f);
         currentDay += 1;
-        forecast[0] = forecast[1] + Random.Range(-2f, 2f);
-        forecast[1] = forecast[2] + Random.Range(-2f, 2f);
-        forecast[2] = Random.Range(26f, 46f);
         Application.LoadLevel("NewspaperScene");
     }
 
