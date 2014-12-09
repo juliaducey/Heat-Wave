@@ -34,10 +34,11 @@ public class GameState : MonoBehaviour {
 	void Start () {
 		prevPersonCount = 0;
 		DontDestroyOnLoad (gameObject);
-		forecast = new float[] { Random.Range(26f, 46f), Random.Range(26f, 46f), Random.Range(26f, 46f)};
+		forecast = new float[] { 30.5f, 36.1f, 39.4f, 43.3f, 36.6f, 30.5f, 28.9f};
 		this.busy = false;
         umbrellaList = new ArrayList();
         waterList = new ArrayList();
+        timer = GameObject.Find("Timer").GetComponent<Timer>();
 	}
 	
 	// Update is called once per frame
@@ -74,10 +75,8 @@ public class GameState : MonoBehaviour {
 
     public void IncrementDay()
     {
+        forecast[(currentDay - 1) % 7] += Random.Range(0f, 2f);
         currentDay += 1;
-        forecast[0] = forecast[1] + Random.Range(-2f, 2f);
-        forecast[1] = forecast[2] + Random.Range(-2f, 2f);
-        forecast[2] = Random.Range(26f, 46f);
         Application.LoadLevel("NewspaperScene");
     }
 
@@ -145,7 +144,7 @@ public class GameState : MonoBehaviour {
 	{
 		Person[] people = new Person[] {person1, person2, person3, person4};
 		// Kinda hacky but whatever
-		timer = GameObject.Find ("Timer").GetComponent<Timer> ();
+        timer.SetTimerText();
 		timer.StartTimer ();
 		int day = timer.day;
 		Debug.Log ("Day:");
@@ -162,7 +161,7 @@ public class GameState : MonoBehaviour {
 		for (int i=1; i<=numPeople; i++)
 		{
 			Person person = people[Random.Range(0, 4)];
-			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), -4F, (float) (-i)), Quaternion.identity);
+			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-33.5F, 33.50F), -4F, (float) (-i)), Quaternion.identity);
 			// Fixed prefab so scaling here isn't necessary
 			// newPerson.transform.localScale = new Vector3(8, 8, 0);
 			newPerson.name = "Person " + i;
