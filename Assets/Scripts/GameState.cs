@@ -161,7 +161,7 @@ public class GameState : MonoBehaviour {
 		for (int i=1; i<=numPeople; i++)
 		{
 			Person person = people[Random.Range(0, 4)];
-			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), -4F, (float) (-i)), Quaternion.identity);
+			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-33.5F, 33.50F), -4F, (float) (-i)), Quaternion.identity);
 			// Fixed prefab so scaling here isn't necessary
 			// newPerson.transform.localScale = new Vector3(8, 8, 0);
 			newPerson.name = "Person " + i;
