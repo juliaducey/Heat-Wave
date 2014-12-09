@@ -6,7 +6,7 @@ public class Timer : MonoBehaviour {
 	public int day, hours, minutes;
 	public bool state;
 	float seconds;
-	int speed;
+	float speed;
 	Text text;
 	private float totalMins = 0f;
 
@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour {
 		minutes = 0;
 		seconds = 0;
 		day     = 1;
-		speed   = 100;
+		speed   = 64f / 3f;
         state = true;
 		DontDestroyOnLoad (gameObject);
 	}

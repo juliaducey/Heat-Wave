@@ -7,6 +7,7 @@ public class Person : MonoBehaviour {
 	public bool male;
 	public bool drunk;
 	public bool old;
+    public bool homeless;
 	private bool inConversation;
 	private bool fainting; // Whether or not person is currently fainting
 	private bool goingInside;
@@ -51,7 +52,7 @@ public class Person : MonoBehaviour {
 //		this.old = Random.Range(0.0F, 1.0F) > .75;
         this.startTime = Time.time;
 		// lose 10 seconds for every risk factor
-		this.timeTillFaintInSeconds = 34 - 10 * (this.male.GetHashCode () + this.drunk.GetHashCode () + this.old.GetHashCode ());
+		this.timeTillFaintInSeconds = 20 - this.male.GetHashCode () - 4 * this.drunk.GetHashCode () - 4 * this.old.GetHashCode ();
         this.temperature = GameObject.Find("Temperature").GetComponent<Temperature>();
 
 		this.distanceNeedToTravelToPause = Random.Range (10, 50);
@@ -232,7 +233,10 @@ public class Person : MonoBehaviour {
         // Create animation
 		fainting = true;
 		// Destroy exclamation point
-		Destroy (myExclamation.gameObject);
+		if (myExclamation)
+		{
+			Destroy (myExclamation.gameObject);
+		}
 		// Destroy(gameObject);
 	}
 
@@ -248,6 +252,10 @@ public class Person : MonoBehaviour {
 		{
 			attributes += ",old";
 		}
+        if (homeless)
+        {
+            attributes += ",homeless";
+        }
 		if (timeTillFaintInSeconds < 15) 
 		{
 			attributes = "dying,dying,dying,dying,dying,dying,dying,dying,dying,dying,dying,dying,dying";
