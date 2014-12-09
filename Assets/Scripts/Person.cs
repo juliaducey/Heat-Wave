@@ -91,7 +91,7 @@ public class Person : MonoBehaviour {
 				myCheckmark = (Transform)Transform.Instantiate(checkmark, transform.position, Quaternion.identity);
 				checkNotification = true;
 			}
-			myCheckmark.transform.position = new Vector3(transform.position.x, transform.position.y + 11, transform.position.z);
+			myCheckmark.transform.position = new Vector3(transform.position.x - 0.5F, transform.position.y + 11.5F, transform.position.z);
 			gameObject.transform.position = new Vector3 (gameObject.transform.position.x + 0.05f, 
 			                                             gameObject.transform.position.y, 
 			                                             gameObject.transform.position.z);
@@ -253,7 +253,7 @@ public class Person : MonoBehaviour {
         }
 		if (timeTillFaintInSeconds < 15) 
 		{
-			attributes = "dying";
+			attributes = "dying,dying,dying,dying,dying,dying,dying,dying,dying,dying,dying,dying,dying";
 			//TODO: balance timings?
 		}
 		return attributes;

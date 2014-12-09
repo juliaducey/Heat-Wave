@@ -33,6 +33,7 @@ public class Timer : MonoBehaviour {
             if (seconds == 0 && minutes == 0 && hours == 0)
             {
                 day = GameObject.Find("MainGameState").GetComponent<GameState>().currentDay;
+				totalMins = 0f;
             }
 			seconds += Time.deltaTime * speed;
 			
