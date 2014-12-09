@@ -16,6 +16,7 @@ public class Restart : MonoBehaviour {
 	public void restart()
 	{
         Destroy(GameObject.Find("MainGameState"));
+        Destroy(GameObject.Find("Timer"));
 		Application.LoadLevel ("StartScene");
 		Time.timeScale = 1;
 	}
