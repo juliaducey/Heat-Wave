@@ -85,8 +85,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  male: 1
-  drunk: 1
+  male: 0
+  drunk: 0
   old: 0
   timeTillFaintInSeconds: 0
   scriptHandler: {fileID: 11400000}
