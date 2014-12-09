@@ -294,12 +294,11 @@ MonoBehaviour:
   m_Text: "Plot:\nYou\u2019re a red cross volunteer.  As it gets hotter outside, what
     are you going to do?  You can offer homeless people water, tell old people to
     go inside, install umbrellas, or many other options.  What will you prioritize?
-    \ Be careful though, if 20 people faint you will be fired!\n\nInstructions:\nUse
-    your  mouse to interact with characters or to install water fountains.  Press
-    space to pause the game.\nControls:\nPAUSE:  CLICK ON PAUSE BUTTON\nTALK TO A
-    PERSON:  CLICK ON PERSON\nADD A WATER COOLER:  CLICK ON WATER BUTTON\nADD AN UMBRELLA:
-    \ CLICK ON UMBRELLA BUTTON\n\nA warning sign above someone's head indicates they
-    are about to faint.  A checkmark indicates they are headed inside."
+    \ Be careful though, if too many people faint you will be fired!\n\nControls:\nPAUSE:
+    \ CLICK ON PAUSE BUTTON\nTALK TO A PERSON:  CLICK ON PERSON\nADD A WATER COOLER:
+    \ CLICK ON WATER BUTTON\nADD AN UMBRELLA:  CLICK ON UMBRELLA BUTTON\n\nA warning
+    sign above someone's head indicates they are about to faint.  A house indicates
+    they are headed inside."
 --- !u!222 &731100314
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -755,7 +754,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -130.839996}
+  m_AnchoredPosition: {x: 0, y: -110.129997}
   m_SizeDelta: {x: 130, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1175479462

@@ -22,7 +22,7 @@ public class Person : MonoBehaviour {
     private float currenttime;
     private Temperature temperature;
     public GameState state;
-	private float faintRotation = 1.2F;
+	private float faintRotation = 1.7F;
 	private float faintFall = 0.057F;
 	// People burn for this long (seconds)
 	private float fireTimeRemaining = 2.0f;
@@ -91,7 +91,7 @@ public class Person : MonoBehaviour {
 				myCheckmark = (Transform)Transform.Instantiate(checkmark, transform.position, Quaternion.identity);
 				checkNotification = true;
 			}
-			myCheckmark.transform.position = new Vector3(transform.position.x - 0.5F, transform.position.y + 11.5F, transform.position.z);
+			myCheckmark.transform.position = new Vector3(transform.position.x - 0.5F, transform.position.y + 22F, transform.position.z);
 			gameObject.transform.position = new Vector3 (gameObject.transform.position.x + 0.05f, 
 			                                             gameObject.transform.position.y, 
 			                                             gameObject.transform.position.z);
@@ -142,10 +142,11 @@ public class Person : MonoBehaviour {
 				if (!faintNotification)
 				{
 					myExclamation = (Transform)Transform.Instantiate(exclamation, transform.position, Quaternion.identity);
+					myExclamation.transform.position = new Vector3(transform.position.x, transform.position.y + 21F, transform.position.z);
 					faintNotification = true;
 				}
 				// myExclamation.transform.position = transform.position;
-				myExclamation.transform.position = new Vector3(transform.position.x, transform.position.y + 11, transform.position.z);
+				myExclamation.transform.position = new Vector3(transform.position.x, transform.position.y + 21F, transform.position.z);
 			} 
 		} 
 		else if (fainting) 
@@ -154,13 +155,14 @@ public class Person : MonoBehaviour {
 			if (gameObject.transform.eulerAngles.z < 90)
 			{
 				gameObject.transform.Rotate(0, 0, faintRotation);
-				gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - faintFall, transform.position.z);
+				//gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - faintFall, transform.position.z);
 			} 
 			else
 			{
 				if (fireTimeRemaining == 2.0)
 				{
 					myFlame = (Transform)Transform.Instantiate(flame, transform.position, Quaternion.identity);
+					myFlame.transform.position = new Vector3(transform.position.x - 10, transform.position.y, transform.position.z);
 				}
 				if (fireTimeRemaining <= 0)
 				{
@@ -231,7 +233,10 @@ public class Person : MonoBehaviour {
         // Create animation
 		fainting = true;
 		// Destroy exclamation point
-		Destroy (myExclamation.gameObject);
+		if (myExclamation)
+		{
+			Destroy (myExclamation.gameObject);
+		}
 		// Destroy(gameObject);
 	}
 
