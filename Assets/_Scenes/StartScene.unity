@@ -179,7 +179,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 2.94009995, y: 142.460007}
+  m_AnchoredPosition: {x: 2.94009995, y: 166.139999}
   m_SizeDelta: {x: 400, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &731100313
@@ -214,7 +214,8 @@ MonoBehaviour:
     your  mouse to interact with characters or to install water fountains.  Press
     space to pause the game.\nControls:\nPAUSE:  CLICK ON PAUSE BUTTON\nTALK TO A
     PERSON:  CLICK ON PERSON\nADD A WATER COOLER:  CLICK ON WATER BUTTON\nADD AN UMBRELLA:
-    \ CLICK ON UMBRELLA BUTTON"
+    \ CLICK ON UMBRELLA BUTTON\n\nA warning sign above someone's head indicates they
+    are about to faint.  A checkmark indicates they are headed inside."
 --- !u!222 &731100314
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -247,7 +248,7 @@ RectTransform:
   m_GameObject: {fileID: 885210241}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 3, z: 1}
+  m_LocalScale: {x: 5.95000029, y: 3.57000017, z: 1.19000006}
   m_Children: []
   m_Father: {fileID: 408091866}
   m_RootOrder: 1
@@ -434,7 +435,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -106.419998}
+  m_AnchoredPosition: {x: 0, y: -130.839996}
   m_SizeDelta: {x: 130, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1175479462

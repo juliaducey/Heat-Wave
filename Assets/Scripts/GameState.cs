@@ -26,9 +26,13 @@ public class GameState : MonoBehaviour {
     public ArrayList umbrellaList;
     public ArrayList waterList;
     private Timer timer;
+
+	// How many people there were yesterday
+	private int prevPersonCount;
 	
 	// Use this for initialization
 	void Start () {
+		prevPersonCount = 0;
 		DontDestroyOnLoad (gameObject);
 		forecast = new float[] { 30.5f, 36.1f, 39.4f, 43.3f, 36.6f, 30.5f, 28.9f};
 		this.busy = false;
@@ -125,6 +129,7 @@ public class GameState : MonoBehaviour {
 
     public void FinishTalking()
     {
+		talkingPerson.setPersonToMoving(); //sets inConversation to false
         talkingPerson = null;
     }
 
@@ -144,27 +149,25 @@ public class GameState : MonoBehaviour {
 		Debug.Log ("Day:");
 		Debug.Log (day);
 
-		int numPeople = 1 + (3 * day) + Random.Range(0, 3); 
-		for (int i=1; i<=numPeople/2; i++)
-		{
-			Person person = people[Random.Range(0, 4)];
-			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), 10F, (float) (-i)), Quaternion.identity);
-			// Fixed prefab so scaling here isn't necessary
-			// newPerson.transform.localScale = new Vector3(8, 8, 0);
-			newPerson.name = "Person " + i;
-			newPerson.id = i;
+		int numPeople;
+		if (day == 1) {
+			numPeople = 2;
+		} else {
+			numPeople = prevPersonCount + Random.Range (1, 3);
 		}
 		
 		// Create people on bottom row.  Note that one person doesn't actually get created because of bounds on loops
-		for (int i=1; i<=numPeople/2; i++)
+		for (int i=1; i<=numPeople; i++)
 		{
 			Person person = people[Random.Range(0, 4)];
-			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), -9F, (float) (-i)), Quaternion.identity);
+			Person newPerson = (Person) Instantiate(person, new Vector3(Random.Range(-45, 30), -4F, (float) (-i)), Quaternion.identity);
 			// Fixed prefab so scaling here isn't necessary
 			// newPerson.transform.localScale = new Vector3(8, 8, 0);
 			newPerson.name = "Person " + i;
 			newPerson.id = i;
 		}
+
+		prevPersonCount = numPeople;
 	}
 	
 	public void SomeoneWentInside() {

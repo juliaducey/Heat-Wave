@@ -15,7 +15,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Person 4
+  m_Name: PersonFemale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.2199993, y: -7.48920012, z: -1}
-  m_LocalScale: {x: 12.1003809, y: 12.100379, z: 0}
+  m_LocalPosition: {x: -30.2151299, y: -6.70400667, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,8 +57,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: .720000029, y: .889999986}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: 6, y: 10}
+  m_Center: {x: -2, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,7 +84,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bced235f850a42f781f16fedc6449dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 5
+  id: 1
+  male: 1
+  drunk: 1
+  old: 0
   timeTillFaintInSeconds: 0
   scriptHandler: {fileID: 11400000}
   state: {fileID: 0}
@@ -140,7 +143,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 92518a71365e646ac88531f43db2628a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: daf5a1821f3f71045bf4b24c6f527773, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

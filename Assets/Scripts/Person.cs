@@ -21,7 +21,8 @@ public class Person : MonoBehaviour {
     private float currenttime;
     private Temperature temperature;
     public GameState state;
-	private int faintRotation = 1;
+	private float faintRotation = 1.2F;
+	private float faintFall = 0.057F;
 	// People burn for this long (seconds)
 	private float fireTimeRemaining = 2.0f;
 	// Flame property for prefab
@@ -89,7 +90,7 @@ public class Person : MonoBehaviour {
 				myCheckmark = (Transform)Transform.Instantiate(checkmark, transform.position, Quaternion.identity);
 				checkNotification = true;
 			}
-			myCheckmark.transform.position = new Vector3(transform.position.x - 2, transform.position.y + 4, transform.position.z);
+			myCheckmark.transform.position = new Vector3(transform.position.x, transform.position.y + 11, transform.position.z);
 			gameObject.transform.position = new Vector3 (gameObject.transform.position.x + 0.05f, 
 			                                             gameObject.transform.position.y, 
 			                                             gameObject.transform.position.z);
@@ -143,7 +144,7 @@ public class Person : MonoBehaviour {
 					faintNotification = true;
 				}
 				// myExclamation.transform.position = transform.position;
-				myExclamation.transform.position = new Vector3(transform.position.x - 2, transform.position.y + 5, transform.position.z);
+				myExclamation.transform.position = new Vector3(transform.position.x, transform.position.y + 11, transform.position.z);
 			} 
 		} 
 		else if (fainting) 
@@ -152,6 +153,7 @@ public class Person : MonoBehaviour {
 			if (gameObject.transform.eulerAngles.z < 90)
 			{
 				gameObject.transform.Rotate(0, 0, faintRotation);
+				gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - faintFall, transform.position.z);
 			} 
 			else
 			{

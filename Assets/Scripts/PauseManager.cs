@@ -19,6 +19,9 @@ public class PauseManager : MonoBehaviour {
 	{
 
 	}
+	public void ToggleCanvas(){
+		canvas.enabled = !canvas.enabled;
+	}
 
 	public void Pause()
 	{
