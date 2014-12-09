@@ -23,10 +23,7 @@ public class Timer : MonoBehaviour {
 		day     = 1;
 		speed   = 100;
         state = true;
-		text = GameObject.Find("TimerText").GetComponent <Text> ();
-		updateTimerUI ();
 		DontDestroyOnLoad (gameObject);
-        GameObject.Find("MainGameState").GetComponent<GameState>().PopulateScene();
 	}
 
 	// Update is called once per frame
@@ -61,6 +58,11 @@ public class Timer : MonoBehaviour {
 	
 	}
 
+    public void SetTimerText()
+    {
+        text = GameObject.Find("TimerText").GetComponent <Text> ();
+        updateTimerUI();
+    }
     public void StartTimer()
     {
         state = true;

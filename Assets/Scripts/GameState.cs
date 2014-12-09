@@ -38,6 +38,7 @@ public class GameState : MonoBehaviour {
 		this.busy = false;
         umbrellaList = new ArrayList();
         waterList = new ArrayList();
+        timer = GameObject.Find("Timer").GetComponent<Timer>();
 	}
 	
 	// Update is called once per frame
@@ -143,7 +144,7 @@ public class GameState : MonoBehaviour {
 	{
 		Person[] people = new Person[] {person1, person2, person3, person4};
 		// Kinda hacky but whatever
-		timer = GameObject.Find ("Timer").GetComponent<Timer> ();
+        timer.SetTimerText();
 		timer.StartTimer ();
 		int day = timer.day;
 		Debug.Log ("Day:");
