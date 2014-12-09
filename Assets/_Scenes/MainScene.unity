@@ -206,7 +206,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &97499873
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500000, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -478,7 +478,7 @@ MonoBehaviour:
     MemberName: BringToFront
 --- !u!65 &130766788
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500012, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -643,7 +643,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .0018382353
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1057,7 +1057,7 @@ Transform:
   - {fileID: 1871055948}
   - {fileID: 340241478}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &267584202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,7 +1655,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &499283880
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500016, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -1770,7 +1770,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &503730945
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500018, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -1895,7 +1895,7 @@ RectTransform:
   - {fileID: 650850869}
   - {fileID: 455526709}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 479.5, y: 300}
@@ -2486,7 +2486,7 @@ MonoBehaviour:
     m_Bottom: 5
 --- !u!65 &721151405
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500002, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -2545,7 +2545,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &759520300
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500014, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -2834,7 +2834,7 @@ MonoBehaviour:
     m_Bottom: 5
 --- !u!65 &885704327
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500022, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -2908,9 +2908,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Background: {fileID: 905791254}
-  Timer: {fileID: 0}
-  DawnColor: {r: .875, g: .718014717, b: .482536763, a: 0}
-  NightColor: {r: .405763417, g: .468354732, b: .698529422, a: 0}
+  DawnColor: {r: .911764681, g: .633426785, b: .335207611, a: 1}
+  NightColor: {r: .731509507, g: .768474817, b: .904411793, a: 1}
 --- !u!1 &909668399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3140,7 +3139,7 @@ Transform:
   - {fileID: 1424786686}
   - {fileID: 1710049523}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!114 &973644624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3177,7 +3176,7 @@ MeshFilter:
   m_Mesh: {fileID: 0}
 --- !u!65 &973644626
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500030, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -3477,7 +3476,7 @@ MonoBehaviour:
     MemberName: BringToFront
 --- !u!65 &1026233402
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500020, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -3768,7 +3767,7 @@ MonoBehaviour:
     m_Bottom: 5
 --- !u!65 &1136341739
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500024, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -3971,7 +3970,7 @@ MonoBehaviour:
     m_Bottom: 5
 --- !u!65 &1214763183
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500010, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -4084,7 +4083,7 @@ MonoBehaviour:
     m_Bottom: 5
 --- !u!65 &1240228965
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500028, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -4163,7 +4162,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &1424786689
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500006, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -4532,7 +4531,7 @@ MonoBehaviour:
     MemberName: BringToFront
 --- !u!65 &1653650320
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500034, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -4700,7 +4699,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &1654934004
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500008, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -5012,7 +5011,7 @@ MonoBehaviour:
     MemberName: BringToFront
 --- !u!65 &1700010214
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500004, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -5210,7 +5209,7 @@ Transform:
   m_PrefabInternal: {fileID: 157684810}
   m_GameObject: {fileID: 1710049519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0018382353, y: .0018382353, z: 0}
+  m_LocalPosition: {x: 0, y: .0018382353, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 973644623}
@@ -5389,7 +5388,7 @@ MonoBehaviour:
   autoHeight: 0
 --- !u!65 &1805989011
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500032, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
@@ -5768,7 +5767,7 @@ MonoBehaviour:
     m_Bottom: 5
 --- !u!65 &2024180027
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 6500026, guid: 43f5e37eef7985343b80ad55488cecf4,
     type: 2}
   m_PrefabInternal: {fileID: 157684810}
