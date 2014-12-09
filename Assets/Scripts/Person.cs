@@ -231,7 +231,10 @@ public class Person : MonoBehaviour {
         // Create animation
 		fainting = true;
 		// Destroy exclamation point
-		Destroy (myExclamation.gameObject);
+		if (myExclamation)
+		{
+			Destroy (myExclamation.gameObject);
+		}
 		// Destroy(gameObject);
 	}
 
