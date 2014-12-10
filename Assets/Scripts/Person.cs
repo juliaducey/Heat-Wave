@@ -201,7 +201,7 @@ public class Person : MonoBehaviour {
 
 	public void drinkWater () {
 //		Debug.Log ("somebody drank water");
-        this.timeTillFaintInSeconds += 20 - this.male.GetHashCode() - 4 * this.drunk.GetHashCode() - 4 * this.old.GetHashCode() - 3 * this.homeless.GetHashCode(); // value can be balanced later
+        this.timeTillFaintInSeconds += 60 * (20 - this.male.GetHashCode() - 4 * this.drunk.GetHashCode() - 4 * this.old.GetHashCode() - 3 * this.homeless.GetHashCode()); // value can be balanced later
 		if (myExclamation) 
 		{
 			Destroy (myExclamation.gameObject);
