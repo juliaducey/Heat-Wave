@@ -2967,6 +2967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Background: {fileID: 905791254}
+  Timer: {fileID: 1277333532}
   DawnColor: {r: .911764681, g: .633426785, b: .335207611, a: 1}
   NightColor: {r: .731509507, g: .768474817, b: .904411793, a: 1}
 --- !u!1 &909668399

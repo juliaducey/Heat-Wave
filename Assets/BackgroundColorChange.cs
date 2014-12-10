@@ -4,7 +4,7 @@ using System.Collections;
 public class BackgroundColorChange : MonoBehaviour {
 
 	public SpriteRenderer Background;
-	Timer Timer;
+	public Timer Timer;
 
 	public Color DawnColor;
 	public Color NightColor;
@@ -13,7 +13,6 @@ public class BackgroundColorChange : MonoBehaviour {
 
 	void Start()
 	{
-		Timer = (Timer) GameObject.FindObjectOfType<Timer>();
 	}
 
 	// Update is called once per frame

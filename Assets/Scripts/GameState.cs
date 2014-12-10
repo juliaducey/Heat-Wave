@@ -150,12 +150,9 @@ public class GameState : MonoBehaviour {
 		// Kinda hacky but whatever
         timer.SetTimerText();
 		timer.StartTimer ();
-		int day = timer.day;
-//		Debug.Log ("Day:");
-//		Debug.Log (day);
 
 		int numPeople;
-		if (day == 1) {
+		if (currentDay == 1) {
 			numPeople = 6;
 		} else {
 			numPeople = prevPersonCount + Random.Range (2, 3);
@@ -177,8 +174,7 @@ public class GameState : MonoBehaviour {
 
 	private IEnumerator waitAndIncrement (float t) {
 		yield return new WaitForSeconds (t);
-		timer.StopTimer();
-		IncrementDay();
+		timer.nextDay ();
 	}
 
 	public void SomeoneWentInside() {
