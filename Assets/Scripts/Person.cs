@@ -201,7 +201,7 @@ public class Person : MonoBehaviour {
 
 	public void drinkWater () {
 //		Debug.Log ("somebody drank water");
-		this.timeTillFaintInSeconds += 20; // value can be balanced later
+		this.timeTillFaintInSeconds += 120; // value can be balanced later
 		if (myExclamation) 
 		{
 			Destroy (myExclamation.gameObject);
