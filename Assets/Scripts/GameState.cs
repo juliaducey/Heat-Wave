@@ -21,7 +21,6 @@ public class GameState : MonoBehaviour {
     public bool busy;
     public Person[] allPeople;
     public Person talkingPerson;
-    public bool hot;
     public bool bgm;
     public ArrayList umbrellaList;
     public ArrayList waterList;

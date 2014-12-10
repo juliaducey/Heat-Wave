@@ -40,10 +40,6 @@ public class Temperature : MonoBehaviour {
 		if (timerObject.hours > currentHour) {
 			currentHour = timerObject.hours;
             curTemp = baseTemp + 2 - (.05f * (currentHour - 16) * (currentHour - 16));
-            if (curTemp > 100f  && !state.hot)
-                state.hot = true;
-            else if (curTemp <= 100f && state.hot)
-                state.hot = false;
 			text.text = "Temperature: " + curTemp.ToString();
 		}
 	}
