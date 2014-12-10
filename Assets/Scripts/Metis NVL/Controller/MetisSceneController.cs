@@ -16,6 +16,8 @@ public class MetisSceneController : MonoBehaviour
 
 	public static readonly string TAG = "SceneController";
 
+	public string bullshit;
+
 	bool _waiting;
 	public bool Waiting 
 	{ 
@@ -62,7 +64,8 @@ public class MetisSceneController : MonoBehaviour
 			view.Initialize (Wait);
 		}
 
-		gameObject.AddComponent<MetisLuaScriptController>();
+		var script = gameObject.AddComponent<MetisLuaScriptController>();
+		script.bullshit = bullshit;
 	}
 
 	void Update()

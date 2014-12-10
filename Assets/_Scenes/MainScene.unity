@@ -114,7 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -578,7 +577,7 @@ MonoBehaviour:
     m_Left: 0
     m_Right: 0
     m_Top: 0
-    m_Bottom: 0
+    m_Bottom: 24
   textShadow: 0
   shadowColor:
     serializedVersion: 2
@@ -607,7 +606,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 2300000, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_Materials.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400032, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.x
@@ -643,7 +642,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .0018382353
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -733,7 +732,7 @@ Prefab:
         type: 2}
     - target: {fileID: 11400002, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: backgroundSprite
-      value: frame-basic
+      value: frame-style7
       objectReference: {fileID: 0}
     - target: {fileID: 11400046, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: atlas
@@ -742,7 +741,7 @@ Prefab:
         type: 2}
     - target: {fileID: 11400046, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: backgroundSprite
-      value: frame-basic
+      value: frame-style7
       objectReference: {fileID: 0}
     - target: {fileID: 11400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: atlas
@@ -751,7 +750,7 @@ Prefab:
         type: 2}
     - target: {fileID: 11400020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: backgroundSprite
-      value: frame-basic
+      value: frame-style7
       objectReference: {fileID: 0}
     - target: {fileID: 11400052, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: atlas
@@ -760,7 +759,7 @@ Prefab:
         type: 2}
     - target: {fileID: 11400052, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: backgroundSprite
-      value: frame-basic
+      value: frame-style7
       objectReference: {fileID: 0}
     - target: {fileID: 11400052, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: layout.margins.top
@@ -837,6 +836,114 @@ Prefab:
     - target: {fileID: 11400044, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
       propertyPath: textScale
       value: 1.66666663
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400052, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: color.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500020, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_Size.y
+      value: .152205884
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400026, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: layout.margins.top
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400026, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: layout.margins.bottom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400044, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: layout.margins.top
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400044, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: layout.margins.bottom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400070, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: layout.margins.top
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400070, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: layout.margins.bottom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400012, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: layout.margins.top
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400012, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: layout.margins.bottom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500012, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_Size.y
+      value: .152205884
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500034, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_Size.y
+      value: .152205884
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500004, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_Size.y
+      value: .152205884
+      objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.0761029422
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.0761029422
+      objectReference: {fileID: 0}
+    - target: {fileID: 400036, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.0761029422
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.0761029422
+      objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.54852939
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.54852939
+      objectReference: {fileID: 0}
+    - target: {fileID: 400036, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.54852939
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.54852939
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400026, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: padding.m_Bottom
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400044, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: padding.m_Bottom
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400070, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: padding.m_Bottom
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400012, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: padding.m_Bottom
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400032, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: color.rgba
+      value: 4293190884
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400032, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
+      propertyPath: bottomColor.rgba
+      value: 4288651167
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43f5e37eef7985343b80ad55488cecf4, type: 2}
@@ -1435,6 +1542,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009081e57da03574399d9141aead074c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullshit: "-----------------------------------------------------------------------------\r\n--
+    \ Lua wrapper for Metis.NVL functionality.\r\n--\r\n--  (c) 2014 Project BC Ltd.\r\n--\r\n--
+    \ Unauthorized copying of this file via any medium is strictly prohibited.\r\n--\tProprietary
+    and confidential.\r\n--\r\n--\tAuthor: Bishop Myers\r\n-----------------------------------------------------------------------------\r\nnvl\t
+    \       = require \"corelib\"\r\n--audio\t\t= require \"lib.vsa.audio\"\r\n\r\nfunction
+    enter(name, tag)\r\n\tnvl.show_portrait(name, tag or \"\")\r\nend\r\n\r\nfunction
+    exit(name)\r\n\tnvl.exit_portrait(name)\r\nend\r\n\r\nfunction wait(seconds)\r\n\tnvl.wait(seconds
+    or 1.0)\r\nend\r\n\r\nfunction menu(choice1, choice2, choice3, choice4)\r\n\tnumber_of_choices
+    = 0\r\n\tif choice1 then \r\n\t\tnumber_of_choices = number_of_choices + 1 \r\n\telse\r\n\t\tchoice1
+    = \"\"\r\n\tend\r\n\tif choice2 then \r\n\t\tnumber_of_choices = number_of_choices
+    + 1 \r\n\telse\r\n\t\tchoice2 = \"\"\r\n\tend\r\n\tif choice3 then \r\n\t\tnumber_of_choices
+    = number_of_choices + 1 \r\n\telse\r\n\t\tchoice3 = \"\"\r\n\tend\r\n\tif choice4
+    then \r\n\t\tnumber_of_choices = number_of_choices + 1 \r\n\telse\r\n\t\tchoice4
+    = \"\"\r\n\tend\r\n\tnvl.menu(number_of_choices, choice1, choice2, choice3, choice4)\r\n\treturn
+    nvl.menu_result();\r\nend\r\n\r\nfunction exit_all()\r\n\tnvl.exit_all()\r\nend\r\n\r\nfunction
+    replace(set1, set2, tag)\r\n\texit(set1)\r\n\tenter(set2, tag)\r\nend\r\n\r\nfunction
+    change(set, tag)\r\n\tenter(set, tag)\r\nend\r\n\r\nfunction fade_in(time_in_seconds)\r\n\ttime_in_seconds
+    = time_in_seconds or 1.0\r\n\t--nvl.say(\"# TODO: Fade in handling\")\r\n\t--nvl.fade_in(time_in_seconds)\r\nend\r\n\r\nfunction
+    fade_out(time_in_seconds)\r\n\ttime_in_seconds = time_in_seconds or 1.0\r\n\t--nvl.say(\"#
+    TODO: Fade out handling\")\r\n\t--nvl.fade_out(time_in_seconds)\r\nend\r\n\r\nreturn
+    1\r\n\r\nlocal nvltestlib\t\t= require \"testlib\"\r\nlocal nvlcorelib\t\t= require
+    \"corelib\"\r\n\r\nlocal function set_variable(key, value)\r\n\tif type(value)
+    == \"string\" then\r\n\t\tnvltestlib.set_variable(key, value, \"String\")\r\n\t\treturn
+    1\r\n\telseif type(value) == \"number\" then\r\n\t\t-- Check if int\r\n\t\tif
+    math.floor(value) == value then\r\n\t\t\tnvltestlib.set_variable(key, value, \"Integer\")\r\n\t\t--
+    Nope, it's a double\r\n\t\telse\r\n\t\t\tnvltestlib.set_variable(key, value, \"Double\")\r\n\t\tend\r\n\t\treturn
+    1\r\n\telseif type(value) == \"boolean\" then\r\n\t\tnvltestlib.set_variable(key,
+    value, \"Flag\")\r\n\t\treturn 1\r\n\telse\r\n\t\treturn -1\r\n\tend\r\nend\r\n\r\nlocal
+    function get_variable(key)\r\n\treturn nvltestlib.get_variable(key)\r\nend\r\n\r\n--[[\r\nlocal
+    function say(input)\r\n\tname_and_dialogue = string.split(input,\":\",2);\r\n\tif
+    table.getn(name_and_dialogue) == 1 then\r\n\t\tname = \"\";\r\n\t\tdialogue =
+    input;\r\n\telseif table.getn(name_and_dialogue) == 2 then\r\n\t\tname = name_and_dialogue[1];\r\n\t\tdialogue
+    = name_and_dialogue[2];\r\n\tend\r\n\treturn nvlcorelib.say(name, dialogue);\r\nend\r\n--]]\r\n\r\nlocal
+    function show_bg(alias)\r\n\treturn nvlcorelib.show_bg(alias)\r\nend\r\n\r\nreturn\r\n{\r\n\tset_variable
+    \t= set_variable,\r\n\tget_variable\t= get_variable,\r\n\tsay\t\t\t\t= say\r\n}"
 --- !u!1 &365886997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,7 +1938,7 @@ MonoBehaviour:
   zindex: 0
   color:
     serializedVersion: 2
-    rgba: 4294303476
+    rgba: 4293190884
   disabledColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -1830,7 +1972,7 @@ MonoBehaviour:
   text: 
   bottomColor:
     serializedVersion: 2
-    rgba: 4288181145
+    rgba: 4288651167
   align: 0
   vertAlign: 0
   textScale: 3.5
@@ -1906,7 +2048,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -2535,7 +2676,7 @@ MonoBehaviour:
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
-  backgroundSprite: frame-basic
+  backgroundSprite: frame-style7
   backgroundColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -2719,6 +2860,47 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4cd8f33973c52ca4ea617ec44cfc805c, type: 2}
+      propertyPath: bullshit
+      value: "-----------------------------------------------------------------------------\r\n--
+        \ Lua wrapper for Metis.NVL functionality.\r\n--\r\n--  (c) 2014 Project BC
+        Ltd.\r\n--\r\n--  Unauthorized copying of this file via any medium is strictly
+        prohibited.\r\n--\tProprietary and confidential.\r\n--\r\n--\tAuthor: Bishop
+        Myers\r\n-----------------------------------------------------------------------------\r\nnvl\t
+        \       = require \"corelib\"\r\n--audio\t\t= require \"lib.vsa.audio\"\r\n\r\nfunction
+        enter(name, tag)\r\n\tnvl.show_portrait(name, tag or \"\")\r\nend\r\n\r\nfunction
+        exit(name)\r\n\tnvl.exit_portrait(name)\r\nend\r\n\r\nfunction wait(seconds)\r\n\tnvl.wait(seconds
+        or 1.0)\r\nend\r\n\r\nfunction menu(choice1, choice2, choice3, choice4)\r\n\tnumber_of_choices
+        = 0\r\n\tif choice1 then \r\n\t\tnumber_of_choices = number_of_choices + 1
+        \r\n\telse\r\n\t\tchoice1 = \"\"\r\n\tend\r\n\tif choice2 then \r\n\t\tnumber_of_choices
+        = number_of_choices + 1 \r\n\telse\r\n\t\tchoice2 = \"\"\r\n\tend\r\n\tif
+        choice3 then \r\n\t\tnumber_of_choices = number_of_choices + 1 \r\n\telse\r\n\t\tchoice3
+        = \"\"\r\n\tend\r\n\tif choice4 then \r\n\t\tnumber_of_choices = number_of_choices
+        + 1 \r\n\telse\r\n\t\tchoice4 = \"\"\r\n\tend\r\n\tnvl.menu(number_of_choices,
+        choice1, choice2, choice3, choice4)\r\n\treturn nvl.menu_result();\r\nend\r\n\r\nfunction
+        exit_all()\r\n\tnvl.exit_all()\r\nend\r\n\r\nfunction replace(set1, set2,
+        tag)\r\n\texit(set1)\r\n\tenter(set2, tag)\r\nend\r\n\r\nfunction change(set,
+        tag)\r\n\tenter(set, tag)\r\nend\r\n\r\nfunction fade_in(time_in_seconds)\r\n\ttime_in_seconds
+        = time_in_seconds or 1.0\r\n\t--nvl.say(\"# TODO: Fade in handling\")\r\n\t--nvl.fade_in(time_in_seconds)\r\nend\r\n\r\nfunction
+        fade_out(time_in_seconds)\r\n\ttime_in_seconds = time_in_seconds or 1.0\r\n\t--nvl.say(\"#
+        TODO: Fade out handling\")\r\n\t--nvl.fade_out(time_in_seconds)\r\nend\r\n\r\nreturn
+        1\r\n\r\nlocal nvltestlib\t\t= require \"testlib\"\r\nlocal nvlcorelib\t\t=
+        require \"corelib\"\r\n\r\nlocal function set_variable(key, value)\r\n\tif
+        type(value) == \"string\" then\r\n\t\tnvltestlib.set_variable(key, value,
+        \"String\")\r\n\t\treturn 1\r\n\telseif type(value) == \"number\" then\r\n\t\t--
+        Check if int\r\n\t\tif math.floor(value) == value then\r\n\t\t\tnvltestlib.set_variable(key,
+        value, \"Integer\")\r\n\t\t-- Nope, it's a double\r\n\t\telse\r\n\t\t\tnvltestlib.set_variable(key,
+        value, \"Double\")\r\n\t\tend\r\n\t\treturn 1\r\n\telseif type(value) == \"boolean\"
+        then\r\n\t\tnvltestlib.set_variable(key, value, \"Flag\")\r\n\t\treturn 1\r\n\telse\r\n\t\treturn
+        -1\r\n\tend\r\nend\r\n\r\nlocal function get_variable(key)\r\n\treturn nvltestlib.get_variable(key)\r\nend\r\n\r\n--[[\r\nlocal
+        function say(input)\r\n\tname_and_dialogue = string.split(input,\":\",2);\r\n\tif
+        table.getn(name_and_dialogue) == 1 then\r\n\t\tname = \"\";\r\n\t\tdialogue
+        = input;\r\n\telseif table.getn(name_and_dialogue) == 2 then\r\n\t\tname =
+        name_and_dialogue[1];\r\n\t\tdialogue = name_and_dialogue[2];\r\n\tend\r\n\treturn
+        nvlcorelib.say(name, dialogue);\r\nend\r\n--]]\r\n\r\nlocal function show_bg(alias)\r\n\treturn
+        nvlcorelib.show_bg(alias)\r\nend\r\n\r\nreturn\r\n{\r\n\tset_variable \t=
+        set_variable,\r\n\tget_variable\t= get_variable,\r\n\tsay\t\t\t\t= say\r\n}"
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400012, guid: 4cd8f33973c52ca4ea617ec44cfc805c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4cd8f33973c52ca4ea617ec44cfc805c, type: 2}
@@ -2882,7 +3064,7 @@ MonoBehaviour:
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
-  backgroundSprite: frame-basic
+  backgroundSprite: frame-style7
   backgroundColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -3407,6 +3589,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: e773281c06b5e024db5e1a4f549afe5d, type: 2}
+  - {fileID: 2100000, guid: a1dc2d85ebe83b84390ece395c681e7e, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3442,7 +3625,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -3762,7 +3944,7 @@ MonoBehaviour:
     m_Left: 0
     m_Right: 0
     m_Top: 0
-    m_Bottom: 0
+    m_Bottom: 24
   textShadow: 0
   shadowColor:
     serializedVersion: 2
@@ -4204,7 +4386,7 @@ MonoBehaviour:
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
-  backgroundSprite: frame-basic
+  backgroundSprite: frame-style7
   backgroundColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -4387,7 +4569,7 @@ MonoBehaviour:
   isLocalized: 0
   hotZoneScale: {x: 1, y: 1}
   atlas: {fileID: 11400000, guid: 061b63b910d71734eb8a953efb83a358, type: 2}
-  backgroundSprite: frame-basic
+  backgroundSprite: frame-style7
   backgroundColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -5332,7 +5514,7 @@ MonoBehaviour:
     m_Left: 0
     m_Right: 0
     m_Top: 0
-    m_Bottom: 0
+    m_Bottom: 24
   textShadow: 0
   shadowColor:
     serializedVersion: 2
@@ -5813,7 +5995,7 @@ MonoBehaviour:
     m_Left: 0
     m_Right: 0
     m_Top: 0
-    m_Bottom: 0
+    m_Bottom: 24
   textShadow: 0
   shadowColor:
     serializedVersion: 2
@@ -5911,7 +6093,7 @@ Transform:
   m_PrefabInternal: {fileID: 157684810}
   m_GameObject: {fileID: 1710049519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0018382353, y: .0018382353, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 973644623}
@@ -5957,7 +6139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b16811c7269501446b58e5768d60a0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeTime: .5
 --- !u!114 &1746021153
 MonoBehaviour:
   m_ObjectHideFlags: 0

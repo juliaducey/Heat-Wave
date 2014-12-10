@@ -7,9 +7,11 @@ public class MetisDFChoiceView : dfViewComponent {
 	string _text;
 	int _choiceNumber;
 	Action<int> _clickCallback;
+	float clickTime;
 	
 	public void Initialize(string text, int choiceNumber, Action<int> clickCallback)
 	{
+		clickTime = Time.time + MetisChoiceController.FadeTime;
 		dfGUIManager manager = null;
 		foreach (var m in dfGUIManager.ActiveManagers)
 		{
@@ -26,6 +28,9 @@ public class MetisDFChoiceView : dfViewComponent {
 	
 	public void OnClick()
 	{
+		if (Time.time < clickTime)
+			return;
+
 		if (_clickCallback != null)
 		{
 			//gameObject.audio.Play ();
