@@ -8,6 +8,8 @@ public class GameState : MonoBehaviour {
 	public Text text; 
 	public int numberOfPeopleFainted = 0;
 	public int numberOfPeopleInside = 0;
+	private int currNumFainted = 0;
+	private int currNumInside = 0;
 	public int score = 0;
 	public float[] forecast;
 	public Person person1;
@@ -75,6 +77,8 @@ public class GameState : MonoBehaviour {
     {
         forecast[(currentDay - 1) % 7] += Random.Range(0f, 2f);
         currentDay += 1;
+		currNumFainted = 0;
+		currNumInside = 0;
         Application.LoadLevel("NewspaperScene");
     }
 
@@ -179,8 +183,9 @@ public class GameState : MonoBehaviour {
 
 	public void SomeoneWentInside() {
 		numberOfPeopleInside += 1;
+		currNumInside += 1;
 		if (Application.loadedLevelName == "MainScene") {
-			if (numberOfPeopleInside + numberOfPeopleFainted >= prevPersonCount && prevPersonCount > 0) {
+			if (currNumInside + currNumFainted >= prevPersonCount && prevPersonCount > 0) {
 				StartCoroutine( waitAndIncrement(3.0f));
 			}
 		}
@@ -188,8 +193,9 @@ public class GameState : MonoBehaviour {
 
 	public void SomeoneFainted() {
 		numberOfPeopleFainted += 1;
+		currNumFainted += 1;
 		if (Application.loadedLevelName == "MainScene") {
-			if (numberOfPeopleInside + numberOfPeopleFainted >= prevPersonCount && prevPersonCount > 0) {
+			if (currNumInside + currNumFainted >= prevPersonCount && prevPersonCount > 0) {
 				StartCoroutine(waitAndIncrement(3.0f));
 			}
 		}
