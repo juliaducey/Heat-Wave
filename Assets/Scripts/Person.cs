@@ -146,7 +146,8 @@ public class Person : MonoBehaviour {
 					faintNotification = true;
 				}
 				// myExclamation.transform.position = transform.position;
-				myExclamation.transform.position = new Vector3(transform.position.x, transform.position.y + 21F, transform.position.z);
+				if (myExclamation != null)
+					myExclamation.transform.position = new Vector3(transform.position.x, transform.position.y + 21F, transform.position.z);
 			} 
 		} 
 		else if (fainting) 
@@ -198,7 +199,7 @@ public class Person : MonoBehaviour {
 	}
 
 	public void drinkWater () {
-		Debug.Log ("somebody drank water");
+//		Debug.Log ("somebody drank water");
 		this.timeTillFaintInSeconds += 20; // value can be balanced later
 		if (myExclamation) 
 		{

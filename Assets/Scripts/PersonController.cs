@@ -19,7 +19,7 @@ public class PersonController : MetisViewComponentController {
 		Person talkingPerson = GameObject.Find ("MainGameState").GetComponent<GameState> ().GetTalkingPerson();
 		var controller = GameObject.FindGameObjectWithTag(MetisSceneController.TAG).GetComponent<MetisLuaScriptController>();
 		controller.PushOntoStack(talkingPerson.GetAttributes());
-		Debug.Log ("returned " + talkingPerson.GetAttributes ());
+//		Debug.Log ("returned " + talkingPerson.GetAttributes ());
 		return 1;
 	}
 
