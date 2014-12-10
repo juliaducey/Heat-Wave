@@ -16,10 +16,10 @@ public class Temperature : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		text = GetComponent <Text> ();
-		state = GameObject.Find ("MainGameState").GetComponent<GameState> ();
         state.PopulateScene();
-        baseTemp = state.forecast[(state.currentDay - 1) % 7];
-        timerObject = GameObject.Find("Timer").GetComponent<Timer>();
+
+        baseTemp = state.forecast[(timerObject.day - 1) % 7];
+
         curTemp = -1f * System.Math.Abs(timerObject.hours * .5f - 6) + baseTemp - state.umbrellas;
         text.text = "Temperature: " + curTemp.ToString();
         updateTemperature();
@@ -40,9 +40,9 @@ public class Temperature : MonoBehaviour {
 		if (timerObject.hours > currentHour) {
 			currentHour = timerObject.hours;
             curTemp = baseTemp + 2 - (.05f * (currentHour - 16) * (currentHour - 16));
-            if (curTemp > 100f  && !state.hot)
+            if (curTemp > 35f  && !state.hot)
                 state.hot = true;
-            else if (curTemp <= 100f && state.hot)
+            else if (curTemp <= 35f && state.hot)
                 state.hot = false;
 			text.text = "Temperature: " + curTemp.ToString();
 		}
