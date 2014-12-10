@@ -11,7 +11,7 @@ public class MetisChoiceController : MetisViewComponentController
 	bool _active = false;
 	int _selectedChoice = 0;
 
-	public float FadeTime = 0.5f;
+	public static float FadeTime = 0.5f;
 	List<MetisDFChoiceView> _choices = new List<MetisDFChoiceView>();
 
 	protected override void OnAwake()
