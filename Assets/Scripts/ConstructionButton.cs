@@ -8,10 +8,13 @@ public class ConstructionButton : MonoBehaviour {
     public float timeToBuild = 5f;
     public string item;
     GameObject working;
+
+	public Text BuildingText;
+
 	// Use this for initialization
 	void Start () {
         this.state = GameObject.Find("MainGameState").GetComponent<GameState>();
-	
+		BuildingText.SetAlpha (0f);
 	}
 	
 	// Update is called once per frame
@@ -47,6 +50,12 @@ public class ConstructionButton : MonoBehaviour {
             {
                 state.busy = true;
                 building = true;
+
+				var t = timeToBuild/8;
+
+				BuildingText.FadeIn(t, () => BuildingText.FadeOut (t, () => BuildingText.FadeIn 
+				                   (t, () => BuildingText.FadeOut (t, () => BuildingText.FadeIn 
+				                   (t, () => BuildingText.FadeOut(t, () => BuildingText.FadeIn (t, () => BuildingText.FadeOut (t))))))));
             }
 
         }
