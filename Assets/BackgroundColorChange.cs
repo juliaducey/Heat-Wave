@@ -13,6 +13,7 @@ public class BackgroundColorChange : MonoBehaviour {
 
 	void Start()
 	{
+		Timer = GameObject.FindObjectOfType<Timer>();
 	}
 
 	// Update is called once per frame
