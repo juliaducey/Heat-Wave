@@ -14,7 +14,10 @@ public class Umbrella : MonoBehaviour {
     // If MainScene, deplete umbrella health.  If health reaches 0, destroy umbrella and tell GameState about it.
 	void Update () {
         if (Application.loadedLevelName == "MainScene")
+          
         {
+            if (!GetComponent<SpriteRenderer>().enabled)
+                GetComponent<SpriteRenderer>().enabled = true;
             health -= Time.deltaTime;
 
             if (health < 0)
@@ -23,6 +26,11 @@ public class Umbrella : MonoBehaviour {
                 state.RemoveUmbrella();
                 Destroy(gameObject);
             }
+        }
+        else
+        {
+            if (GetComponent<SpriteRenderer>().enabled)
+                GetComponent<SpriteRenderer>().enabled = false;
         }
         if (Application.loadedLevelName == "StartScene")
             Destroy(gameObject);

@@ -17,6 +17,8 @@ public class Water : MonoBehaviour {
 	void Update () {
         if (Application.loadedLevelName == "MainScene")
         {
+            if (!GetComponent<SpriteRenderer>().enabled)
+                GetComponent<SpriteRenderer>().enabled = true;
             health -= Time.deltaTime;
 
             if (health < 0)
@@ -24,6 +26,11 @@ public class Water : MonoBehaviour {
                 state.RemoveWater();
                 Destroy(gameObject);
             }
+        }
+        else
+        {
+            if (GetComponent<SpriteRenderer>().enabled)
+                GetComponent<SpriteRenderer>().enabled = false;
         }
 
         if (Application.loadedLevelName == "StartScene")
