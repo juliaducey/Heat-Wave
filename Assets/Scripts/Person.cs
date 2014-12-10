@@ -73,11 +73,6 @@ public class Person : MonoBehaviour {
 			return;
 		}
 
-        float tempMultiplier = 1f;
-
-        if (temperature.curTemp > 38f && state.waters == 0)
-            tempMultiplier = 1.5f;
-
         this.timeTillFaintInSeconds -= ((temperature.curTemp - 28f) / 16f + 1) *  Time.deltaTime * 64f/5f;
 		this.timeTillGoInside -= Time.deltaTime * 64f/5f;
 
@@ -146,8 +141,14 @@ public class Person : MonoBehaviour {
 					faintNotification = true;
 				}
 				// myExclamation.transform.position = transform.position;
+				myExclamation.transform.position = new Vector3(transform.position.x, transform.position.y + 21F, transform.position.z);
+
 				if (myExclamation != null)
 					myExclamation.transform.position = new Vector3(transform.position.x, transform.position.y + 21F, transform.position.z);
+
+                // chance of drinking water if critical
+                if (Random.Range(0, 10) >= 10 - state.waters)
+                    this.timeTillFaintInSeconds += ((temperature.curTemp - 28f) / 16f + 1) * Time.deltaTime * 64f / 5f;
 			} 
 		} 
 		else if (fainting) 
@@ -200,7 +201,7 @@ public class Person : MonoBehaviour {
 
 	public void drinkWater () {
 //		Debug.Log ("somebody drank water");
-		this.timeTillFaintInSeconds += 20; // value can be balanced later
+		this.timeTillFaintInSeconds += 120; // value can be balanced later
 		if (myExclamation) 
 		{
 			Destroy (myExclamation.gameObject);
