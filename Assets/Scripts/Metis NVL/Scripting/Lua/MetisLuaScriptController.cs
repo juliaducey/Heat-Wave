@@ -15,6 +15,8 @@ public class MetisLuaScriptController : MonoBehaviour
 	public MetisSceneController SceneController;
 	bool DisableMainCamera = false;
 
+	public string bullshit;
+
 	// Name of BG to automatically show, if any
 	public string AutoShowBG = string.Empty;
 	void Start()
@@ -89,8 +91,11 @@ public class MetisLuaScriptController : MonoBehaviour
 		}
 		
 		// Import header
-		ExecuteDoString ("require \"lib.vsa.core\"");
-		ExecuteDoString ("require \"lib.metis_nvl.core\"");
+		//ExecuteDoString ("require \"lib.vsa.core\"");
+		//ExecuteDoString ("require \"lib.metis_nvl.core\"");
+
+		ExecuteDoString (bullshit);
+
 		//ExecuteDoString("sound(\"event_start\")");
 		
 		if (!string.IsNullOrEmpty(AutoShowBG) && shouldAutoShowBG)
@@ -128,6 +133,8 @@ public class MetisLuaScriptController : MonoBehaviour
 
 	private void ExecuteDoString(string str)
 	{
+		//Debug.Log (System.IO.Directory.GetCurrentDirectory());
+		//Debug.Log(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location));
 		var status = Lua.L_DoString (str);
 		if (status != ThreadStatus.LUA_OK)
 		{
@@ -178,6 +185,5 @@ public class MetisLuaScriptController : MonoBehaviour
 			}
 		}
 		return 1;
-	}    
+	}
 }
-
