@@ -3160,7 +3160,7 @@ Prefab:
       objectReference: {fileID: 1277333532}
     - target: {fileID: 11400000, guid: 957d47cfbc2fc1c41bc1b755e940e7de, type: 2}
       propertyPath: forecast.Array.data[0]
-      value: 30.5
+      value: 39.4000015
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 957d47cfbc2fc1c41bc1b755e940e7de, type: 2}
       propertyPath: forecast.Array.data[1]
@@ -4949,7 +4949,7 @@ MonoBehaviour:
   numberOfPeopleInside: 0
   score: 0
   forecast:
-  - 30.5
+  - 39.4000015
   - 36.0999985
   - 39.4000015
   - 43.2999992

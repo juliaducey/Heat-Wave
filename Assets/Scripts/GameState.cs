@@ -33,7 +33,6 @@ public class GameState : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		prevPersonCount = 0;
 		DontDestroyOnLoad (gameObject);
 		this.busy = false;
         umbrellaList = new ArrayList();
@@ -171,13 +170,29 @@ public class GameState : MonoBehaviour {
 
 		prevPersonCount = numPeople;
 	}
-	
+
+	private IEnumerator waitAndIncrement (float t) {
+		yield return new WaitForSeconds (t);
+		timer.StopTimer();
+		IncrementDay();
+	}
+
 	public void SomeoneWentInside() {
 		numberOfPeopleInside += 1;
+		if (Application.loadedLevelName == "MainScene") {
+			if (numberOfPeopleInside + numberOfPeopleFainted >= prevPersonCount && prevPersonCount > 0) {
+				StartCoroutine( waitAndIncrement(3.0f));
+			}
+		}
 	}
-	
+
 	public void SomeoneFainted() {
 		numberOfPeopleFainted += 1;
+		if (Application.loadedLevelName == "MainScene") {
+			if (numberOfPeopleInside + numberOfPeopleFainted >= prevPersonCount && prevPersonCount > 0) {
+				StartCoroutine(waitAndIncrement(3.0f));
+			}
+		}
 	}
 
     public void LoadMainScene()
