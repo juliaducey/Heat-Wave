@@ -73,7 +73,7 @@ public class Person : MonoBehaviour {
 			return;
 		}
 
-        this.timeTillFaintInSeconds -= ((temperature.curTemp - 28f) / 16f + 1) *  Time.deltaTime * 64f/5f;
+        this.timeTillFaintInSeconds -= ((temperature.curTemp - 28f) / 32f + 1) *  Time.deltaTime * 64f/5f;
 		this.timeTillGoInside -= Time.deltaTime * 64f/5f;
 
 		if ((this.timeTillGoInside <= 0) && !fainting && !goingInside && !inConversation) {
@@ -201,7 +201,7 @@ public class Person : MonoBehaviour {
 
 	public void drinkWater () {
 //		Debug.Log ("somebody drank water");
-		this.timeTillFaintInSeconds += 120; // value can be balanced later
+        this.timeTillFaintInSeconds += 60 * (20 - this.male.GetHashCode() - 4 * this.drunk.GetHashCode() - 4 * this.old.GetHashCode() - 3 * this.homeless.GetHashCode()); // value can be balanced later
 		if (myExclamation) 
 		{
 			Destroy (myExclamation.gameObject);
