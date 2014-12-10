@@ -9,7 +9,7 @@ public class GameState : MonoBehaviour {
 	public int numberOfPeopleFainted = 0;
 	public int numberOfPeopleInside = 0;
 	public int score = 0;
-    public float[] forecast;
+	public float[] forecast;
 	public Person person1;
 	public Person person2;
 	public Person person3;
@@ -24,20 +24,18 @@ public class GameState : MonoBehaviour {
     public bool bgm;
     public ArrayList umbrellaList;
     public ArrayList waterList;
-    private Timer timer;
+    public Timer timer;
 
 	// How many people there were yesterday
 	private int prevPersonCount;
 	
+
 	// Use this for initialization
 	void Start () {
-		prevPersonCount = 0;
 		DontDestroyOnLoad (gameObject);
-		forecast = new float[] { 30.5f, 36.1f, 39.4f, 43.3f, 36.6f, 30.5f, 28.9f};
 		this.busy = false;
         umbrellaList = new ArrayList();
         waterList = new ArrayList();
-        timer = GameObject.Find("Timer").GetComponent<Timer>();
 	}
 	
 	// Update is called once per frame
@@ -125,11 +123,13 @@ public class GameState : MonoBehaviour {
     public void TalkToPerson(Person p)
     {
         talkingPerson = p;
+		busy = true;
     }
 
     public void FinishTalking()
     {
 		talkingPerson.setPersonToMoving(); //sets inConversation to false
+		busy = false;
         talkingPerson = null;
     }
 
@@ -146,8 +146,8 @@ public class GameState : MonoBehaviour {
         timer.SetTimerText();
 		timer.StartTimer ();
 		int day = timer.day;
-		Debug.Log ("Day:");
-		Debug.Log (day);
+//		Debug.Log ("Day:");
+//		Debug.Log (day);
 
 		int numPeople;
 		if (day == 1) {
@@ -169,13 +169,29 @@ public class GameState : MonoBehaviour {
 
 		prevPersonCount = numPeople;
 	}
-	
+
+	private IEnumerator waitAndIncrement (float t) {
+		yield return new WaitForSeconds (t);
+		timer.StopTimer();
+		IncrementDay();
+	}
+
 	public void SomeoneWentInside() {
 		numberOfPeopleInside += 1;
+		if (Application.loadedLevelName == "MainScene") {
+			if (numberOfPeopleInside + numberOfPeopleFainted >= prevPersonCount && prevPersonCount > 0) {
+				StartCoroutine( waitAndIncrement(3.0f));
+			}
+		}
 	}
-	
+
 	public void SomeoneFainted() {
 		numberOfPeopleFainted += 1;
+		if (Application.loadedLevelName == "MainScene") {
+			if (numberOfPeopleInside + numberOfPeopleFainted >= prevPersonCount && prevPersonCount > 0) {
+				StartCoroutine(waitAndIncrement(3.0f));
+			}
+		}
 	}
 
     public void LoadMainScene()

@@ -143,10 +143,12 @@ public class Person : MonoBehaviour {
 				// myExclamation.transform.position = transform.position;
 				myExclamation.transform.position = new Vector3(transform.position.x, transform.position.y + 21F, transform.position.z);
 
+				if (myExclamation != null)
+					myExclamation.transform.position = new Vector3(transform.position.x, transform.position.y + 21F, transform.position.z);
+
                 // chance of drinking water if critical
                 if (Random.Range(0, 10) >= 10 - state.waters)
                     this.timeTillFaintInSeconds += ((temperature.curTemp - 28f) / 16f + 1) * Time.deltaTime * 64f / 5f;
-
 			} 
 		} 
 		else if (fainting) 
@@ -189,7 +191,7 @@ public class Person : MonoBehaviour {
 
 	void OnMouseDown() {
 		// bring up dialogue
-        if (state.busy == false && !goingInside && !fainting)
+        if (!state.busy && !goingInside && !fainting)
         {
             inConversation = true;
 		    state.TalkToPerson (this);
@@ -198,7 +200,7 @@ public class Person : MonoBehaviour {
 	}
 
 	public void drinkWater () {
-		Debug.Log ("somebody drank water");
+//		Debug.Log ("somebody drank water");
 		this.timeTillFaintInSeconds += 20; // value can be balanced later
 		if (myExclamation) 
 		{
