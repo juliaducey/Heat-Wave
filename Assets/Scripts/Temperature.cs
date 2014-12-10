@@ -16,6 +16,8 @@ public class Temperature : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		text = GetComponent <Text> ();
+        state = GameObject.Find("MainGameState").GetComponent<GameState>();
+        timerObject = GameObject.Find("Timer").GetComponent<Timer>();
         state.PopulateScene();
 
         baseTemp = state.forecast[(timerObject.day - 1) % 7];
@@ -36,12 +38,13 @@ public class Temperature : MonoBehaviour {
 	}
 	
 	public void updateTemperature() {
-		timerObject = GameObject.Find ("Timer").GetComponent<Timer> ();
-		if (timerObject.hours > currentHour) {
-			currentHour = timerObject.hours;
-            curTemp = baseTemp + 2 - (.05f * (currentHour - 16) * (currentHour - 16));
-			text.text = "Temperature: " + curTemp.ToString();
-		}
+        if (timerObject.hours > currentHour)
+        {
+            currentHour = timerObject.hours;
+        }
+        curTemp = baseTemp + 2 - (.05f * (currentHour - 16) * (currentHour - 16)) - state.umbrellas;
+	    text.text = "Temperature: " + curTemp.ToString();
+
 	}
 	
 	public void updateNumberOfPeopleDead(int numberFainted) {

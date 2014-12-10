@@ -36,6 +36,7 @@ public class GameState : MonoBehaviour {
 	void Start () {
 		DontDestroyOnLoad (gameObject);
 		this.busy = false;
+        forecast = new float[] { 30.5f, 36.1f, 39.4f, 43.3f, 36.6f, 30.5f, 28.9f };
         umbrellaList = new ArrayList();
         waterList = new ArrayList();
 	}
@@ -147,6 +148,7 @@ public class GameState : MonoBehaviour {
 	{
 		Person[] people = new Person[] {person1, person2, person3, person4};
 		// Kinda hacky but whatever
+        timer = GameObject.Find("Timer").GetComponent<Timer>();
         timer.SetTimerText();
 		timer.StartTimer ();
 
